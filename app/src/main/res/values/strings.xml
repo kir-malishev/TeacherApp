@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Конструктор тестов</string>
+    <string name="next">Вперёд!</string>
+    <string name="menu">Меню</string>
+    <string name="test">Тест</string>
+    <string name="inmenu">В меню</string>
+    <string name="open">Войти</string>
+    <string name="back">Назад</string>
+    <string name="errorlogin">Неверный логин и/или пароль</string>
+    <string name="noemail">Введите e-mail</string>
+    <string name="erremail">Неверно введён e-mail</string>
+    <string name="nopass">Введите пароль</string>
+    <string name="password">Пароль</string>
+    <string name="minlengthpass">Пароль (не менее 6 символов)</string>
+    <string name="veryshortpass">Слишком короткий пароль</string>
+    <string name="nopass1">Подтвердите пароль</string>
+    <string name="pass1">Подтверждение пароля</string>
+    <string name="remember">Запомнить </string>
+    <string name="let">Отправить</string>
+    <string name="otherpass">Пароли не совпадают</string>
+    <string name="emailalreadywas">Этот e-mail уже зарегистрирован</string>
+    <string name="noconnect">Не удаётся соединиться с сервером. Проверьте доступ к Интернету.</string>
+    <string name="registration">Регистрация</string> 
+    <string name="authorization">Авторизация</string>
+    <string name="create">Создать тест</string>
+    <string name="editqq">Введите вопрос</string>
+    <string name="nochoose">Вы не выбрали тип вопроса</string>
+    <string name="editrightans">Введите верный ответ</string>
+    <string name="otherans">Введите другие ответы (всего не более 8)\nВарианты ответа будут перемешаны</string>
+	<string name="message_text">Text of your message</string>
+	<string name="yes">Да</string>
+	<string name="no">Отмена</string>
+	<string name="numbervar">Вариант №</string>
+	<string name="number1">Вариант №1</string>
+	<string name="numberqq">Вопрос №</string>
+	<string name="addquestion">Добавить вопрос</string>
+	<string name="result">Результат</string>
+	<string name="mustnot">Больше нельзя</string>
+	<string name="lessnot">Меньше нельзя</string>
+	<string name="maxlen">Длиннее нельзя</string>
+	<string name="varans">Введите варинты ответов\n(всего не более 8)\nВарианты ответа будут перемешаны</string>
+	<string name="inputans">Введите варинты верного ответа\n(всего не более 8)\nРегистр букв не учитывается</string>
+	<string name="forgeted">Вы забыли закончить редактирование вопроса №</string>
+	<string name="cannotdiminish">Убавлять нечего</string>
+	<string name="cannotadd">Добавлять больше нельзя\n(пожалейте своих учеников)</string>
+	<string name="noans">В тесте нет вопросов</string>
+	<string name="noright">не содержит верных ответов</string>
+	<string name="noend">не закончен</string>
+	<string name="points">Баллы за верный ответ</string>
+	<string name="rightans">верный ответ</string>
+	<string name="nametest">Введите название теста</string>
+	<string name="OK">OK</string>
+	<string name="aboutinput">(с вводом ответа)</string>
+	<string name="abouthoice">(с выбором одного ответа)</string>
+	<string name="aboutmultiple">(с выбором нескольких ответов)</string>
+	<string name="noname">Вы не ввели название теста</string>
+	<string name="succesfultest">Тест успешно создан</string>
+	<string name="exit">Выйти</string>
+	<string name="stay">Остаться</string>
+	<string name="warning">Если вы выйдите, данные не сохранятся</string>
+	<string name="warning1">Если вы выйдите, внесённые изменения не сохранятся</string>
+	<string name="error">Ошибка</string>
+	<string name="mytests">Мои тесты</string>
+	<string name="save">Сохранить</string>
+	<string name="rename">Переименовать тест</string>
+	<string name="amend">Редактировать вопросы</string>
+	<string name="choiceoption">Выберите действие</string>
+	<string name="notests">Вы пока не создали ни одного теста</string>
+	<string name="remove">Удалить вопрос</string>
+	<string name="confirm">Подтвердите действие</string>
+	<string name="email">E-mail</string>
+	<string name="mailresult">Отправить на электронную почту</string>
+	<string name="succesfulmail">Письмо успешно отправлено</string>
+	<string name="errormail">При отправке возникла ошибка</string>
+	<string name="renameOK">Тест успешно переименован</string>
+	<string name="createOK">Тест успешно создан</string>
+	<string name="testID">Номер теста:</string>
+	<string name="noresults">Никто ещё не выполнил этот тест</string> 
+	<string name="wait">Секундочку</string>
+	<string name="add">Добавить вопрос</string>
+    <color name="light_color">#F0E68C</color>
+	<color name="dark_color">#370903</color>
+	<color name="black_color">#000000</color>
+	<color name="white_color">#FFFFFF</color>
+	<color name="yellow_color">#FFFF00</color>
+	<color name="orange_color">#FF8C00</color>
+	<color name="button_color">#B7EF8E</color>
+	
+<string-array name="points">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+    <item>7</item>
+    <item>8</item>
+    <item>9</item>
+    <item>10</item>
+</string-array>
+
+<string-array name="types">
+    <item>С выбором одного ответа</item>
+    <item>С множественным выбором ответа</item>
+    <item>С вводом ответа</item>
+</string-array>
+
+<string-array name="options">
+    <item>Переименовать тест</item>
+    <item>Редактировать вопросы</item>
+    <item>Результаты прохождений</item>
+    <item>Отправить тест на e-mail</item>
+</string-array>
+</resources>

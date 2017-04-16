@@ -1,0 +1,154 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* README.md
+* doc/
+* doc/allclasses-frame.html
+* doc/allclasses-noframe.html
+* doc/app/
+* doc/app/teacher/
+* doc/app/teacher/ActivityMenu.html
+* doc/app/teacher/BuildConfig.html
+* doc/app/teacher/EditChoiceActivity.html
+* doc/app/teacher/EditInputActivity.html
+* doc/app/teacher/EditMultipleActivity.html
+* doc/app/teacher/EditTestActivity.Task.html
+* doc/app/teacher/EditTestActivity.html
+* doc/app/teacher/Item.html
+* doc/app/teacher/LoginActivity.Task.html
+* doc/app/teacher/LoginActivity.html
+* doc/app/teacher/MyAdapter.html
+* doc/app/teacher/MyTestsActivity.Task.html
+* doc/app/teacher/MyTestsActivity.html
+* doc/app/teacher/OnSwipeTouchListener.html
+* doc/app/teacher/R.array.html
+* doc/app/teacher/R.attr.html
+* doc/app/teacher/R.color.html
+* doc/app/teacher/R.dimen.html
+* doc/app/teacher/R.drawable.html
+* doc/app/teacher/R.html
+* doc/app/teacher/R.id.html
+* doc/app/teacher/R.layout.html
+* doc/app/teacher/R.string.html
+* doc/app/teacher/R.style.html
+* doc/app/teacher/RegActivity.Task.html
+* doc/app/teacher/RegActivity.html
+* doc/app/teacher/RequestTask.html
+* doc/app/teacher/ResultViewActivity.Task.html
+* doc/app/teacher/ResultViewActivity.html
+* doc/app/teacher/ResultsActivity.Task.html
+* doc/app/teacher/ResultsActivity.html
+* doc/app/teacher/Utils.html
+* doc/app/teacher/class-use/
+* doc/app/teacher/class-use/ActivityMenu.html
+* doc/app/teacher/class-use/BuildConfig.html
+* doc/app/teacher/class-use/EditChoiceActivity.html
+* doc/app/teacher/class-use/EditInputActivity.html
+* doc/app/teacher/class-use/EditMultipleActivity.html
+* doc/app/teacher/class-use/EditTestActivity.Task.html
+* doc/app/teacher/class-use/EditTestActivity.html
+* doc/app/teacher/class-use/Item.html
+* doc/app/teacher/class-use/LoginActivity.Task.html
+* doc/app/teacher/class-use/LoginActivity.html
+* doc/app/teacher/class-use/MyAdapter.html
+* doc/app/teacher/class-use/MyTestsActivity.Task.html
+* doc/app/teacher/class-use/MyTestsActivity.html
+* doc/app/teacher/class-use/OnSwipeTouchListener.html
+* doc/app/teacher/class-use/R.array.html
+* doc/app/teacher/class-use/R.attr.html
+* doc/app/teacher/class-use/R.color.html
+* doc/app/teacher/class-use/R.dimen.html
+* doc/app/teacher/class-use/R.drawable.html
+* doc/app/teacher/class-use/R.html
+* doc/app/teacher/class-use/R.id.html
+* doc/app/teacher/class-use/R.layout.html
+* doc/app/teacher/class-use/R.string.html
+* doc/app/teacher/class-use/R.style.html
+* doc/app/teacher/class-use/RegActivity.Task.html
+* doc/app/teacher/class-use/RegActivity.html
+* doc/app/teacher/class-use/RequestTask.html
+* doc/app/teacher/class-use/ResultViewActivity.Task.html
+* doc/app/teacher/class-use/ResultViewActivity.html
+* doc/app/teacher/class-use/ResultsActivity.Task.html
+* doc/app/teacher/class-use/ResultsActivity.html
+* doc/app/teacher/class-use/Utils.html
+* doc/app/teacher/package-frame.html
+* doc/app/teacher/package-summary.html
+* doc/app/teacher/package-tree.html
+* doc/app/teacher/package-use.html
+* doc/constant-values.html
+* doc/deprecated-list.html
+* doc/help-doc.html
+* doc/index-files/
+* doc/index-files/index-1.html
+* doc/index-files/index-10.html
+* doc/index-files/index-11.html
+* doc/index-files/index-12.html
+* doc/index-files/index-13.html
+* doc/index-files/index-14.html
+* doc/index-files/index-15.html
+* doc/index-files/index-16.html
+* doc/index-files/index-17.html
+* doc/index-files/index-18.html
+* doc/index-files/index-19.html
+* doc/index-files/index-2.html
+* doc/index-files/index-20.html
+* doc/index-files/index-21.html
+* doc/index-files/index-22.html
+* doc/index-files/index-3.html
+* doc/index-files/index-4.html
+* doc/index-files/index-5.html
+* doc/index-files/index-6.html
+* doc/index-files/index-7.html
+* doc/index-files/index-8.html
+* doc/index-files/index-9.html
+* doc/index.html
+* doc/overview-tree.html
+* doc/package-list
+* doc/script.js
+* doc/stylesheet.css
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:18.0.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* assets/ => app/src/main/assets
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -1,0 +1,22 @@
+-keep class app.teacher.LoginActivity { <init>(); }
+-keep class app.teacher.MainActivity { <init>(); }
+-keep class app.teacher.RegActivity { <init>(); }
+-keep class app.teacher.EditTestActivity { <init>(); }
+-keep class app.teacher.EditChoiceActivity { <init>(); }
+-keep class app.teacher.EditInputActivity { <init>(); }
+-keep class app.teacher.EditMultipleActivity { <init>(); }
+-keep class app.teacher.ActivityMenu { <init>(); }
+-keep class app.teacher.MyTestsActivity { <init>(); }
+-keep class app.teacher.TestReviewActivity { <init>(); }
+-keep class app.teacher.ResultsActivity { <init>(); }
+-keep class app.teacher.ResultViewActivity { <init>(); }
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+-keep public class * extends java.lang.annotation.Annotation {
+    *;
+}
+-keep class com.android.tools.fd.** {
+    *;
+}
+-dontnote com.android.tools.fd.**,android.support.multidex.MultiDexExtractor

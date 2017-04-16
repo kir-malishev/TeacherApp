@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView3"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:fillViewport="true" >
+
+        <ListView
+            android:id="@+id/tests"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7" >
+
+        </ListView>
+        
+        </ScrollView>
+
+ <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" 
+            android:orientation="horizontal">
+        
+
+            <Button
+                android:id="@+id/inMenu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:onClick="inMenu"
+                android:layout_weight="1" 
+                android:text="@string/inmenu"
+                android:textSize="20sp" />
+            
+             <Button
+                android:id="@+id/create"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:onClick="create"
+                android:layout_weight="1" 
+                android:text="@string/create"
+                android:textSize="20sp" />
+            
+            
+            
+
+       </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>

@@ -1,19 +1,23 @@
 [
     {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\createtest.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\createtest.xml"
+    },
+    {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_input.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_input.xml"
+    },
+    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\menu.xml"
     },
     {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login1.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\login1.xml"
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\newtest.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\newtest.xml"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\result_review.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\result_review.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\createtest.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\createtest.xml"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_multiple.xml",
@@ -24,91 +28,31 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\login1.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\style_for_spinner.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\style_for_spinner.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\login.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view_item.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\list_view_item.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\menu.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registration.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\registration.xml"
-    },
-    {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registration.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\registration.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_choice.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_choice.xml"
-    },
-    {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\result.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\result.xml"
-    },
-    {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\createtest.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\createtest.xml"
-    },
-    {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_input.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_input.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_multiple.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_multiple.xml"
-    },
-    {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\newtest.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\newtest.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\newtest.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\newtest.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_review.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\test_review.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\result.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\result.xml"
-    },
-    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\login.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_review.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\test_review.xml"
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\style_for_spinner.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\style_for_spinner.xml"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_choice.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_choice.xml"
     },
     {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_review.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\test_review.xml"
+    },
+    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view_item.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\list_view_item.xml"
     },
     {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\result_review.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\result_review.xml"
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registration.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\registration.xml"
     },
     {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\style_for_spinner.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\style_for_spinner.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_input.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_input.xml"
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\result.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\result.xml"
     }
 ]

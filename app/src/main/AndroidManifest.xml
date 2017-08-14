@@ -2,144 +2,117 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.teacher"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/diary"
         android:label="@string/app_name"
-       android:theme="@style/AppTheme"
-       >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="app.teacher.LoginActivity"
-            android:windowSoftInputMode="stateHidden"
+            android:name=".LoginActivity"
             android:label="@string/app_name"
             android:noHistory="true"
-             >
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="app.teacher.MainActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="@string/test"
-            android:noHistory="true" >
-            <intent-filter>
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="app.teacher.RegActivity"
-            android:windowSoftInputMode="stateHidden"
+                <activity
+            android:name=".RegActivity"
             android:label="@string/registration"
-            android:noHistory="true" >
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            </activity>
-                    <activity
-            android:name="app.teacher.EditTestActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="@string/create"
-            android:noHistory="false" >
-            <intent-filter>
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            </activity>
-          <activity
-            android:name="app.teacher.EditChoiceActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="@string/create"
-            android:noHistory="true" >
-            <intent-filter>
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        
-                  <activity
-            android:name="app.teacher.EditInputActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:label="@string/create"
-            android:noHistory="true" >
-            <intent-filter>
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-
-            android:name="app.teacher.EditMultipleActivity"
-            android:windowSoftInputMode="stateHidden"
+            android:name=".EditTestActivity"
             android:label="@string/create"
-            android:noHistory="true" >
+            android:noHistory="false"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        	<activity
-        	 android:name="app.teacher.ActivityMenu"
-        	 android:windowSoftInputMode="stateHidden"
-    			android:label="@string/menu"
-    			android:noHistory="true">
-    			<intent-filter>
-                
+        <activity
+            android:name=".EditChoiceActivity"
+            android:label="@string/create"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-					</activity>
-					
-					        	<activity
-        	 android:name="app.teacher.MyTestsActivity"
-        	 android:windowSoftInputMode="stateHidden"
-    			android:label="@string/mytests"
-    			android:noHistory="true">
-    			<intent-filter>
-                
+        </activity>
+        <activity
+            android:name=".EditInputActivity"
+            android:label="@string/create"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-					</activity>
-					
-						<activity
-        	 android:name="app.teacher.TestReviewActivity"
-        	 android:windowSoftInputMode="stateHidden"
-    			android:label="@string/mytests"
-    			android:noHistory="true">
-    			<intent-filter>
-                
+        </activity>
+        <activity
+            android:name=".EditMultipleActivity"
+            android:label="@string/create"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-					</activity>
-					<activity
-            android:name="app.teacher.ResultsActivity"
-            android:windowSoftInputMode="stateHidden"
+        </activity>
+        <activity
+            android:name=".ActivityMenu"
+            android:label="@string/menu"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MyTestsActivity"
+            android:label="@string/mytests"
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+               <activity
+            android:name=".ResultsActivity"
             android:label="@string/result"
-            android:noHistory="false" >
-                			<intent-filter>
-                
+            android:noHistory="false"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
-            <activity
-            android:name="app.teacher.ResultViewActivity"
-            android:windowSoftInputMode="stateHidden"
+        </activity>
+        <activity
+            android:name=".ResultViewActivity"
             android:label="@string/result"
-            android:noHistory="true" >
-                			<intent-filter>
-                
+            android:noHistory="true"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            </activity>
-            </application>
+        </activity>
+        <activity android:name=".EditChallengeActivity"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
 
 </manifest>

@@ -4,28 +4,12 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton_pressed.xml"
     },
     {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hbutton_pressed.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton_pressed.xml"
-    },
-    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\drawable\\ic_launcher.png"
     },
     {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.png",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\icon.png"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hbutton.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton.xml"
-    },
-    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\diary.png",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\drawable\\diary.png"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hbutton_focused.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton_focused.xml"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hbutton.xml",
@@ -36,28 +20,12 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton_normal.xml"
     },
     {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.png",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\magicball.png",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\magicball.png"
-    },
-    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\magicball.png",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\drawable\\magicball.png"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hbutton_focused.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton_focused.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\hbutton_normal.xml",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\hbutton_normal.xml"
-    },
-    {
-        "merged": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\diary.png",
-        "source": "D:\\home\\student1\\AndroidStudioProjects\\TeacherApp\\app\\src\\main\\res\\drawable\\diary.png"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon.png",

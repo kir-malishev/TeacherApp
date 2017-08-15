@@ -19,13 +19,29 @@ public class ChoiceQuestion extends Challenge implements Parcelable{
         super();
         this.answers = new HashSet<String>();
     }
+
+    ChoiceQuestion(int type){
+        super(type);
+        this.answers = new HashSet<String>();
+    }
+
     ChoiceQuestion(String question) {
         super(question);
         this.answers = new HashSet<String>();
     }
 
+    ChoiceQuestion(int type, String question) {
+        super(type, question);
+        this.answers = new HashSet<String>();
+    }
+
     ChoiceQuestion(String question, HashSet<String> answers) {
         super(question);
+        this.answers = answers;
+    }
+
+    ChoiceQuestion(int type, String question, HashSet<String> answers) {
+        super(type, question);
         this.answers = answers;
     }
 

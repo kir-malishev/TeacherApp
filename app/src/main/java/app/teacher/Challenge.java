@@ -8,12 +8,31 @@ import android.os.Parcelable;
  */
 public class Challenge implements Parcelable{
 
+    /**CHALLENGE                         TYPE
+     *
+     *
+     * Unknown                             -1
+     *
+     * OnlyChoiceQuestion                   0
+     * MultipleChoiceQuestion               1
+     * InputQuestion                        2
+     */
+
+
     String question;
+    int type = -1;
 
     Challenge(){}
 
+    Challenge(int type){
+        this.type = type;
+    }
 
     Challenge(String question){
+        this.question = question;
+    }
+    Challenge(int type, String question){
+        this.type = type;
         this.question = question;
     }
 
@@ -42,6 +61,7 @@ public class Challenge implements Parcelable{
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(question);
+        parcel.writeInt(type);
 
     }
 

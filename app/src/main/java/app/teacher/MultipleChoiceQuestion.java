@@ -12,21 +12,24 @@ import java.util.HashSet;
 public class MultipleChoiceQuestion extends ChoiceQuestion implements Parcelable {
 
     HashSet<String> rightAnswer;
+    static final int TYPE = 1;
+
+
     MultipleChoiceQuestion(){
-        super();
+        super(TYPE);
     }
 
     MultipleChoiceQuestion(String question){
-        super(question);
+        super(TYPE, question);
 
     }
 
     MultipleChoiceQuestion(String question, HashSet<String> answers){
-        super(question, answers);
+        super(TYPE, question, answers);
     }
 
     MultipleChoiceQuestion(String question, HashSet<String> answers, HashSet<String> rightAnswer){
-        super(question, answers);
+        super(TYPE, question, answers);
         this.rightAnswer = rightAnswer;
     }
 

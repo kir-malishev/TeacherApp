@@ -12,17 +12,18 @@ import java.util.HashSet;
 public class InputQuestion extends Challenge implements Parcelable{
 
     HashSet<String> rightAnswer;
+    static final int TYPE = 2;
 
     InputQuestion(){
-        super();
+        super(TYPE);
     }
 
     InputQuestion(String question){
-        super(question);
+        super(TYPE, question);
     }
 
     InputQuestion(String question, HashSet<String> rightAnswer){
-        super(question);
+        super(TYPE, question);
         this.rightAnswer = rightAnswer;
     }
 

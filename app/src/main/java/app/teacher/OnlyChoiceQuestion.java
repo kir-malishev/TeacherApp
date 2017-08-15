@@ -14,22 +14,23 @@ import java.util.HashSet;
 public class OnlyChoiceQuestion extends ChoiceQuestion implements Parcelable {
 
     String rightAnswer;
+    static final int TYPE = 0;
 
     OnlyChoiceQuestion(){
-        super();
+        super(TYPE);
     }
 
     OnlyChoiceQuestion(String question){
-        super(question);
+        super(TYPE, question);
 
     }
 
     OnlyChoiceQuestion(String question, HashSet<String> answers){
-        super(question, answers);
+        super(TYPE, question, answers);
     }
 
     OnlyChoiceQuestion(String question, HashSet<String> answers, String rightAnswer){
-        super(question, answers);
+        super(TYPE, question, answers);
         this.rightAnswer = rightAnswer;
     }
 

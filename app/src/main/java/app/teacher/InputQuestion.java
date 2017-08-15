@@ -14,11 +14,14 @@ public class InputQuestion extends Challenge implements Parcelable {
     HashSet<String> rightAnswer;
     static final int TYPE = 2;
 
-    InputQuestion(){        super(TYPE);
+    InputQuestion(){
+        super(TYPE);
+        this.rightAnswer = new HashSet<String>();
     }
 
     InputQuestion(String question){
         super(TYPE, question);
+        this.rightAnswer = new HashSet<String>();
     }
 
     InputQuestion(String question, HashSet<String> rightAnswer){
@@ -28,6 +31,7 @@ public class InputQuestion extends Challenge implements Parcelable {
 
 
     protected InputQuestion(Parcel in) {
+        super(in);
         rightAnswer = (HashSet) in.readValue(HashSet.class.getClassLoader());
     }
 

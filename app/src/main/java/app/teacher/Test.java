@@ -10,26 +10,40 @@ import java.util.ArrayList;
  * Created by Кирилл on 04.07.2017.
  */
 public class Test {
-    ArrayList<Challenge> challenges;
 
+    ArrayList<Challenge> challenges;
     String name;
+    String testId;
 
     Test(){
-        challenges = new ArrayList<Challenge>();
+        this.challenges = new ArrayList<Challenge>();
+        this.name = "";
+        this.testId = "";
     }
 
     Test(String name){
-        challenges = new ArrayList<Challenge>();
+        this.challenges = new ArrayList<Challenge>();
         this.name = name;
+        this.testId = "";
+
     }
 
     Test(ArrayList<Challenge> challenges){
         this.challenges = challenges;
+        this.name = "";
+        this.testId = "";
     }
 
     Test(ArrayList<Challenge> challenges, String name){
         this.challenges = challenges;
         this.name = name;
+        this.testId = "";
+    }
+
+    Test(ArrayList<Challenge> challenges, String name, String testId){
+        this.challenges = challenges;
+        this.name = name;
+        this.testId = testId;
     }
 
     void addChallenge(Challenge challenge){
@@ -44,6 +58,10 @@ public class Test {
         this.name = name;
     }
 
+    void setTestId(String testId){
+        this.testId = testId;
+    }
+
     Challenge getChallenge(int index){
         return challenges.get(index);
     }
@@ -54,6 +72,10 @@ public class Test {
 
     String getName(){
         return name;
+    }
+
+    String getTestId(){
+        return this.testId;
     }
 
     void remove(int index){

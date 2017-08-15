@@ -18,16 +18,20 @@ public class MultipleChoiceQuestion extends Challenge implements Parcelable {
 
     MultipleChoiceQuestion(){
         super(TYPE);
+        this.answers = new HashSet<String>();
+        this.rightAnswer = new HashSet<String>();
     }
 
     MultipleChoiceQuestion(String question){
         super(TYPE, question);
-
+        this.answers = new HashSet<String>();
+        this.rightAnswer = new HashSet<String>();
     }
 
     MultipleChoiceQuestion(String question, HashSet<String> answers){
         super(TYPE, question);
         this.answers = answers;
+        this.rightAnswer = new HashSet<String>();
     }
 
     MultipleChoiceQuestion(String question, HashSet<String> answers, HashSet<String> rightAnswer){
@@ -36,6 +40,11 @@ public class MultipleChoiceQuestion extends Challenge implements Parcelable {
         this.rightAnswer = rightAnswer;
     }
 
+    protected MultipleChoiceQuestion(Parcel in) {
+        super(in);
+        this.answers = (HashSet) in.readValue(HashSet.class.getClassLoader());
+        this.rightAnswer = (HashSet) in.readValue(HashSet.class.getClassLoader());
+    }
 
     void setRightAnswer(HashSet<String> rightAnswer){
         this.rightAnswer = rightAnswer;
@@ -47,13 +56,6 @@ public class MultipleChoiceQuestion extends Challenge implements Parcelable {
 
     HashSet<String> getRightAnswers(){
         return this.rightAnswer;
-    }
-
-
-    protected MultipleChoiceQuestion(Parcel in) {
-        super(in);
-        this.answers = (HashSet) in.readValue(HashSet.class.getClassLoader());
-        this.rightAnswer = (HashSet) in.readValue(HashSet.class.getClassLoader());
     }
 
     @Override

@@ -19,7 +19,7 @@ public class Challenge implements Parcelable {
      */
 
 
-    String question;
+    String question = "";
     int type = -1;
 
 

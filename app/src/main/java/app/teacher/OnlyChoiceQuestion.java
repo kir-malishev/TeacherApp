@@ -19,22 +19,33 @@ public class OnlyChoiceQuestion extends Challenge implements Parcelable {
 
     OnlyChoiceQuestion(){
         super(TYPE);
+        this.answers = new HashSet<String>();
+        this.rightAnswer = "";
     }
 
     OnlyChoiceQuestion(String question){
         super(TYPE, question);
+        this.answers = new HashSet<String>();
+        this.rightAnswer = "";
 
     }
 
     OnlyChoiceQuestion(String question, HashSet<String> answers){
         super(TYPE, question);
         this.answers = answers;
+        this.rightAnswer = "";
     }
 
     OnlyChoiceQuestion(String question, HashSet<String> answers, String rightAnswer){
         super(TYPE, question);
         this.answers = answers;
         this.rightAnswer = rightAnswer;
+    }
+
+    protected OnlyChoiceQuestion(Parcel in) {
+        super(in);
+        answers = (HashSet) in.readValue(HashSet.class.getClassLoader());
+        rightAnswer = in.readString();
     }
 
 
@@ -54,14 +65,6 @@ public class OnlyChoiceQuestion extends Challenge implements Parcelable {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         return gson.toJson(this);
-    }
-
-
-
-    protected OnlyChoiceQuestion(Parcel in) {
-        super(in);
-        answers = (HashSet) in.readValue(HashSet.class.getClassLoader());
-        rightAnswer = in.readString();
     }
 
     @Override

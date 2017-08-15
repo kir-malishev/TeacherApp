@@ -21,6 +21,7 @@ public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Tes
     public JsonElement serialize(Test src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject json = new JsonObject();
         json.addProperty("test_name", src.getName());
+        json.addProperty("test_id", src.getTestId());
         final GsonBuilder builder = new GsonBuilder();
         builder.registerTypeAdapter(Challenge.class, new ChallengeConverter());
         final Gson gson = builder.create();
@@ -32,7 +33,8 @@ public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Tes
     public Test deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         JsonObject object = json.getAsJsonObject();
         String testName = object.get("test_name").getAsString();
-        Test test = new Test(testName);
+        String testId = object.get("test_id").getAsString();
+        Test test = new Test(testName, testId);
         for(JsonElement jsonChallenge: object.get("challenges").getAsJsonArray()){
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Challenge.class, new ChallengeConverter());

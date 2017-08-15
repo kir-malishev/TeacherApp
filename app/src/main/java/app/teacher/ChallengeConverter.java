@@ -28,14 +28,14 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
         JsonArray jsonRightAnswer = new JsonArray();
         switch(src.type){
             case 0:
-                for(String answer: ((ChoiceQuestion) src).answers){
+                for(String answer: ((OnlyChoiceQuestion) src).answers){
                     jsonAnswers.add(answer);
                 }
                 json.add("answers", jsonAnswers);
                 json.addProperty("right_answer", ((OnlyChoiceQuestion) src).rightAnswer);
                 break;
             case 1:
-                for(String answer: ((ChoiceQuestion) src).answers){
+                for(String answer: ((MultipleChoiceQuestion) src).answers){
                     jsonAnswers.add(answer);
                 }
                 json.add("answers", jsonAnswers);

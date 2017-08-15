@@ -9,13 +9,12 @@ import java.util.HashSet;
 /**
  * Created by Кирилл on 01.07.2017.
  */
-public class InputQuestion extends Challenge implements Parcelable{
+public class InputQuestion extends Challenge implements Parcelable {
 
     HashSet<String> rightAnswer;
     static final int TYPE = 2;
 
-    InputQuestion(){
-        super(TYPE);
+    InputQuestion(){        super(TYPE);
     }
 
     InputQuestion(String question){
@@ -27,17 +26,9 @@ public class InputQuestion extends Challenge implements Parcelable{
         this.rightAnswer = rightAnswer;
     }
 
-    protected InputQuestion(Parcel in) {
-        super(in);
-        ArrayList<String> data = new ArrayList<String>();
-        in.readStringList(data);
-        rightAnswer = new HashSet(data);
-    }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        super.writeToParcel(parcel, i);
-        parcel.writeStringList(new ArrayList(rightAnswer));
+    protected InputQuestion(Parcel in) {
+        rightAnswer = (HashSet) in.readValue(HashSet.class.getClassLoader());
     }
 
     @Override
@@ -45,7 +36,13 @@ public class InputQuestion extends Challenge implements Parcelable{
         return 0;
     }
 
-    public static final Creator<InputQuestion> CREATOR = new Creator<InputQuestion>() {
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(rightAnswer);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<InputQuestion> CREATOR = new Parcelable.Creator<InputQuestion>() {
         @Override
         public InputQuestion createFromParcel(Parcel in) {
             return new InputQuestion(in);

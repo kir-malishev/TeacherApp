@@ -11,8 +11,9 @@ import java.util.HashSet;
 /**
  * Created by Кирилл on 01.07.2017.
  */
-public class OnlyChoiceQuestion extends ChoiceQuestion implements Parcelable {
+public class OnlyChoiceQuestion extends Challenge implements Parcelable {
 
+    HashSet<String> answers;
     String rightAnswer;
     static final int TYPE = 0;
 
@@ -26,41 +27,16 @@ public class OnlyChoiceQuestion extends ChoiceQuestion implements Parcelable {
     }
 
     OnlyChoiceQuestion(String question, HashSet<String> answers){
-        super(TYPE, question, answers);
+        super(TYPE, question);
+        this.answers = answers;
     }
 
     OnlyChoiceQuestion(String question, HashSet<String> answers, String rightAnswer){
-        super(TYPE, question, answers);
+        super(TYPE, question);
+        this.answers = answers;
         this.rightAnswer = rightAnswer;
     }
 
-    protected OnlyChoiceQuestion(Parcel in) {
-        super(in);
-        rightAnswer = in.readString();
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        super.writeToParcel(parcel, i);
-        parcel.writeString(rightAnswer);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<OnlyChoiceQuestion> CREATOR = new Creator<OnlyChoiceQuestion>() {
-        @Override
-        public OnlyChoiceQuestion createFromParcel(Parcel in) {
-            return new OnlyChoiceQuestion(in);
-        }
-
-        @Override
-        public OnlyChoiceQuestion[] newArray(int size) {
-            return new OnlyChoiceQuestion[size];
-        }
-    };
 
     void setRightAnswer(String rightAnswer){
         this.rightAnswer = rightAnswer;
@@ -81,4 +57,34 @@ public class OnlyChoiceQuestion extends ChoiceQuestion implements Parcelable {
     }
 
 
+
+    protected OnlyChoiceQuestion(Parcel in) {
+        super(in);
+        answers = (HashSet) in.readValue(HashSet.class.getClassLoader());
+        rightAnswer = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(answers);
+        dest.writeString(rightAnswer);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<OnlyChoiceQuestion> CREATOR = new Parcelable.Creator<OnlyChoiceQuestion>() {
+        @Override
+        public OnlyChoiceQuestion createFromParcel(Parcel in) {
+            return new OnlyChoiceQuestion(in);
+        }
+
+        @Override
+        public OnlyChoiceQuestion[] newArray(int size) {
+            return new OnlyChoiceQuestion[size];
+        }
+    };
 }

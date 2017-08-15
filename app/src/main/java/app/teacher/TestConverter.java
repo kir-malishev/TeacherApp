@@ -1,5 +1,7 @@
 package app.teacher;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -18,12 +20,26 @@ public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Tes
     @Override
     public JsonElement serialize(Test src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject json = new JsonObject();
-        json.addProperty("test_name", src.name);
-    return null;
+        json.addProperty("test_name", src.getName());
+        final GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(Challenge.class, new ChallengeConverter());
+        final Gson gson = builder.create();
+        json.add("challenges", gson.toJsonTree(src.getAllChallenges()).getAsJsonArray());
+        return json;
     }
 
     @Override
     public Test deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-        return null;
+        JsonObject object = json.getAsJsonObject();
+        String testName = object.get("test_name").getAsString();
+        Test test = new Test(testName);
+        for(JsonElement jsonChallenge: object.get("challenges").getAsJsonArray()){
+            GsonBuilder builder = new GsonBuilder();
+            builder.registerTypeAdapter(Challenge.class, new ChallengeConverter());
+            final Gson gson = builder.create();
+            Challenge challenge = gson.fromJson(jsonChallenge, typeOfT);
+            test.addChallenge(challenge);
+        }
+        return test;
     }
 }

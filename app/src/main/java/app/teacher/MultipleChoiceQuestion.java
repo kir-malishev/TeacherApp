@@ -9,8 +9,9 @@ import java.util.HashSet;
 /**
  * Created by Кирилл on 01.07.2017.
  */
-public class MultipleChoiceQuestion extends ChoiceQuestion implements Parcelable {
+public class MultipleChoiceQuestion extends Challenge implements Parcelable {
 
+    HashSet<String> answers;
     HashSet<String> rightAnswer;
     static final int TYPE = 1;
 
@@ -25,34 +26,16 @@ public class MultipleChoiceQuestion extends ChoiceQuestion implements Parcelable
     }
 
     MultipleChoiceQuestion(String question, HashSet<String> answers){
-        super(TYPE, question, answers);
+        super(TYPE, question);
+        this.answers = answers;
     }
 
     MultipleChoiceQuestion(String question, HashSet<String> answers, HashSet<String> rightAnswer){
-        super(TYPE, question, answers);
+        super(TYPE, question);
+        this.answers = answers;
         this.rightAnswer = rightAnswer;
     }
 
-
-    protected MultipleChoiceQuestion(Parcel in) {
-        super(in);
-        ArrayList<String> data = new ArrayList<String>();
-        in.readStringList(data);
-        rightAnswer = new HashSet(data);
-    }
-
-
-    public static final Creator<MultipleChoiceQuestion> CREATOR = new Creator<MultipleChoiceQuestion>() {
-        @Override
-        public MultipleChoiceQuestion createFromParcel(Parcel in) {
-            return new MultipleChoiceQuestion(in);
-        }
-
-        @Override
-        public MultipleChoiceQuestion[] newArray(int size) {
-            return new MultipleChoiceQuestion[size];
-        }
-    };
 
     void setRightAnswer(HashSet<String> rightAnswer){
         this.rightAnswer = rightAnswer;
@@ -63,7 +46,14 @@ public class MultipleChoiceQuestion extends ChoiceQuestion implements Parcelable
     }
 
     HashSet<String> getRightAnswers(){
-        return rightAnswer;
+        return this.rightAnswer;
+    }
+
+
+    protected MultipleChoiceQuestion(Parcel in) {
+        super(in);
+        this.answers = (HashSet) in.readValue(HashSet.class.getClassLoader());
+        this.rightAnswer = (HashSet) in.readValue(HashSet.class.getClassLoader());
     }
 
     @Override
@@ -74,6 +64,20 @@ public class MultipleChoiceQuestion extends ChoiceQuestion implements Parcelable
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeStringList(new ArrayList(rightAnswer));
+        parcel.writeValue(this.answers);
+        parcel.writeValue(this.rightAnswer);
     }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<MultipleChoiceQuestion> CREATOR = new Parcelable.Creator<MultipleChoiceQuestion>() {
+        @Override
+        public MultipleChoiceQuestion createFromParcel(Parcel in) {
+            return new MultipleChoiceQuestion(in);
+        }
+
+        @Override
+        public MultipleChoiceQuestion[] newArray(int size) {
+            return new MultipleChoiceQuestion[size];
+        }
+    };
 }

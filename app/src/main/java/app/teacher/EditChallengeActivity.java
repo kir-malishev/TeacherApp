@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class EditChallengeActivity extends Activity implements OnItemClickListener{
 
@@ -50,7 +51,7 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
         ad.setItems(types, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                Challenge challenge = new Challenge();
+                Challenge challenge = null;
                 switch (item) {
                     case 0:
                         challenge = new OnlyChoiceQuestion();
@@ -90,16 +91,21 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
         Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
-        if (test.getChallenge(position) instanceof OnlyChoiceQuestion) {
-            intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
-        } else if (test.getChallenge(position) instanceof MultipleChoiceQuestion) {
-            intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
-        } else if (test.getChallenge(position) instanceof InputQuestion) {
-            intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
+        switch(test.getChallenge(position).getType()){
+            case 0:
+                intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
+                break;
+            case 1:
+                intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
+                break;
+            case 2:
+                intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
+                break;
         }
 
+        saveTest();
         intent.putExtra("position", position);
-        //intent.putExtra("type", listAnswers.get(position).getType());
+        intent.putExtra("challenge", test.getChallenge(position));
         startActivity(intent);
 
     }
@@ -107,7 +113,9 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
     void saveTest(){
         SharedPreferences sharedPref = getSharedPreferences(DATA_FOR_TEST, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        Gson gson = new Gson();
+        final GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(Test.class, new TestConverter());
+        final Gson gson = builder.create();
         String json = gson.toJson(test);
         editor.putString("test", json);
         editor.apply();
@@ -115,20 +123,24 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
 
     Test getTest(){
         SharedPreferences sharedPref = getSharedPreferences(DATA_FOR_TEST, Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPref.getString("test", null);
-        Test test = gson.fromJson(json,Test.class);
+        GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(Test.class, new TestConverter());
+        final Gson gson = builder.create();
+        String json = sharedPref.getString("test", "");
+        test = gson.fromJson(json, Test.class);
         return test;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        saveTest();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        saveTest();
     }
 }
 

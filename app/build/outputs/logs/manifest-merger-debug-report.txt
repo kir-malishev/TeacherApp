@@ -18,11 +18,13 @@ ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:2:1-118:12
 uses-sdk
 ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:22.2.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:22.2.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:9:9-38
 		INJECTED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml
@@ -37,10 +39,11 @@ ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:11:5-67
 		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:11:22-64
 application
 ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:14:5-116:19
-MERGED from [com.android.support:support-v4:22.2.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:22.2.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:17:9-41
 	android:allowBackup

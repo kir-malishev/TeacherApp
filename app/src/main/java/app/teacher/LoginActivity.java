@@ -74,11 +74,13 @@ public class LoginActivity extends Activity {
 		LOGIN = sharedPref.getString("Login", "");
 		PASSWORD = sharedPref.getString("Password", "");
 		
-		Bundle extras = getIntent().getExtras();
-		if (extras != null) {
-			LOGIN = extras.getString("login");
-			PASSWORD = extras.getString("password");
+		Intent intent = getIntent();
+		if(intent.hasExtra("login") && intent.hasExtra("password")){
+			LOGIN = intent.getStringExtra("login");
+			PASSWORD = intent.getStringExtra("password");
 		}
+
+
 		if (!LOGIN.equals(""))
 			isRemember.setChecked(true);
 		editLogin.setText(LOGIN);

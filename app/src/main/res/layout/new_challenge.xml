@@ -18,13 +18,13 @@
             android:layout_weight="4"
             android:fillViewport="true" >
 
-            <ListView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/challenges"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="7" >
 
-            </ListView>
+            </android.support.v7.widget.RecyclerView>
 
         </ScrollView>
 
@@ -33,18 +33,45 @@
             android:layout_height="0dp"
             android:layout_weight="1.3" >
 
-
-            <Button
-                android:id="@+id/addans"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="7dp"
-                android:onClick="newChallenge"
-                android:text="@string/add"
-                android:textSize="20sp" />
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/setname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    android:onClick="setTestName"
+                    android:text="@string/editname"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/addans"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    android:onClick="newChallenge"
+                    android:text="@string/plus"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

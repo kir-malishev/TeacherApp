@@ -14,12 +14,12 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 109,
+                        "startLine": 112,
                         "startColumn": 4,
-                        "startOffset": 5401,
-                        "endLine": 114,
+                        "startOffset": 5539,
+                        "endLine": 117,
                         "endColumn": 19,
-                        "endOffset": 5623
+                        "endOffset": 5761
                     }
                 }
             },
@@ -35,12 +35,12 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 90,
+                        "startLine": 93,
                         "startColumn": 4,
-                        "startOffset": 4929,
-                        "endLine": 101,
+                        "startOffset": 5067,
+                        "endLine": 104,
                         "endColumn": 19,
-                        "endOffset": 5208
+                        "endOffset": 5346
                     }
                 }
             },
@@ -56,12 +56,12 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 103,
+                        "startLine": 106,
                         "startColumn": 4,
-                        "startOffset": 5214,
-                        "endLine": 107,
+                        "startOffset": 5352,
+                        "endLine": 110,
                         "endColumn": 19,
-                        "endOffset": 5395
+                        "endOffset": 5533
                     }
                 }
             },
@@ -76,11 +76,11 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 84,
+                        "startLine": 87,
                         "startColumn": 4,
-                        "startOffset": 4695,
+                        "startOffset": 4833,
                         "endColumn": 45,
-                        "endOffset": 4736
+                        "endOffset": 4874
                     }
                 }
             },
@@ -95,11 +95,11 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 88,
+                        "startLine": 91,
                         "startColumn": 4,
-                        "startOffset": 4881,
+                        "startOffset": 5019,
                         "endColumn": 46,
-                        "endOffset": 4923
+                        "endOffset": 5061
                     }
                 }
             },
@@ -304,11 +304,11 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 83,
+                        "startLine": 86,
                         "startColumn": 4,
-                        "startOffset": 4650,
+                        "startOffset": 4788,
                         "endColumn": 44,
-                        "endOffset": 4690
+                        "endOffset": 4828
                     }
                 }
             },
@@ -323,11 +323,11 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 82,
+                        "startLine": 85,
                         "startColumn": 4,
-                        "startOffset": 4604,
+                        "startOffset": 4742,
                         "endColumn": 45,
-                        "endOffset": 4645
+                        "endOffset": 4783
                     }
                 }
             },
@@ -342,11 +342,11 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 87,
+                        "startLine": 90,
                         "startColumn": 4,
-                        "startOffset": 4834,
+                        "startOffset": 4972,
                         "endColumn": 46,
-                        "endOffset": 4876
+                        "endOffset": 5014
                     }
                 }
             },
@@ -361,11 +361,11 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 85,
+                        "startLine": 88,
                         "startColumn": 4,
-                        "startOffset": 4741,
+                        "startOffset": 4879,
                         "endColumn": 45,
-                        "endOffset": 4782
+                        "endOffset": 4920
                     }
                 }
             },
@@ -380,21 +380,21 @@
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
-                        "startLine": 86,
+                        "startLine": 89,
                         "startColumn": 4,
-                        "startOffset": 4787,
+                        "startOffset": 4925,
                         "endColumn": 46,
-                        "endOffset": 4829
+                        "endOffset": 4967
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 2203,
+                    "startOffset": 2475,
                     "endColumn": 57,
-                    "endOffset": 2256
+                    "endOffset": 2528
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\dimens.xml",
@@ -409,11 +409,11 @@
             },
             {
                 "to": {
-                    "startLine": 44,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 2261,
+                    "startOffset": 2533,
                     "endColumn": 55,
-                    "endOffset": 2312
+                    "endOffset": 2584
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\dimens.xml",
@@ -428,11 +428,49 @@
             },
             {
                 "to": {
-                    "startLine": 45,
+                    "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 2317,
+                    "startOffset": 2589,
+                    "endColumn": 74,
+                    "endOffset": 2659
+                },
+                "from": {
+                    "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\23.1.1\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 500,
+                        "endColumn": 74,
+                        "endOffset": 570
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 2664,
+                    "endColumn": 65,
+                    "endOffset": 2725
+                },
+                "from": {
+                    "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.android.support\\recyclerview-v7\\23.1.1\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 745,
+                        "endColumn": 65,
+                        "endOffset": 806
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 2730,
                     "endColumn": 66,
-                    "endOffset": 2379
+                    "endOffset": 2792
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\version.xml",
@@ -447,11 +485,11 @@
             },
             {
                 "to": {
-                    "startLine": 46,
+                    "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 2384,
+                    "startOffset": 2797,
                     "endColumn": 33,
-                    "endOffset": 2413
+                    "endOffset": 2826
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -466,11 +504,11 @@
             },
             {
                 "to": {
-                    "startLine": 47,
+                    "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 2418,
+                    "startOffset": 2831,
                     "endColumn": 64,
-                    "endOffset": 2478
+                    "endOffset": 2891
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -485,11 +523,11 @@
             },
             {
                 "to": {
-                    "startLine": 48,
+                    "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 2483,
+                    "startOffset": 2896,
                     "endColumn": 56,
-                    "endOffset": 2535
+                    "endOffset": 2948
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -504,11 +542,11 @@
             },
             {
                 "to": {
-                    "startLine": 49,
+                    "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 2540,
+                    "startOffset": 2953,
                     "endColumn": 72,
-                    "endOffset": 2608
+                    "endOffset": 3021
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -523,11 +561,11 @@
             },
             {
                 "to": {
-                    "startLine": 50,
+                    "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 2613,
+                    "startOffset": 3026,
                     "endColumn": 47,
-                    "endOffset": 2656
+                    "endOffset": 3069
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -542,11 +580,11 @@
             },
             {
                 "to": {
-                    "startLine": 51,
+                    "startLine": 54,
                     "startColumn": 4,
-                    "startOffset": 2661,
+                    "startOffset": 3074,
                     "endColumn": 55,
-                    "endOffset": 2712
+                    "endOffset": 3125
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -561,11 +599,11 @@
             },
             {
                 "to": {
-                    "startLine": 52,
+                    "startLine": 55,
                     "startColumn": 4,
-                    "startOffset": 2717,
+                    "startOffset": 3130,
                     "endColumn": 55,
-                    "endOffset": 2768
+                    "endOffset": 3181
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -580,11 +618,11 @@
             },
             {
                 "to": {
-                    "startLine": 53,
+                    "startLine": 56,
                     "startColumn": 4,
-                    "startOffset": 2773,
+                    "startOffset": 3186,
                     "endColumn": 55,
-                    "endOffset": 2824
+                    "endOffset": 3237
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -599,11 +637,11 @@
             },
             {
                 "to": {
-                    "startLine": 54,
+                    "startLine": 57,
                     "startColumn": 4,
-                    "startOffset": 2829,
+                    "startOffset": 3242,
                     "endColumn": 91,
-                    "endOffset": 2916
+                    "endOffset": 3329
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\auth_strings.xml",
@@ -618,11 +656,11 @@
             },
             {
                 "to": {
-                    "startLine": 55,
+                    "startLine": 58,
                     "startColumn": 4,
-                    "startOffset": 2921,
+                    "startOffset": 3334,
                     "endColumn": 87,
-                    "endOffset": 3004
+                    "endOffset": 3417
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\auth_strings.xml",
@@ -637,11 +675,11 @@
             },
             {
                 "to": {
-                    "startLine": 56,
+                    "startLine": 59,
                     "startColumn": 4,
-                    "startOffset": 3009,
+                    "startOffset": 3422,
                     "endColumn": 53,
-                    "endOffset": 3058
+                    "endOffset": 3471
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -656,11 +694,11 @@
             },
             {
                 "to": {
-                    "startLine": 57,
+                    "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 3063,
+                    "startOffset": 3476,
                     "endColumn": 38,
-                    "endOffset": 3097
+                    "endOffset": 3510
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -675,11 +713,11 @@
             },
             {
                 "to": {
-                    "startLine": 58,
+                    "startLine": 61,
                     "startColumn": 4,
-                    "startOffset": 3102,
+                    "startOffset": 3515,
                     "endColumn": 89,
-                    "endOffset": 3187
+                    "endOffset": 3600
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -694,11 +732,11 @@
             },
             {
                 "to": {
-                    "startLine": 59,
+                    "startLine": 62,
                     "startColumn": 4,
-                    "startOffset": 3192,
+                    "startOffset": 3605,
                     "endColumn": 58,
-                    "endOffset": 3246
+                    "endOffset": 3659
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -713,11 +751,11 @@
             },
             {
                 "to": {
-                    "startLine": 60,
+                    "startLine": 63,
                     "startColumn": 4,
-                    "startOffset": 3251,
+                    "startOffset": 3664,
                     "endColumn": 58,
-                    "endOffset": 3305
+                    "endOffset": 3718
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -732,11 +770,11 @@
             },
             {
                 "to": {
-                    "startLine": 61,
+                    "startLine": 64,
                     "startColumn": 4,
-                    "startOffset": 3310,
+                    "startOffset": 3723,
                     "endColumn": 156,
-                    "endOffset": 3462
+                    "endOffset": 3875
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -751,11 +789,11 @@
             },
             {
                 "to": {
-                    "startLine": 62,
+                    "startLine": 65,
                     "startColumn": 4,
-                    "startOffset": 3467,
+                    "startOffset": 3880,
                     "endColumn": 144,
-                    "endOffset": 3607
+                    "endOffset": 4020
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -770,11 +808,11 @@
             },
             {
                 "to": {
-                    "startLine": 63,
+                    "startLine": 66,
                     "startColumn": 4,
-                    "startOffset": 3612,
+                    "startOffset": 4025,
                     "endColumn": 108,
-                    "endOffset": 3716
+                    "endOffset": 4129
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -789,11 +827,11 @@
             },
             {
                 "to": {
-                    "startLine": 64,
+                    "startLine": 67,
                     "startColumn": 4,
-                    "startOffset": 3721,
+                    "startOffset": 4134,
                     "endColumn": 231,
-                    "endOffset": 3948
+                    "endOffset": 4361
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -808,11 +846,11 @@
             },
             {
                 "to": {
-                    "startLine": 65,
+                    "startLine": 68,
                     "startColumn": 4,
-                    "startOffset": 3953,
+                    "startOffset": 4366,
                     "endColumn": 125,
-                    "endOffset": 4074
+                    "endOffset": 4487
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -827,11 +865,11 @@
             },
             {
                 "to": {
-                    "startLine": 66,
+                    "startLine": 69,
                     "startColumn": 4,
-                    "startOffset": 4079,
+                    "startOffset": 4492,
                     "endColumn": 180,
-                    "endOffset": 4255
+                    "endOffset": 4668
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -846,11 +884,11 @@
             },
             {
                 "to": {
-                    "startLine": 67,
+                    "startLine": 70,
                     "startColumn": 4,
-                    "startOffset": 4260,
+                    "startOffset": 4673,
                     "endColumn": 124,
-                    "endOffset": 4380
+                    "endOffset": 4793
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -865,11 +903,11 @@
             },
             {
                 "to": {
-                    "startLine": 68,
+                    "startLine": 71,
                     "startColumn": 4,
-                    "startOffset": 4385,
+                    "startOffset": 4798,
                     "endColumn": 138,
-                    "endOffset": 4519
+                    "endOffset": 4932
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -884,11 +922,11 @@
             },
             {
                 "to": {
-                    "startLine": 69,
+                    "startLine": 72,
                     "startColumn": 4,
-                    "startOffset": 4524,
+                    "startOffset": 4937,
                     "endColumn": 123,
-                    "endOffset": 4643
+                    "endOffset": 5056
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -903,11 +941,11 @@
             },
             {
                 "to": {
-                    "startLine": 70,
+                    "startLine": 73,
                     "startColumn": 4,
-                    "startOffset": 4648,
+                    "startOffset": 5061,
                     "endColumn": 212,
-                    "endOffset": 4856
+                    "endOffset": 5269
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -922,11 +960,11 @@
             },
             {
                 "to": {
-                    "startLine": 71,
+                    "startLine": 74,
                     "startColumn": 4,
-                    "startOffset": 4861,
+                    "startOffset": 5274,
                     "endColumn": 214,
-                    "endOffset": 5071
+                    "endOffset": 5484
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -941,11 +979,11 @@
             },
             {
                 "to": {
-                    "startLine": 72,
+                    "startLine": 75,
                     "startColumn": 4,
-                    "startOffset": 5076,
+                    "startOffset": 5489,
                     "endColumn": 122,
-                    "endOffset": 5194
+                    "endOffset": 5607
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -960,11 +998,11 @@
             },
             {
                 "to": {
-                    "startLine": 73,
+                    "startLine": 76,
                     "startColumn": 4,
-                    "startOffset": 5199,
+                    "startOffset": 5612,
                     "endColumn": 164,
-                    "endOffset": 5359
+                    "endOffset": 5772
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -979,11 +1017,11 @@
             },
             {
                 "to": {
-                    "startLine": 74,
+                    "startLine": 77,
                     "startColumn": 4,
-                    "startOffset": 5364,
+                    "startOffset": 5777,
                     "endColumn": 93,
-                    "endOffset": 5453
+                    "endOffset": 5866
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -998,11 +1036,11 @@
             },
             {
                 "to": {
-                    "startLine": 75,
+                    "startLine": 78,
                     "startColumn": 4,
-                    "startOffset": 5458,
+                    "startOffset": 5871,
                     "endColumn": 136,
-                    "endOffset": 5590
+                    "endOffset": 6003
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1017,11 +1055,11 @@
             },
             {
                 "to": {
-                    "startLine": 76,
+                    "startLine": 79,
                     "startColumn": 4,
-                    "startOffset": 5595,
+                    "startOffset": 6008,
                     "endColumn": 140,
-                    "endOffset": 5731
+                    "endOffset": 6144
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1036,11 +1074,11 @@
             },
             {
                 "to": {
-                    "startLine": 77,
+                    "startLine": 80,
                     "startColumn": 4,
-                    "startOffset": 5736,
+                    "startOffset": 6149,
                     "endColumn": 89,
-                    "endOffset": 5821
+                    "endOffset": 6234
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1055,11 +1093,11 @@
             },
             {
                 "to": {
-                    "startLine": 78,
+                    "startLine": 81,
                     "startColumn": 4,
-                    "startOffset": 5826,
+                    "startOffset": 6239,
                     "endColumn": 147,
-                    "endOffset": 5969
+                    "endOffset": 6382
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1074,11 +1112,11 @@
             },
             {
                 "to": {
-                    "startLine": 79,
+                    "startLine": 82,
                     "startColumn": 4,
-                    "startOffset": 5974,
+                    "startOffset": 6387,
                     "endColumn": 102,
-                    "endOffset": 6072
+                    "endOffset": 6485
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1093,11 +1131,11 @@
             },
             {
                 "to": {
-                    "startLine": 80,
+                    "startLine": 83,
                     "startColumn": 4,
-                    "startOffset": 6077,
+                    "startOffset": 6490,
                     "endColumn": 150,
-                    "endOffset": 6223
+                    "endOffset": 6636
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1112,11 +1150,11 @@
             },
             {
                 "to": {
-                    "startLine": 81,
+                    "startLine": 84,
                     "startColumn": 4,
-                    "startOffset": 6228,
+                    "startOffset": 6641,
                     "endColumn": 91,
-                    "endOffset": 6315
+                    "endOffset": 6728
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1131,11 +1169,11 @@
             },
             {
                 "to": {
-                    "startLine": 82,
+                    "startLine": 85,
                     "startColumn": 4,
-                    "startOffset": 6320,
+                    "startOffset": 6733,
                     "endColumn": 110,
-                    "endOffset": 6426
+                    "endOffset": 6839
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1150,11 +1188,11 @@
             },
             {
                 "to": {
-                    "startLine": 83,
+                    "startLine": 86,
                     "startColumn": 4,
-                    "startOffset": 6431,
+                    "startOffset": 6844,
                     "endColumn": 218,
-                    "endOffset": 6645
+                    "endOffset": 7058
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1169,11 +1207,11 @@
             },
             {
                 "to": {
-                    "startLine": 84,
+                    "startLine": 87,
                     "startColumn": 4,
-                    "startOffset": 6650,
+                    "startOffset": 7063,
                     "endColumn": 94,
-                    "endOffset": 6740
+                    "endOffset": 7153
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1188,11 +1226,11 @@
             },
             {
                 "to": {
-                    "startLine": 85,
+                    "startLine": 88,
                     "startColumn": 4,
-                    "startOffset": 6745,
+                    "startOffset": 7158,
                     "endColumn": 104,
-                    "endOffset": 6845
+                    "endOffset": 7258
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1207,11 +1245,11 @@
             },
             {
                 "to": {
-                    "startLine": 86,
+                    "startLine": 89,
                     "startColumn": 4,
-                    "startOffset": 6850,
+                    "startOffset": 7263,
                     "endColumn": 180,
-                    "endOffset": 7026
+                    "endOffset": 7439
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1226,11 +1264,11 @@
             },
             {
                 "to": {
-                    "startLine": 87,
+                    "startLine": 90,
                     "startColumn": 4,
-                    "startOffset": 7031,
+                    "startOffset": 7444,
                     "endColumn": 124,
-                    "endOffset": 7151
+                    "endOffset": 7564
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1245,11 +1283,11 @@
             },
             {
                 "to": {
-                    "startLine": 88,
+                    "startLine": 91,
                     "startColumn": 4,
-                    "startOffset": 7156,
+                    "startOffset": 7569,
                     "endColumn": 174,
-                    "endOffset": 7326
+                    "endOffset": 7739
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1264,11 +1302,11 @@
             },
             {
                 "to": {
-                    "startLine": 89,
+                    "startLine": 92,
                     "startColumn": 4,
-                    "startOffset": 7331,
+                    "startOffset": 7744,
                     "endColumn": 104,
-                    "endOffset": 7431
+                    "endOffset": 7844
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1283,11 +1321,11 @@
             },
             {
                 "to": {
-                    "startLine": 90,
+                    "startLine": 93,
                     "startColumn": 4,
-                    "startOffset": 7436,
+                    "startOffset": 7849,
                     "endColumn": 62,
-                    "endOffset": 7494
+                    "endOffset": 7907
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values\\common_strings.xml",
@@ -1302,11 +1340,11 @@
             },
             {
                 "to": {
-                    "startLine": 91,
+                    "startLine": 94,
                     "startColumn": 4,
-                    "startOffset": 7499,
+                    "startOffset": 7912,
                     "endColumn": 56,
-                    "endOffset": 7551
+                    "endOffset": 7964
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1321,11 +1359,11 @@
             },
             {
                 "to": {
-                    "startLine": 92,
+                    "startLine": 95,
                     "startColumn": 4,
-                    "startOffset": 7556,
+                    "startOffset": 7969,
                     "endColumn": 47,
-                    "endOffset": 7599
+                    "endOffset": 8012
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1340,11 +1378,11 @@
             },
             {
                 "to": {
-                    "startLine": 93,
+                    "startLine": 96,
                     "startColumn": 4,
-                    "startOffset": 7604,
+                    "startOffset": 8017,
                     "endColumn": 56,
-                    "endOffset": 7656
+                    "endOffset": 8069
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1359,11 +1397,30 @@
             },
             {
                 "to": {
-                    "startLine": 94,
+                    "startLine": 97,
                     "startColumn": 4,
-                    "startOffset": 7661,
+                    "startOffset": 8074,
+                    "endColumn": 45,
+                    "endOffset": 8115
+                },
+                "from": {
+                    "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 4604,
+                        "endColumn": 45,
+                        "endOffset": 4645
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 98,
+                    "startColumn": 4,
+                    "startOffset": 8120,
                     "endColumn": 49,
-                    "endOffset": 7706
+                    "endOffset": 8165
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1378,11 +1435,11 @@
             },
             {
                 "to": {
-                    "startLine": 95,
+                    "startLine": 99,
                     "startColumn": 4,
-                    "startOffset": 7711,
+                    "startOffset": 8170,
                     "endColumn": 61,
-                    "endOffset": 7768
+                    "endOffset": 8227
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1397,11 +1454,11 @@
             },
             {
                 "to": {
-                    "startLine": 96,
+                    "startLine": 100,
                     "startColumn": 4,
-                    "startOffset": 7773,
+                    "startOffset": 8232,
                     "endColumn": 40,
-                    "endOffset": 7809
+                    "endOffset": 8268
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1416,11 +1473,11 @@
             },
             {
                 "to": {
-                    "startLine": 97,
+                    "startLine": 101,
                     "startColumn": 4,
-                    "startOffset": 7814,
+                    "startOffset": 8273,
                     "endColumn": 75,
-                    "endOffset": 7885
+                    "endOffset": 8344
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1435,11 +1492,11 @@
             },
             {
                 "to": {
-                    "startLine": 98,
+                    "startLine": 102,
                     "startColumn": 4,
-                    "startOffset": 7890,
+                    "startOffset": 8349,
                     "endColumn": 58,
-                    "endOffset": 7944
+                    "endOffset": 8403
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1454,11 +1511,11 @@
             },
             {
                 "to": {
-                    "startLine": 99,
+                    "startLine": 103,
                     "startColumn": 4,
-                    "startOffset": 7949,
+                    "startOffset": 8408,
                     "endColumn": 40,
-                    "endOffset": 7985
+                    "endOffset": 8444
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1473,11 +1530,11 @@
             },
             {
                 "to": {
-                    "startLine": 100,
+                    "startLine": 104,
                     "startColumn": 4,
-                    "startOffset": 7990,
+                    "startOffset": 8449,
                     "endColumn": 66,
-                    "endOffset": 8052
+                    "endOffset": 8511
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1492,11 +1549,11 @@
             },
             {
                 "to": {
-                    "startLine": 101,
+                    "startLine": 105,
                     "startColumn": 4,
-                    "startOffset": 8057,
+                    "startOffset": 8516,
                     "endColumn": 66,
-                    "endOffset": 8119
+                    "endOffset": 8578
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1511,11 +1568,11 @@
             },
             {
                 "to": {
-                    "startLine": 102,
+                    "startLine": 106,
                     "startColumn": 4,
-                    "startOffset": 8124,
+                    "startOffset": 8583,
                     "endColumn": 38,
-                    "endOffset": 8158
+                    "endOffset": 8617
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1530,11 +1587,11 @@
             },
             {
                 "to": {
-                    "startLine": 103,
+                    "startLine": 107,
                     "startColumn": 4,
-                    "startOffset": 8163,
+                    "startOffset": 8622,
                     "endColumn": 81,
-                    "endOffset": 8240
+                    "endOffset": 8699
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1549,11 +1606,11 @@
             },
             {
                 "to": {
-                    "startLine": 104,
+                    "startLine": 108,
                     "startColumn": 4,
-                    "startOffset": 8245,
+                    "startOffset": 8704,
                     "endColumn": 41,
-                    "endOffset": 8282
+                    "endOffset": 8741
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1568,11 +1625,11 @@
             },
             {
                 "to": {
-                    "startLine": 105,
+                    "startLine": 109,
                     "startColumn": 4,
-                    "startOffset": 8287,
+                    "startOffset": 8746,
                     "endColumn": 116,
-                    "endOffset": 8399
+                    "endOffset": 8858
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1587,11 +1644,11 @@
             },
             {
                 "to": {
-                    "startLine": 106,
+                    "startLine": 110,
                     "startColumn": 4,
-                    "startOffset": 8404,
+                    "startOffset": 8863,
                     "endColumn": 49,
-                    "endOffset": 8449
+                    "endOffset": 8908
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1606,11 +1663,11 @@
             },
             {
                 "to": {
-                    "startLine": 107,
+                    "startLine": 111,
                     "startColumn": 4,
-                    "startOffset": 8454,
+                    "startOffset": 8913,
                     "endColumn": 41,
-                    "endOffset": 8491
+                    "endOffset": 8950
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1625,11 +1682,11 @@
             },
             {
                 "to": {
-                    "startLine": 108,
+                    "startLine": 112,
                     "startColumn": 4,
-                    "startOffset": 8496,
+                    "startOffset": 8955,
                     "endColumn": 69,
-                    "endOffset": 8561
+                    "endOffset": 9020
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1644,11 +1701,11 @@
             },
             {
                 "to": {
-                    "startLine": 109,
+                    "startLine": 113,
                     "startColumn": 4,
-                    "startOffset": 8566,
+                    "startOffset": 9025,
                     "endColumn": 49,
-                    "endOffset": 8611
+                    "endOffset": 9070
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1663,11 +1720,11 @@
             },
             {
                 "to": {
-                    "startLine": 110,
+                    "startLine": 114,
                     "startColumn": 4,
-                    "startOffset": 8616,
+                    "startOffset": 9075,
                     "endColumn": 37,
-                    "endOffset": 8649
+                    "endOffset": 9108
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1682,11 +1739,11 @@
             },
             {
                 "to": {
-                    "startLine": 111,
+                    "startLine": 115,
                     "startColumn": 4,
-                    "startOffset": 8654,
+                    "startOffset": 9113,
                     "endColumn": 61,
-                    "endOffset": 8711
+                    "endOffset": 9170
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1701,11 +1758,11 @@
             },
             {
                 "to": {
-                    "startLine": 112,
+                    "startLine": 116,
                     "startColumn": 4,
-                    "startOffset": 8716,
+                    "startOffset": 9175,
                     "endColumn": 70,
-                    "endOffset": 8782
+                    "endOffset": 9241
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1720,11 +1777,11 @@
             },
             {
                 "to": {
-                    "startLine": 113,
+                    "startLine": 117,
                     "startColumn": 4,
-                    "startOffset": 8787,
+                    "startOffset": 9246,
                     "endColumn": 49,
-                    "endOffset": 8832
+                    "endOffset": 9291
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1739,11 +1796,11 @@
             },
             {
                 "to": {
-                    "startLine": 114,
+                    "startLine": 118,
                     "startColumn": 4,
-                    "startOffset": 8837,
+                    "startOffset": 9296,
                     "endColumn": 45,
-                    "endOffset": 8878
+                    "endOffset": 9337
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1758,11 +1815,11 @@
             },
             {
                 "to": {
-                    "startLine": 115,
+                    "startLine": 119,
                     "startColumn": 4,
-                    "startOffset": 8883,
+                    "startOffset": 9342,
                     "endColumn": 59,
-                    "endOffset": 8938
+                    "endOffset": 9397
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1777,11 +1834,11 @@
             },
             {
                 "to": {
-                    "startLine": 116,
+                    "startLine": 120,
                     "startColumn": 4,
-                    "startOffset": 8943,
+                    "startOffset": 9402,
                     "endColumn": 40,
-                    "endOffset": 8979
+                    "endOffset": 9438
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1796,11 +1853,11 @@
             },
             {
                 "to": {
-                    "startLine": 117,
+                    "startLine": 121,
                     "startColumn": 4,
-                    "startOffset": 8984,
+                    "startOffset": 9443,
                     "endColumn": 37,
-                    "endOffset": 9017
+                    "endOffset": 9476
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1815,11 +1872,11 @@
             },
             {
                 "to": {
-                    "startLine": 118,
+                    "startLine": 122,
                     "startColumn": 4,
-                    "startOffset": 9022,
+                    "startOffset": 9481,
                     "endColumn": 54,
-                    "endOffset": 9072
+                    "endOffset": 9531
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1834,11 +1891,11 @@
             },
             {
                 "to": {
-                    "startLine": 119,
+                    "startLine": 123,
                     "startColumn": 4,
-                    "startOffset": 9077,
+                    "startOffset": 9536,
                     "endColumn": 62,
-                    "endOffset": 9135
+                    "endOffset": 9594
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1853,11 +1910,11 @@
             },
             {
                 "to": {
-                    "startLine": 120,
+                    "startLine": 124,
                     "startColumn": 4,
-                    "startOffset": 9140,
+                    "startOffset": 9599,
                     "endColumn": 102,
-                    "endOffset": 9238
+                    "endOffset": 9697
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1872,11 +1929,11 @@
             },
             {
                 "to": {
-                    "startLine": 121,
+                    "startLine": 125,
                     "startColumn": 4,
-                    "startOffset": 9243,
+                    "startOffset": 9702,
                     "endColumn": 50,
-                    "endOffset": 9289
+                    "endOffset": 9748
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1891,11 +1948,11 @@
             },
             {
                 "to": {
-                    "startLine": 122,
+                    "startLine": 126,
                     "startColumn": 4,
-                    "startOffset": 9294,
+                    "startOffset": 9753,
                     "endColumn": 45,
-                    "endOffset": 9335
+                    "endOffset": 9794
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1910,11 +1967,11 @@
             },
             {
                 "to": {
-                    "startLine": 123,
+                    "startLine": 127,
                     "startColumn": 4,
-                    "startOffset": 9340,
+                    "startOffset": 9799,
                     "endColumn": 61,
-                    "endOffset": 9397
+                    "endOffset": 9856
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1929,11 +1986,30 @@
             },
             {
                 "to": {
-                    "startLine": 124,
+                    "startLine": 128,
                     "startColumn": 4,
-                    "startOffset": 9402,
+                    "startOffset": 9861,
+                    "endColumn": 56,
+                    "endOffset": 9913
+                },
+                "from": {
+                    "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 83,
+                        "startColumn": 4,
+                        "startOffset": 4650,
+                        "endColumn": 56,
+                        "endOffset": 4702
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 129,
+                    "startColumn": 4,
+                    "startOffset": 9918,
                     "endColumn": 49,
-                    "endOffset": 9447
+                    "endOffset": 9963
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1948,11 +2024,11 @@
             },
             {
                 "to": {
-                    "startLine": 125,
+                    "startLine": 130,
                     "startColumn": 4,
-                    "startOffset": 9452,
+                    "startOffset": 9968,
                     "endColumn": 54,
-                    "endOffset": 9502
+                    "endOffset": 10018
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1967,11 +2043,11 @@
             },
             {
                 "to": {
-                    "startLine": 126,
+                    "startLine": 131,
                     "startColumn": 4,
-                    "startOffset": 9507,
+                    "startOffset": 10023,
                     "endColumn": 69,
-                    "endOffset": 9572
+                    "endOffset": 10088
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -1986,11 +2062,11 @@
             },
             {
                 "to": {
-                    "startLine": 127,
+                    "startLine": 132,
                     "startColumn": 4,
-                    "startOffset": 9577,
+                    "startOffset": 10093,
                     "endColumn": 62,
-                    "endOffset": 9635
+                    "endOffset": 10151
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2005,11 +2081,11 @@
             },
             {
                 "to": {
-                    "startLine": 128,
+                    "startLine": 133,
                     "startColumn": 4,
-                    "startOffset": 9640,
+                    "startOffset": 10156,
                     "endColumn": 70,
-                    "endOffset": 9706
+                    "endOffset": 10222
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2024,11 +2100,11 @@
             },
             {
                 "to": {
-                    "startLine": 129,
+                    "startLine": 134,
                     "startColumn": 4,
-                    "startOffset": 9711,
+                    "startOffset": 10227,
                     "endColumn": 46,
-                    "endOffset": 9753
+                    "endOffset": 10269
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2043,11 +2119,11 @@
             },
             {
                 "to": {
-                    "startLine": 130,
+                    "startLine": 135,
                     "startColumn": 4,
-                    "startOffset": 9758,
+                    "startOffset": 10274,
                     "endColumn": 45,
-                    "endOffset": 9799
+                    "endOffset": 10315
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2062,11 +2138,11 @@
             },
             {
                 "to": {
-                    "startLine": 131,
+                    "startLine": 136,
                     "startColumn": 4,
-                    "startOffset": 9804,
+                    "startOffset": 10320,
                     "endColumn": 47,
-                    "endOffset": 9847
+                    "endOffset": 10363
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2081,11 +2157,11 @@
             },
             {
                 "to": {
-                    "startLine": 132,
+                    "startLine": 137,
                     "startColumn": 4,
-                    "startOffset": 9852,
+                    "startOffset": 10368,
                     "endColumn": 38,
-                    "endOffset": 9886
+                    "endOffset": 10402
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2100,11 +2176,11 @@
             },
             {
                 "to": {
-                    "startLine": 133,
+                    "startLine": 138,
                     "startColumn": 4,
-                    "startOffset": 9891,
+                    "startOffset": 10407,
                     "endColumn": 111,
-                    "endOffset": 9998
+                    "endOffset": 10514
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2119,11 +2195,11 @@
             },
             {
                 "to": {
-                    "startLine": 134,
+                    "startLine": 139,
                     "startColumn": 4,
-                    "startOffset": 10003,
+                    "startOffset": 10519,
                     "endColumn": 57,
-                    "endOffset": 10056
+                    "endOffset": 10572
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2138,11 +2214,11 @@
             },
             {
                 "to": {
-                    "startLine": 135,
+                    "startLine": 140,
                     "startColumn": 4,
-                    "startOffset": 10061,
+                    "startOffset": 10577,
                     "endColumn": 54,
-                    "endOffset": 10111
+                    "endOffset": 10627
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2157,11 +2233,11 @@
             },
             {
                 "to": {
-                    "startLine": 136,
+                    "startLine": 141,
                     "startColumn": 4,
-                    "startOffset": 10116,
+                    "startOffset": 10632,
                     "endColumn": 43,
-                    "endOffset": 10155
+                    "endOffset": 10671
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2176,11 +2252,30 @@
             },
             {
                 "to": {
-                    "startLine": 137,
+                    "startLine": 142,
                     "startColumn": 4,
-                    "startOffset": 10160,
+                    "startOffset": 10676,
+                    "endColumn": 34,
+                    "endOffset": 10706
+                },
+                "from": {
+                    "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 84,
+                        "startColumn": 4,
+                        "startOffset": 4707,
+                        "endColumn": 34,
+                        "endOffset": 4737
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 143,
+                    "startColumn": 4,
+                    "startOffset": 10711,
                     "endColumn": 56,
-                    "endOffset": 10212
+                    "endOffset": 10763
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2195,11 +2290,11 @@
             },
             {
                 "to": {
-                    "startLine": 138,
+                    "startLine": 144,
                     "startColumn": 4,
-                    "startOffset": 10217,
+                    "startOffset": 10768,
                     "endColumn": 37,
-                    "endOffset": 10250
+                    "endOffset": 10801
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2214,11 +2309,11 @@
             },
             {
                 "to": {
-                    "startLine": 139,
+                    "startLine": 145,
                     "startColumn": 4,
-                    "startOffset": 10255,
+                    "startOffset": 10806,
                     "endColumn": 41,
-                    "endOffset": 10292
+                    "endOffset": 10843
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2233,11 +2328,11 @@
             },
             {
                 "to": {
-                    "startLine": 140,
+                    "startLine": 146,
                     "startColumn": 4,
-                    "startOffset": 10297,
+                    "startOffset": 10848,
                     "endColumn": 37,
-                    "endOffset": 10330
+                    "endOffset": 10881
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2252,11 +2347,11 @@
             },
             {
                 "to": {
-                    "startLine": 141,
+                    "startLine": 147,
                     "startColumn": 4,
-                    "startOffset": 10335,
+                    "startOffset": 10886,
                     "endColumn": 37,
-                    "endOffset": 10368
+                    "endOffset": 10919
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2271,11 +2366,11 @@
             },
             {
                 "to": {
-                    "startLine": 142,
+                    "startLine": 148,
                     "startColumn": 4,
-                    "startOffset": 10373,
+                    "startOffset": 10924,
                     "endColumn": 37,
-                    "endOffset": 10406
+                    "endOffset": 10957
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2290,11 +2385,11 @@
             },
             {
                 "to": {
-                    "startLine": 143,
+                    "startLine": 149,
                     "startColumn": 4,
-                    "startOffset": 10411,
+                    "startOffset": 10962,
                     "endColumn": 38,
-                    "endOffset": 10445
+                    "endOffset": 10996
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2309,11 +2404,11 @@
             },
             {
                 "to": {
-                    "startLine": 144,
+                    "startLine": 150,
                     "startColumn": 4,
-                    "startOffset": 10450,
+                    "startOffset": 11001,
                     "endColumn": 39,
-                    "endOffset": 10485
+                    "endOffset": 11036
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2328,11 +2423,11 @@
             },
             {
                 "to": {
-                    "startLine": 145,
+                    "startLine": 151,
                     "startColumn": 4,
-                    "startOffset": 10490,
+                    "startOffset": 11041,
                     "endColumn": 38,
-                    "endOffset": 10524
+                    "endOffset": 11075
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2347,11 +2442,11 @@
             },
             {
                 "to": {
-                    "startLine": 146,
+                    "startLine": 152,
                     "startColumn": 4,
-                    "startOffset": 10529,
+                    "startOffset": 11080,
                     "endColumn": 39,
-                    "endOffset": 10564
+                    "endOffset": 11115
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2366,11 +2461,11 @@
             },
             {
                 "to": {
-                    "startLine": 147,
+                    "startLine": 153,
                     "startColumn": 4,
-                    "startOffset": 10569,
+                    "startOffset": 11120,
                     "endColumn": 39,
-                    "endOffset": 10604
+                    "endOffset": 11155
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\questions.xml",
@@ -2385,11 +2480,11 @@
             },
             {
                 "to": {
-                    "startLine": 148,
+                    "startLine": 154,
                     "startColumn": 4,
-                    "startOffset": 10609,
+                    "startOffset": 11160,
                     "endColumn": 52,
-                    "endOffset": 10657
+                    "endOffset": 11208
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2404,11 +2499,11 @@
             },
             {
                 "to": {
-                    "startLine": 149,
+                    "startLine": 155,
                     "startColumn": 4,
-                    "startOffset": 10662,
+                    "startOffset": 11213,
                     "endColumn": 47,
-                    "endOffset": 10705
+                    "endOffset": 11256
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2423,11 +2518,11 @@
             },
             {
                 "to": {
-                    "startLine": 150,
+                    "startLine": 156,
                     "startColumn": 4,
-                    "startOffset": 10710,
+                    "startOffset": 11261,
                     "endColumn": 49,
-                    "endOffset": 10755
+                    "endOffset": 11306
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2442,11 +2537,11 @@
             },
             {
                 "to": {
-                    "startLine": 151,
+                    "startLine": 157,
                     "startColumn": 4,
-                    "startOffset": 10760,
+                    "startOffset": 11311,
                     "endColumn": 53,
-                    "endOffset": 10809
+                    "endOffset": 11360
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2461,11 +2556,11 @@
             },
             {
                 "to": {
-                    "startLine": 152,
+                    "startLine": 158,
                     "startColumn": 4,
-                    "startOffset": 10814,
+                    "startOffset": 11365,
                     "endColumn": 62,
-                    "endOffset": 10872
+                    "endOffset": 11423
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2480,11 +2575,11 @@
             },
             {
                 "to": {
-                    "startLine": 153,
+                    "startLine": 159,
                     "startColumn": 4,
-                    "startOffset": 10877,
+                    "startOffset": 11428,
                     "endColumn": 44,
-                    "endOffset": 10917
+                    "endOffset": 11468
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2499,11 +2594,11 @@
             },
             {
                 "to": {
-                    "startLine": 154,
+                    "startLine": 160,
                     "startColumn": 4,
-                    "startOffset": 10922,
+                    "startOffset": 11473,
                     "endColumn": 49,
-                    "endOffset": 10967
+                    "endOffset": 11518
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2518,11 +2613,11 @@
             },
             {
                 "to": {
-                    "startLine": 155,
+                    "startLine": 161,
                     "startColumn": 4,
-                    "startOffset": 10972,
+                    "startOffset": 11523,
                     "endColumn": 42,
-                    "endOffset": 11010
+                    "endOffset": 11561
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2537,11 +2632,11 @@
             },
             {
                 "to": {
-                    "startLine": 156,
+                    "startLine": 162,
                     "startColumn": 4,
-                    "startOffset": 11015,
+                    "startOffset": 11566,
                     "endColumn": 41,
-                    "endOffset": 11052
+                    "endOffset": 11603
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2556,11 +2651,11 @@
             },
             {
                 "to": {
-                    "startLine": 157,
+                    "startLine": 163,
                     "startColumn": 4,
-                    "startOffset": 11057,
+                    "startOffset": 11608,
                     "endColumn": 67,
-                    "endOffset": 11120
+                    "endOffset": 11671
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2575,11 +2670,11 @@
             },
             {
                 "to": {
-                    "startLine": 158,
+                    "startLine": 164,
                     "startColumn": 4,
-                    "startOffset": 11125,
+                    "startOffset": 11676,
                     "endColumn": 61,
-                    "endOffset": 11182
+                    "endOffset": 11733
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2594,11 +2689,11 @@
             },
             {
                 "to": {
-                    "startLine": 159,
+                    "startLine": 165,
                     "startColumn": 4,
-                    "startOffset": 11187,
+                    "startOffset": 11738,
                     "endColumn": 37,
-                    "endOffset": 11220
+                    "endOffset": 11771
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2613,11 +2708,11 @@
             },
             {
                 "to": {
-                    "startLine": 160,
+                    "startLine": 166,
                     "startColumn": 4,
-                    "startOffset": 11225,
+                    "startOffset": 11776,
                     "endColumn": 47,
-                    "endOffset": 11268
+                    "endOffset": 11819
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2632,11 +2727,11 @@
             },
             {
                 "to": {
-                    "startLine": 161,
+                    "startLine": 167,
                     "startColumn": 4,
-                    "startOffset": 11273,
+                    "startOffset": 11824,
                     "endColumn": 112,
-                    "endOffset": 11381
+                    "endOffset": 11932
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2651,11 +2746,11 @@
             },
             {
                 "to": {
-                    "startLine": 162,
+                    "startLine": 168,
                     "startColumn": 4,
-                    "startOffset": 11386,
+                    "startOffset": 11937,
                     "endColumn": 65,
-                    "endOffset": 11447
+                    "endOffset": 11998
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2670,11 +2765,11 @@
             },
             {
                 "to": {
-                    "startLine": 163,
+                    "startLine": 169,
                     "startColumn": 4,
-                    "startOffset": 11452,
+                    "startOffset": 12003,
                     "endColumn": 43,
-                    "endOffset": 11491
+                    "endOffset": 12042
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2689,11 +2784,11 @@
             },
             {
                 "to": {
-                    "startLine": 164,
+                    "startLine": 170,
                     "startColumn": 4,
-                    "startOffset": 11496,
+                    "startOffset": 12047,
                     "endColumn": 73,
-                    "endOffset": 11565
+                    "endOffset": 12116
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2708,11 +2803,11 @@
             },
             {
                 "to": {
-                    "startLine": 165,
+                    "startLine": 171,
                     "startColumn": 4,
-                    "startOffset": 11570,
+                    "startOffset": 12121,
                     "endColumn": 87,
-                    "endOffset": 11653
+                    "endOffset": 12204
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2727,11 +2822,11 @@
             },
             {
                 "to": {
-                    "startLine": 166,
+                    "startLine": 172,
                     "startColumn": 4,
-                    "startOffset": 11658,
+                    "startOffset": 12209,
                     "endColumn": 34,
-                    "endOffset": 11688
+                    "endOffset": 12239
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\strings.xml",
@@ -2746,12 +2841,12 @@
             },
             {
                 "to": {
-                    "startLine": 167,
+                    "startLine": 173,
                     "startColumn": 4,
-                    "startOffset": 11693,
-                    "endLine": 171,
+                    "startOffset": 12244,
+                    "endLine": 177,
                     "endColumn": 12,
-                    "endOffset": 11958
+                    "endOffset": 12509
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\styles.xml",
@@ -2767,12 +2862,12 @@
             },
             {
                 "to": {
-                    "startLine": 172,
+                    "startLine": 178,
                     "startColumn": 4,
-                    "startOffset": 11963,
-                    "endLine": 174,
+                    "startOffset": 12514,
+                    "endLine": 180,
                     "endColumn": 9,
-                    "endOffset": 12103
+                    "endOffset": 12654
                 },
                 "from": {
                     "file": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\values\\styles.xml",

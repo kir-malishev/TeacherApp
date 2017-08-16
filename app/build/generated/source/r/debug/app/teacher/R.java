@@ -42,6 +42,38 @@ containing a value of this type.
 </table>
          */
         public static final int imageAspectRatioAdjust=0x7f010000;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int layoutManager=0x7f010003;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int reverseLayout=0x7f010005;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int spanCount=0x7f010004;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int stackFromEnd=0x7f010006;
     }
     public static final class color {
         public static final int black_color=0x7f060000;
@@ -67,6 +99,7 @@ containing a value of this type.
     public static final class dimen {
         public static final int activity_horizontal_margin=0x7f070000;
         public static final int activity_vertical_margin=0x7f070001;
+        public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f070002;
     }
     public static final class drawable {
         public static final int common_full_open_on_phone=0x7f020000;
@@ -81,66 +114,68 @@ containing a value of this type.
         public static final int magicball=0x7f020009;
     }
     public static final class id {
-        public static final int add=0x7f0a0027;
-        public static final int addans=0x7f0a001a;
-        public static final int adjust_height=0x7f0a0000;
-        public static final int adjust_width=0x7f0a0001;
-        public static final int ans0=0x7f0a0022;
-        public static final int answers=0x7f0a001d;
-        public static final int authemail=0x7f0a0009;
-        public static final int authorization=0x7f0a0007;
-        public static final int authpass=0x7f0a000b;
-        public static final int back=0x7f0a0028;
-        public static final int button1=0x7f0a000f;
-        public static final int buttonreg=0x7f0a0031;
-        public static final int challenges=0x7f0a0019;
-        public static final int create=0x7f0a0015;
-        public static final int createnewtest=0x7f0a001c;
-        public static final int editText1=0x7f0a0012;
-        public static final int editText2=0x7f0a0010;
-        public static final int editemail=0x7f0a002c;
-        public static final int editpass=0x7f0a002e;
-        public static final int editpass1=0x7f0a0030;
-        public static final int editqq=0x7f0a0021;
-        public static final int email=0x7f0a0033;
-        public static final int exit=0x7f0a0017;
-        public static final int inMenu=0x7f0a0038;
-        public static final int inmenu=0x7f0a001b;
-        public static final int item_headerText=0x7f0a0004;
-        public static final int item_subHeaderText=0x7f0a0005;
-        public static final int layout=0x7f0a001e;
-        public static final int menu=0x7f0a0014;
-        public static final int mytests=0x7f0a0016;
-        public static final int newans=0x7f0a0006;
-        public static final int none=0x7f0a0002;
-        public static final int pointsforchoice=0x7f0a0025;
-        public static final int pointsforinput=0x7f0a0029;
-        public static final int questionlabel=0x7f0a001f;
-        public static final int questions=0x7f0a0023;
-        public static final int registration=0x7f0a002b;
-        public static final int remember=0x7f0a000c;
-        public static final int remove=0x7f0a0026;
-        public static final int result=0x7f0a0032;
-        public static final int results=0x7f0a0034;
-        public static final int scrollView1=0x7f0a002a;
-        public static final int scrollView2=0x7f0a0003;
-        public static final int scrollView3=0x7f0a0018;
-        public static final int spinnertext=0x7f0a0036;
-        public static final int style_for_snipper=0x7f0a0035;
-        public static final int tests=0x7f0a0037;
-        public static final int textView1=0x7f0a0013;
-        public static final int textView2=0x7f0a0011;
-        public static final int textView3=0x7f0a0024;
-        public static final int toauth=0x7f0a000e;
-        public static final int toreg=0x7f0a000d;
-        public static final int viewauthemail=0x7f0a0008;
-        public static final int viewauthpass=0x7f0a000a;
-        public static final int viewemail=0x7f0a0020;
-        public static final int viewpass=0x7f0a002d;
-        public static final int viewpass1=0x7f0a002f;
+        public static final int add=0x7f080029;
+        public static final int addans=0x7f08001c;
+        public static final int adjust_height=0x7f080001;
+        public static final int adjust_width=0x7f080002;
+        public static final int ans0=0x7f080024;
+        public static final int answers=0x7f08001f;
+        public static final int authemail=0x7f08000a;
+        public static final int authorization=0x7f080008;
+        public static final int authpass=0x7f08000c;
+        public static final int back=0x7f08002a;
+        public static final int button1=0x7f080010;
+        public static final int buttonreg=0x7f080033;
+        public static final int challenges=0x7f08001a;
+        public static final int create=0x7f080016;
+        public static final int createnewtest=0x7f08001e;
+        public static final int editText1=0x7f080013;
+        public static final int editText2=0x7f080011;
+        public static final int editemail=0x7f08002e;
+        public static final int editpass=0x7f080030;
+        public static final int editpass1=0x7f080032;
+        public static final int editqq=0x7f080023;
+        public static final int email=0x7f080035;
+        public static final int exit=0x7f080018;
+        public static final int inMenu=0x7f08003a;
+        public static final int inmenu=0x7f08001d;
+        public static final int item_headerText=0x7f080005;
+        public static final int item_subHeaderText=0x7f080006;
+        public static final int item_touch_helper_previous_elevation=0x7f080000;
+        public static final int layout=0x7f080020;
+        public static final int menu=0x7f080015;
+        public static final int mytests=0x7f080017;
+        public static final int newans=0x7f080007;
+        public static final int none=0x7f080003;
+        public static final int pointsforchoice=0x7f080027;
+        public static final int pointsforinput=0x7f08002b;
+        public static final int questionlabel=0x7f080021;
+        public static final int questions=0x7f080025;
+        public static final int registration=0x7f08002d;
+        public static final int remember=0x7f08000d;
+        public static final int remove=0x7f080028;
+        public static final int result=0x7f080034;
+        public static final int results=0x7f080036;
+        public static final int scrollView1=0x7f08002c;
+        public static final int scrollView2=0x7f080004;
+        public static final int scrollView3=0x7f080019;
+        public static final int setname=0x7f08001b;
+        public static final int spinnertext=0x7f080038;
+        public static final int style_for_snipper=0x7f080037;
+        public static final int tests=0x7f080039;
+        public static final int textView1=0x7f080014;
+        public static final int textView2=0x7f080012;
+        public static final int textView3=0x7f080026;
+        public static final int toauth=0x7f08000f;
+        public static final int toreg=0x7f08000e;
+        public static final int viewauthemail=0x7f080009;
+        public static final int viewauthpass=0x7f08000b;
+        public static final int viewemail=0x7f080022;
+        public static final int viewpass=0x7f08002f;
+        public static final int viewpass1=0x7f080031;
     }
     public static final class integer {
-        public static final int google_play_services_version=0x7f080000;
+        public static final int google_play_services_version=0x7f090000;
     }
     public static final class layout {
         public static final int createtest=0x7f030000;
@@ -208,83 +243,86 @@ containing a value of this type.
         public static final int confirm=0x7f04002d;
         public static final int create=0x7f04002e;
         public static final int createOK=0x7f04002f;
-        public static final int editqq=0x7f040030;
-        public static final int editrightans=0x7f040031;
-        public static final int email=0x7f040032;
-        public static final int emailalreadywas=0x7f040033;
-        public static final int erremail=0x7f040034;
-        public static final int error=0x7f040035;
-        public static final int errorlogin=0x7f040036;
-        public static final int errormail=0x7f040037;
-        public static final int exit=0x7f040038;
-        public static final int forgeted=0x7f040039;
-        public static final int inmenu=0x7f04003a;
-        public static final int inputans=0x7f04003b;
-        public static final int lessnot=0x7f04003c;
-        public static final int let=0x7f04003d;
-        public static final int mailresult=0x7f04003e;
-        public static final int maxlen=0x7f04003f;
-        public static final int menu=0x7f040040;
-        public static final int message_text=0x7f040041;
-        public static final int minlengthpass=0x7f040042;
-        public static final int mustnot=0x7f040043;
-        public static final int mytests=0x7f040044;
-        public static final int nametest=0x7f040045;
-        public static final int next=0x7f040046;
-        public static final int no=0x7f040047;
-        public static final int noans=0x7f040048;
-        public static final int nochoose=0x7f040049;
-        public static final int noconnect=0x7f04004a;
-        public static final int noemail=0x7f04004b;
-        public static final int noend=0x7f04004c;
-        public static final int noname=0x7f04004d;
-        public static final int nopass=0x7f04004e;
-        public static final int nopass1=0x7f04004f;
-        public static final int noresults=0x7f040050;
-        public static final int noright=0x7f040051;
-        public static final int notests=0x7f040052;
-        public static final int number1=0x7f040053;
-        public static final int numberqq=0x7f040054;
-        public static final int numbervar=0x7f040055;
-        public static final int open=0x7f040056;
-        public static final int otherans=0x7f040057;
-        public static final int otherpass=0x7f040058;
-        public static final int pass1=0x7f040059;
-        public static final int password=0x7f04005a;
-        public static final int points=0x7f04005b;
-        public static final int qq1_1=0x7f04005c;
-        public static final int qq1_10=0x7f04005d;
-        public static final int qq1_2=0x7f04005e;
-        public static final int qq1_3=0x7f04005f;
-        public static final int qq1_4=0x7f040060;
-        public static final int qq1_5=0x7f040061;
-        public static final int qq1_6=0x7f040062;
-        public static final int qq1_7=0x7f040063;
-        public static final int qq1_8=0x7f040064;
-        public static final int qq1_9=0x7f040065;
-        public static final int registration=0x7f040066;
-        public static final int remember=0x7f040067;
-        public static final int remove=0x7f040068;
-        public static final int rename=0x7f040069;
-        public static final int renameOK=0x7f04006a;
-        public static final int result=0x7f04006b;
-        public static final int rightans=0x7f04006c;
-        public static final int save=0x7f04006d;
-        public static final int stay=0x7f04006e;
-        public static final int succesfulmail=0x7f04006f;
-        public static final int succesfultest=0x7f040070;
-        public static final int test=0x7f040071;
-        public static final int testID=0x7f040072;
-        public static final int varans=0x7f040073;
-        public static final int veryshortpass=0x7f040074;
-        public static final int wait=0x7f040075;
-        public static final int warning=0x7f040076;
-        public static final int warning1=0x7f040077;
-        public static final int yes=0x7f040078;
+        public static final int editname=0x7f040030;
+        public static final int editqq=0x7f040031;
+        public static final int editrightans=0x7f040032;
+        public static final int email=0x7f040033;
+        public static final int emailalreadywas=0x7f040034;
+        public static final int erremail=0x7f040035;
+        public static final int error=0x7f040036;
+        public static final int errorlogin=0x7f040037;
+        public static final int errormail=0x7f040038;
+        public static final int exit=0x7f040039;
+        public static final int forgeted=0x7f04003a;
+        public static final int inmenu=0x7f04003b;
+        public static final int inputans=0x7f04003c;
+        public static final int lessnot=0x7f04003d;
+        public static final int let=0x7f04003e;
+        public static final int mailresult=0x7f04003f;
+        public static final int maxlen=0x7f040040;
+        public static final int menu=0x7f040041;
+        public static final int message_text=0x7f040042;
+        public static final int minlengthpass=0x7f040043;
+        public static final int mustnot=0x7f040044;
+        public static final int mytests=0x7f040045;
+        public static final int nametest=0x7f040046;
+        public static final int next=0x7f040047;
+        public static final int no=0x7f040048;
+        public static final int noans=0x7f040049;
+        public static final int nochoose=0x7f04004a;
+        public static final int noconnect=0x7f04004b;
+        public static final int noemail=0x7f04004c;
+        public static final int noend=0x7f04004d;
+        public static final int noname=0x7f04004e;
+        public static final int nonameyet=0x7f04004f;
+        public static final int nopass=0x7f040050;
+        public static final int nopass1=0x7f040051;
+        public static final int noresults=0x7f040052;
+        public static final int noright=0x7f040053;
+        public static final int notests=0x7f040054;
+        public static final int number1=0x7f040055;
+        public static final int numberqq=0x7f040056;
+        public static final int numbervar=0x7f040057;
+        public static final int open=0x7f040058;
+        public static final int otherans=0x7f040059;
+        public static final int otherpass=0x7f04005a;
+        public static final int pass1=0x7f04005b;
+        public static final int password=0x7f04005c;
+        public static final int plus=0x7f04005d;
+        public static final int points=0x7f04005e;
+        public static final int qq1_1=0x7f04005f;
+        public static final int qq1_10=0x7f040060;
+        public static final int qq1_2=0x7f040061;
+        public static final int qq1_3=0x7f040062;
+        public static final int qq1_4=0x7f040063;
+        public static final int qq1_5=0x7f040064;
+        public static final int qq1_6=0x7f040065;
+        public static final int qq1_7=0x7f040066;
+        public static final int qq1_8=0x7f040067;
+        public static final int qq1_9=0x7f040068;
+        public static final int registration=0x7f040069;
+        public static final int remember=0x7f04006a;
+        public static final int remove=0x7f04006b;
+        public static final int rename=0x7f04006c;
+        public static final int renameOK=0x7f04006d;
+        public static final int result=0x7f04006e;
+        public static final int rightans=0x7f04006f;
+        public static final int save=0x7f040070;
+        public static final int stay=0x7f040071;
+        public static final int succesfulmail=0x7f040072;
+        public static final int succesfultest=0x7f040073;
+        public static final int test=0x7f040074;
+        public static final int testID=0x7f040075;
+        public static final int varans=0x7f040076;
+        public static final int veryshortpass=0x7f040077;
+        public static final int wait=0x7f040078;
+        public static final int warning=0x7f040079;
+        public static final int warning1=0x7f04007a;
+        public static final int yes=0x7f04007b;
     }
     public static final class style {
-        public static final int AppTheme=0x7f090000;
-        public static final int HabraThemeButton=0x7f090001;
+        public static final int AppTheme=0x7f0a0000;
+        public static final int HabraThemeButton=0x7f0a0001;
     }
     public static final class styleable {
         /** Attributes that can be used with a LoadingImageView.
@@ -350,5 +388,89 @@ containing a value of this type.
           @attr name app.teacher:imageAspectRatioAdjust
         */
         public static final int LoadingImageView_imageAspectRatioAdjust = 0;
+        /** Attributes that can be used with a RecyclerView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RecyclerView_android_orientation android:orientation}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_layoutManager app.teacher:layoutManager}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_reverseLayout app.teacher:reverseLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_spanCount app.teacher:spanCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #RecyclerView_stackFromEnd app.teacher:stackFromEnd}</code></td><td></td></tr>
+           </table>
+           @see #RecyclerView_android_orientation
+           @see #RecyclerView_layoutManager
+           @see #RecyclerView_reverseLayout
+           @see #RecyclerView_spanCount
+           @see #RecyclerView_stackFromEnd
+         */
+        public static final int[] RecyclerView = {
+            0x010100c4, 0x7f010003, 0x7f010004, 0x7f010005,
+            0x7f010006
+        };
+        /**
+          <p>This symbol is the offset where the {@link android.R.attr#orientation}
+          attribute's value can be found in the {@link #RecyclerView} array.
+          @attr name android:orientation
+        */
+        public static final int RecyclerView_android_orientation = 0;
+        /**
+          <p>This symbol is the offset where the {@link app.teacher.R.attr#layoutManager}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name app.teacher:layoutManager
+        */
+        public static final int RecyclerView_layoutManager = 1;
+        /**
+          <p>This symbol is the offset where the {@link app.teacher.R.attr#reverseLayout}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name app.teacher:reverseLayout
+        */
+        public static final int RecyclerView_reverseLayout = 3;
+        /**
+          <p>This symbol is the offset where the {@link app.teacher.R.attr#spanCount}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name app.teacher:spanCount
+        */
+        public static final int RecyclerView_spanCount = 2;
+        /**
+          <p>This symbol is the offset where the {@link app.teacher.R.attr#stackFromEnd}
+          attribute's value can be found in the {@link #RecyclerView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name app.teacher:stackFromEnd
+        */
+        public static final int RecyclerView_stackFromEnd = 4;
     };
 }

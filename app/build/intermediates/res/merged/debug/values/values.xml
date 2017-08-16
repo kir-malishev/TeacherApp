@@ -41,8 +41,11 @@
     <color name="white_color">#FFFFFF</color>
     <color name="yellow_color">#FFFF00</color>
     <declare-styleable name="LoadingImageView"><attr format="enum" name="imageAspectRatioAdjust"><enum name="none" value="0"/><enum name="adjust_width" value="1"/><enum name="adjust_height" value="2"/></attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
+    <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <item name="item_touch_helper_previous_elevation" type="id"/>
     <integer name="google_play_services_version">8115000</integer>
     <string name="OK">OK</string>
     <string name="abouthoice">(с выбором одного ответа)</string>
@@ -92,6 +95,7 @@
     <string name="confirm">Подтвердите действие</string>
     <string name="create">Создать тест</string>
     <string name="createOK">Тест успешно создан</string>
+    <string name="editname">Название</string>
     <string name="editqq">Введите вопрос</string>
     <string name="editrightans">Введите верный ответ</string>
     <string name="email">E-mail</string>
@@ -122,6 +126,7 @@
     <string name="noemail">Введите e-mail</string>
     <string name="noend">не закончен</string>
     <string name="noname">Вы не ввели название теста</string>
+    <string name="nonameyet">Названия пока нет(</string>
     <string name="nopass">Введите пароль</string>
     <string name="nopass1">Подтвердите пароль</string>
     <string name="noresults">Никто ещё не выполнил этот тест</string>
@@ -135,6 +140,7 @@
     <string name="otherpass">Пароли не совпадают</string>
     <string name="pass1">Подтверждение пароля</string>
     <string name="password">Пароль</string>
+    <string name="plus">+</string>
     <string name="points">Баллы за верный ответ</string>
     <string name="qq1_1">1+2</string>
     <string name="qq1_10">100/20</string>

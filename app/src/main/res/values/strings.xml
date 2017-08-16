@@ -80,6 +80,9 @@
     <string name="noresults">Никто ещё не выполнил этот тест</string>
     <string name="wait">Секундочку</string>
     <string name="add">Добавить вопрос</string>
+    <string name="editname">Название</string>
+    <string name="nonameyet">Названия пока нет(</string>
+    <string name="plus">+</string>
     <color name="light_color">#F0E68C</color>
     <color name="dark_color">#370903</color>
     <color name="black_color">#000000</color>

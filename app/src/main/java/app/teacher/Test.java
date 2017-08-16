@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Кирилл on 04.07.2017.
@@ -49,6 +50,10 @@ public class Test {
         this.challenges = challenges;
         this.name = name;
         this.testId = testId;
+    }
+
+    void swap(int firstPos, int secondPos){
+        Collections.swap(challenges, firstPos, secondPos);
     }
 
     void addChallenge(Challenge challenge){

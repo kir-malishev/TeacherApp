@@ -6,12 +6,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import android.widget.AdapterView.OnItemClickListener;
@@ -19,11 +22,11 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-public class EditChallengeActivity extends Activity implements OnItemClickListener{
+public class EditChallengeActivity extends Activity{
 
     Test test;
     final int MAX_VALUE_CHALLENGES = 200;
-    ListView list;
+    RecyclerView list;
     final String DATA_FOR_TEST = "data_for_test";
 
     @Override
@@ -32,20 +35,14 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
 
         setContentView(R.layout.new_challenge);
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
-        list = (ListView) findViewById(R.id.challenges);
+        list = (RecyclerView) findViewById(R.id.challenges);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        list.setLayoutManager(manager);
 
         test = getTest();
         Bundle extras = getIntent().getExtras();
-        String testName = "";
-        if (extras != null)
-            testName = extras.getString("test_name");
         if(test == null)
-            test = new Test(testName);
+            test = new Test(getString(R.string.nonameyet));
         setTitle(test.getName());
         updateListView(list, test);
 
@@ -87,9 +84,32 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
         saveTest();
     }
 
-    public void updateListView(ListView list, Test test){
-        list.setAdapter(new TestAdapter(EditChallengeActivity.this, test));
-        list.setOnItemClickListener(EditChallengeActivity.this);
+    public void updateListView(RecyclerView list, Test test){
+        TestAdapter adapter = new TestAdapter(EditChallengeActivity.this, test, new TestAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Challenge challenge, int position) {
+                Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
+                switch(challenge.getType()){
+                    case 0:
+                        intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
+                        break;
+                    case 1:
+                        intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
+                        break;
+                    case 2:
+                        intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
+                        break;
+                }
+                saveTest();
+                intent.putExtra("position", position);
+                intent.putExtra("challenge", challenge);
+                startActivity(intent);
+            }
+        });
+        ItemTouchHelper.Callback callback = new RecyclerItemTouchHelper(adapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+        itemTouchHelper.attachToRecyclerView(list);
+        list.setAdapter(adapter);
     }
 
 
@@ -100,27 +120,39 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
             Utils.showToast(this, getString(R.string.cannotadd));
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void setTestName(View v){
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        final EditText editText = new EditText(this);
+        editText.setSingleLine(true);
+        ad.setTitle(R.string.create);
+        ad.setMessage(R.string.nametest);
 
-        Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
-        switch(test.getChallenge(position).getType()){
-            case 0:
-                intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
-                break;
-            case 1:
-                intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
-                break;
-            case 2:
-                intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
-                break;
-        }
+        ad.setView(editText);
 
-        saveTest();
-        intent.putExtra("position", position);
-        intent.putExtra("challenge", test.getChallenge(position));
-        startActivity(intent);
+        ad.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String testName = editText.getText().toString().trim();
+                if (testName.isEmpty()) {
+                    Utils.showToast(EditChallengeActivity.this, getString(R.string.noname));
+                    return;
+                }
+                test.setName(testName);
+                setTitle(testName);
+            }
+        });
 
+        ad.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+
+        ad.setCancelable(true);
+        ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            public void onCancel(DialogInterface dialog) {
+            }
+        });
+
+        ad.show();
     }
 
     void saveTest(){
@@ -154,6 +186,19 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
     protected void onDestroy() {
         super.onDestroy();
         saveTest();
+    }
+
+    private void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+    }
+
+    /** Закрывает клавиатуру, если произедено касание какого-либо из полей. */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN)
+            hideKeyboard();
+        return super.dispatchTouchEvent(ev);
     }
 }
 

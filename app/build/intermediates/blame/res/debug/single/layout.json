@@ -32,6 +32,10 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\login.xml"
     },
     {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\new_challenge.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\new_challenge.xml"
+    },
+    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\style_for_spinner.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\style_for_spinner.xml"
     },

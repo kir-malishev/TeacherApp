@@ -39,7 +39,7 @@ public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Tes
             GsonBuilder builder = new GsonBuilder();
             builder.registerTypeAdapter(Challenge.class, new ChallengeConverter());
             final Gson gson = builder.create();
-            Challenge challenge = gson.fromJson(jsonChallenge, typeOfT);
+            Challenge challenge = gson.fromJson(jsonChallenge, Challenge.class);
             test.addChallenge(challenge);
         }
         return test;

@@ -89,8 +89,10 @@ public class ActivityMenu extends Activity {
 					Utils.showToast(ActivityMenu.this, getString(R.string.noname));
 					return;
 				}
-				EditTestActivity.testName = testName;
-				Intent intent = new Intent(getApplicationContext(), EditTestActivity.class);
+				//EditTestActivity.testName = testName;
+				//Intent intent = new Intent(getApplicationContext(), EditTestActivity.class);
+				Intent intent = new Intent(getApplicationContext(), EditChallengeActivity.class);
+				intent.putExtra("test_name", testName);
 				startActivity(intent);
 				finish();
 			}

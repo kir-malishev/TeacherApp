@@ -25,7 +25,12 @@ public class Test {
         this.challenges = new ArrayList<Challenge>();
         this.name = name;
         this.testId = "";
+    }
 
+    Test(String name, String testId){
+        this.challenges = new ArrayList<Challenge>();
+        this.name = name;
+        this.testId = testId;
     }
 
     Test(ArrayList<Challenge> challenges){

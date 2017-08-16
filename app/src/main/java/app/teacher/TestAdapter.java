@@ -14,13 +14,15 @@ import java.util.ArrayList;
  */
 public class TestAdapter extends BaseAdapter {
 
-    Test test = new Test();
+    Test test;
     Context context;
 
     public TestAdapter(Context context, Test test) {
         if (test != null) {
             this.test = test;
         }
+        else
+            this.test = new Test();
         this.context = context;
     }
 
@@ -48,7 +50,21 @@ public class TestAdapter extends BaseAdapter {
         }
         TextView header = (TextView) someView.findViewById(R.id.item_headerText);
         TextView subHeader = (TextView) someView.findViewById(R.id.item_subHeaderText);
-        if (test.getChallenge(i) instanceof OnlyChoiceQuestion) {
+        switch(test.getChallenge(i).getType()){
+            case 0:
+                header.setTextColor(context.getResources().getColor(R.color.orange_color));
+                subHeader.setText(context.getString(R.string.abouthoice));
+                break;
+            case 1:
+                header.setTextColor(context.getResources().getColor(R.color.white_color));
+                subHeader.setText(context.getString(R.string.aboutmultiple));
+                break;
+            case 2:
+                header.setTextColor(context.getResources().getColor(R.color.yellow_color));
+                subHeader.setText(context.getString(R.string.aboutinput));
+                break;
+        }
+        /*if (test.getChallenge(i) instanceof OnlyChoiceQuestion) {
             header.setTextColor(context.getResources().getColor(R.color.orange_color));
             subHeader.setText(context.getString(R.string.abouthoice));
         } else if (test.getChallenge(i) instanceof MultipleChoiceQuestion) {
@@ -57,8 +73,8 @@ public class TestAdapter extends BaseAdapter {
         } else if (test.getChallenge(i) instanceof InputQuestion) {
             header.setTextColor(context.getResources().getColor(R.color.yellow_color));
             subHeader.setText(context.getString(R.string.aboutinput));
-        }
-        header.setText(context.getString(R.string.numberqq) + test.size());
+        }*/
+        header.setText(context.getString(R.string.numberqq) + (i + 1));
         return someView;
     }
 

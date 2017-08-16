@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:2:1-139:12
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:2:1-118:12
 	package
 		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:3:5-26
 		INJECTED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml
@@ -35,172 +35,140 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:11:22-64
-android:uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:13:5-89
-	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:13:30-86
-android:uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:14:5-83
-	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:14:30-80
-android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:15:5-88
-	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:15:30-85
 application
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:17:5-137:19
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:14:5-116:19
 MERGED from [com.android.support:support-v4:22.2.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:22.2.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:17:9-41
 	android:allowBackup
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:15:9-35
 	android:icon
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:19:9-39
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:16:9-39
 	android:theme
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:21:9-40
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:18:9-40
 activity#app.teacher.LoginActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:22:9-32:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:19:9-29:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:24:13-45
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:21:13-45
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:25:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:22:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:26:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:23:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:23:13-42
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:20:13-42
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:30:27-74
-activity#app.teacher.MainActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:33:9-41:20
-	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:35:13-41
-	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:36:13-37
-	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:37:13-54
-	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:34:13-41
-intent-filter#android.intent.category.LAUNCHER
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:38:13-40:29
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:27:27-74
 activity#app.teacher.RegActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:42:9-50:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:30:17-38:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:44:13-49
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:32:13-49
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:45:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:33:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:46:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:34:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:43:13-40
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:31:13-40
+intent-filter#android.intent.category.LAUNCHER
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:35:13-37:29
 activity#app.teacher.EditTestActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:51:9-59:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:39:9-47:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:53:13-43
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:41:13-43
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:54:13-38
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:42:13-38
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:55:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:43:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:52:13-45
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:40:13-45
 activity#app.teacher.EditChoiceActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:60:9-68:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:48:9-56:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:62:13-43
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:50:13-43
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:63:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:51:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:64:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:52:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:61:13-47
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:49:13-47
 activity#app.teacher.EditInputActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:69:9-77:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:57:9-65:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:71:13-43
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:59:13-43
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:72:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:60:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:73:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:61:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:70:13-46
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:58:13-46
 activity#app.teacher.EditMultipleActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:78:9-86:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:66:9-74:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:80:13-43
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:68:13-43
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:81:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:69:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:82:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:70:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:79:13-49
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:67:13-49
 activity#app.teacher.ActivityMenu
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:87:9-95:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:75:9-83:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:89:13-41
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:77:13-41
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:90:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:78:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:91:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:79:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:88:13-41
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:76:13-41
 activity#app.teacher.MyTestsActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:96:9-104:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:84:9-92:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:98:13-44
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:86:13-44
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:99:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:87:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:100:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:88:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:97:13-44
-activity#app.teacher.TestReviewActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:105:9-113:20
-	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:107:13-44
-	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:108:13-37
-	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:109:13-54
-	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:106:13-47
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:85:13-44
 activity#app.teacher.ResultsActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:114:9-122:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:93:16-101:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:116:13-43
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:95:13-43
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:117:13-38
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:96:13-38
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:118:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:97:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:115:13-44
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:94:13-44
 activity#app.teacher.ResultViewActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:123:9-131:20
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:102:9-110:20
 	android:label
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:125:13-43
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:104:13-43
 	android:noHistory
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:126:13-37
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:105:13-37
 	android:windowSoftInputMode
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:127:13-54
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:106:13-54
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:124:13-47
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:103:13-47
 activity#app.teacher.EditChallengeActivity
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:132:9-68
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:111:9-68
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:132:19-56
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:111:19-56
 meta-data#com.google.android.gms.version
-ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:134:9-136:69
+ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:113:9-115:69
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\AndroidApps\TeacherApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:136:13-66
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:115:13-66
 	android:name
-		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:135:13-58
+		ADDED from D:\AndroidApps\TeacherApp\app\src\main\AndroidManifest.xml:114:13-58

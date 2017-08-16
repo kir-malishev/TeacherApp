@@ -30,17 +30,26 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.newtest);
+        setContentView(R.layout.new_challenge);
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        list = (ListView) findViewById(R.id.challenges);
+
         test = getTest();
+        Bundle extras = getIntent().getExtras();
+        String testName = "";
+        if (extras != null)
+            testName = extras.getString("test_name");
         if(test == null)
-            test = new Test();
-    }
+            test = new Test(testName);
+        setTitle(test.getName());
+        updateListView(list, test);
+
+   }
 
     public void choiceChallenge() {
         String title = getString(R.string.addquestion);
@@ -64,9 +73,8 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
                         break;
                 }
                 test.addChallenge(challenge);
-                list.setAdapter(new TestAdapter(EditChallengeActivity.this, test));
-                list.setOnItemClickListener(EditChallengeActivity.this);
-            }
+                updateListView(list, test);
+                }
         });
         ad.setCancelable(true);
         ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -77,6 +85,11 @@ public class EditChallengeActivity extends Activity implements OnItemClickListen
         ad.show();
 
         saveTest();
+    }
+
+    public void updateListView(ListView list, Test test){
+        list.setAdapter(new TestAdapter(EditChallengeActivity.this, test));
+        list.setOnItemClickListener(EditChallengeActivity.this);
     }
 
 

@@ -27,6 +27,7 @@ public class EditChallengeActivity extends Activity{
     Test test;
     final int MAX_VALUE_CHALLENGES = 200;
     RecyclerView list;
+    TestAdapter adapter;
     final String DATA_FOR_TEST = "data_for_test";
 
     @Override
@@ -35,17 +36,40 @@ public class EditChallengeActivity extends Activity{
 
         setContentView(R.layout.new_challenge);
 
-        list = (RecyclerView) findViewById(R.id.challenges);
-        LinearLayoutManager manager = new LinearLayoutManager(this);
-        list.setLayoutManager(manager);
-
         test = getTest();
         Bundle extras = getIntent().getExtras();
         if(test == null)
             test = new Test(getString(R.string.nonameyet));
         setTitle(test.getName());
-        updateListView(list, test);
 
+
+        list = (RecyclerView) findViewById(R.id.challenges);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        list.setLayoutManager(manager);
+        adapter = new TestAdapter(EditChallengeActivity.this, test, new TestAdapter.OnItemClickListener(){
+            @Override
+            public void onItemClick(Challenge challenge, int position) {
+                Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
+                switch(challenge.getType()){
+                    case 0:
+                        intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
+                        break;
+                    case 1:
+                        intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
+                        break;
+                    case 2:
+                        intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
+                        break;
+                }
+                intent.putExtra("position", position);
+                intent.putExtra("challenge", challenge);
+                startActivity(intent);
+            }
+        });
+        ItemTouchHelper.Callback callback = new RecyclerItemTouchHelper(adapter);
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
+        itemTouchHelper.attachToRecyclerView(list);
+        list.setAdapter(adapter);
    }
 
     public void choiceChallenge() {
@@ -70,7 +94,8 @@ public class EditChallengeActivity extends Activity{
                         break;
                 }
                 test.addChallenge(challenge);
-                updateListView(list, test);
+                saveTest();
+                updateListView();
                 }
         });
         ad.setCancelable(true);
@@ -84,32 +109,8 @@ public class EditChallengeActivity extends Activity{
         saveTest();
     }
 
-    public void updateListView(RecyclerView list, Test test){
-        TestAdapter adapter = new TestAdapter(EditChallengeActivity.this, test, new TestAdapter.OnItemClickListener(){
-            @Override
-            public void onItemClick(Challenge challenge, int position) {
-                Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
-                switch(challenge.getType()){
-                    case 0:
-                        intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
-                        break;
-                    case 1:
-                        intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
-                        break;
-                    case 2:
-                        intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
-                        break;
-                }
-                saveTest();
-                intent.putExtra("position", position);
-                intent.putExtra("challenge", challenge);
-                startActivity(intent);
-            }
-        });
-        ItemTouchHelper.Callback callback = new RecyclerItemTouchHelper(adapter);
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
-        itemTouchHelper.attachToRecyclerView(list);
-        list.setAdapter(adapter);
+    public void updateListView(){
+        adapter.notifyItemInserted(test.size() - 1);
     }
 
 
@@ -194,12 +195,12 @@ public class EditChallengeActivity extends Activity{
     }
 
     /** Закрывает клавиатуру, если произедено касание какого-либо из полей. */
-    @Override
+   /* @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             hideKeyboard();
         return super.dispatchTouchEvent(ev);
-    }
+    }*/
 }
 
 

@@ -2,6 +2,7 @@ package app.teacher;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,8 @@ import static app.teacher.R.layout.list_view_item;
 /**
  * Created by Кирилл on 04.07.2017.
  */
-public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> {
+public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> implements ItemTouchHelperAdapter {
+
 
     public interface OnItemClickListener {
         void onItemClick(Challenge challenge, int position);
@@ -25,6 +27,23 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
     Test test;
     Context context;
     OnItemClickListener listener;
+    boolean update;
+
+
+
+    @Override
+    public boolean onItemMove(int firstPos, int secondPos) {
+        test.swap(firstPos, secondPos);
+        notifyItemMoved(firstPos, secondPos);
+        update = true;
+        return true;
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        test.remove(position);
+        notifyDataSetChanged();
+    }
 
     TestAdapter(Context context, Test test, OnItemClickListener listener){
         this.context = context;

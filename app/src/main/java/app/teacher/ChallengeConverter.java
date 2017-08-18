@@ -12,6 +12,7 @@ import com.google.gson.JsonSerializer;
 
 import java.lang.reflect.Type;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
@@ -60,7 +61,7 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
         String question = object.get("question").getAsString();
         int type = object.get("type").getAsInt();
         Challenge challenge = null;
-        HashSet<String> answers = new HashSet<String>();
+        ArrayList<String> answers = new ArrayList<String>();
         switch(type){
             case -1:
                 challenge = new Challenge(type, question);
@@ -76,14 +77,14 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
                 for(JsonElement answer: object.get("answers").getAsJsonArray()){
                     answers.add(answer.getAsString());
                 }
-                HashSet<String> rightAnswerType1 = new HashSet<String>();
+                ArrayList<String> rightAnswerType1 = new ArrayList<String>();
                 for(JsonElement answer: object.get("rightAnswer").getAsJsonArray()){
                     rightAnswerType1.add(answer.getAsString());
                 }
                 challenge = new MultipleChoiceQuestion(question, answers, rightAnswerType1);
                 break;
             case 2:
-                HashSet<String> rightAnswerType2 = new HashSet<String>();
+                ArrayList<String> rightAnswerType2 = new ArrayList<String>();
                 for(JsonElement answer: object.get("rightAnswer").getAsJsonArray()){
                     rightAnswerType2.add(answer.getAsString());
                 }

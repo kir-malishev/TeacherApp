@@ -6,7 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by Кирилл on 01.07.2017.
  */
-public class Challenge implements Parcelable {
+public class Challenge {
 
     /**CHALLENGE                         TYPE
      *
@@ -40,32 +40,5 @@ public class Challenge implements Parcelable {
         return type;
     }
 
-    protected Challenge(Parcel in) {
-        this.question = in.readString();
-        this.type = in.readInt();
-    }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(question);
-        dest.writeInt(type);
-    }
-
-    @SuppressWarnings("unused")
-    public static final Parcelable.Creator<Challenge> CREATOR = new Parcelable.Creator<Challenge>() {
-        @Override
-        public Challenge createFromParcel(Parcel in) {
-            return new Challenge(in);
-        }
-
-        @Override
-        public Challenge[] newArray(int size) {
-            return new Challenge[size];
-        }
-    };
 }

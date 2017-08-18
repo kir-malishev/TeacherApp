@@ -100,9 +100,7 @@ public class Test {
     }
 
     boolean isEmpty(){
-        if(challenges.isEmpty() && name.isEmpty() && testId.isEmpty())
-            return true;
-        return false;
+        return challenges.isEmpty() && name.isEmpty() && testId.isEmpty();
     }
 
     void remove(int index){

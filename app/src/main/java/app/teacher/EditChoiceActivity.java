@@ -16,6 +16,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -64,6 +66,8 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 	OnlyChoiceQuestion onlyChoiceQuestion;
 
+	RadioGroup radioGroup;
+
 
 	/**
 	 * Устанавливает разметку. Отображает информацию о вопросе, если она есть.
@@ -72,7 +76,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.qq_with_choice);
+		setContentView(R.layout.question_with_choice);
 
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -101,7 +105,9 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 		spinner.setAdapter(adapter);
 
-		getQuestion();
+		radioGroup = (RadioGroup) findViewById(R.id.answers);
+
+		setData();
 
 		view = (ScrollView) findViewById(R.id.scrollView3);
 		view.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
@@ -171,7 +177,11 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 * {@link EditTestActivity#data_for_test} и выводит её на экран.
 	 * 
 	 */
-	public void getQuestion() {
+	public void setData() {
+
+
+
+
 		int size;
 		String question = "";
 		int points;
@@ -237,6 +247,24 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 *            Кнопка "Добавить".
 	 */
 	public void add(View v) {
+
+		int size = Math.min(2, onlyChoiceQuestion.size());
+		for (int i = 0; i < size; i++) {
+
+			RadioButton answer = new RadioButton(this);
+			answer.setTextColor(getResources().getColor(R.color.light_color));
+			answer.setText(RunTestActivity.answers.get(position)[i]);
+			answer.setId(i);
+			if (RunTestActivity.userAns.get(position).contains(RunTestActivity.answers.get(position)[i]))
+				answer.setChecked(true);
+
+			answers.addView(answer);
+		}
+
+
+
+
+
 		addEdit();
 	}
 

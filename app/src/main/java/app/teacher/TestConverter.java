@@ -15,7 +15,7 @@ import java.lang.reflect.Type;
 /**
  * Created by Кирилл on 15.08.2017.
  */
-public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Test> {
+public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Test>, CompatibleWithJSON<Test> {
 
     @Override
     public JsonElement serialize(Test src, Type typeOfSrc, JsonSerializationContext context) {
@@ -43,5 +43,21 @@ public class TestConverter implements JsonSerializer<Test>, JsonDeserializer<Tes
             test.addChallenge(challenge);
         }
         return test;
+    }
+
+    @Override
+    public String getJSON(Test test) {
+        final GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(Test.class, new TestConverter());
+        final Gson gson = builder.create();
+        return gson.toJson(test);
+    }
+
+    @Override
+    public Test getFromJSON(String json) {
+        GsonBuilder builder = new GsonBuilder();
+        builder.registerTypeAdapter(Test.class, new TestConverter());
+        final Gson gson = builder.create();
+        return gson.fromJson(json, Test.class);
     }
 }

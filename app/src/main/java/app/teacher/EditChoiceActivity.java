@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -26,7 +27,7 @@ import android.widget.TextView;
  * @version 1.0
  */
 @SuppressLint("ClickableViewAccessibility")
-public class EditChoiceActivity extends Activity {
+public class EditChoiceActivity extends Activity implements TestUpdater{
 
 	/** Индекс вопроса (номер вопроса - 1). */
 	int position;
@@ -58,6 +59,12 @@ public class EditChoiceActivity extends Activity {
 	/** Основное окно разметки. */
 	ScrollView view;
 
+
+	Test test;
+
+	OnlyChoiceQuestion onlyChoiceQuestion;
+
+
 	/**
 	 * Устанавливает разметку. Отображает информацию о вопросе, если она есть.
 	 */
@@ -65,15 +72,17 @@ public class EditChoiceActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Bundle extras = getIntent().getExtras();
-		if (extras != null) {
-			position = extras.getInt("position");
-			type = extras.getString("type");
-		}
-
 		setContentView(R.layout.qq_with_choice);
 
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+		test = getTest();
+
+		Intent intent = new Intent();
+		int position = intent.getIntExtra("position", 0);
+		onlyChoiceQuestion = (OnlyChoiceQuestion) test.getChallenge(position);
+
+
 
 		TextView label = (TextView) findViewById(R.id.questionlabel);
 		label.setText(getString(R.string.numberqq) + (position + 1));
@@ -274,4 +283,22 @@ public class EditChoiceActivity extends Activity {
 
 	}
 
+	@Override
+	public void saveTest(){
+		SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPref.edit();
+		TestConverter converter = new TestConverter();
+		String json = converter.getJSON(test);
+		editor.putString("test", json);
+		editor.apply();
+	}
+
+	@Override
+	public Test getTest(){
+		SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+		String json = sharedPref.getString("test", "");
+		TestConverter converter = new TestConverter();
+		test = converter.getFromJSON(json);
+		return test;
+	}
 }

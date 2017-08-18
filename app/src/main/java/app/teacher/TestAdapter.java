@@ -31,6 +31,21 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
 
 
 
+
+    TestAdapter(Context context, Test test, OnItemClickListener listener){
+        this.context = context;
+        this.test = test;
+        this.listener = listener;
+    }
+
+    void clear(int size){
+        notifyItemRangeRemoved(0, size);
+    }
+
+    public void addItem(){
+        notifyItemInserted(test.size() - 1);
+    }
+
     @Override
     public boolean onItemMove(int firstPos, int secondPos) {
         test.swap(firstPos, secondPos);
@@ -45,11 +60,6 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
         notifyDataSetChanged();
     }
 
-    TestAdapter(Context context, Test test, OnItemClickListener listener){
-        this.context = context;
-        this.test = test;
-        this.listener = listener;
-    }
 
     @Override
     public TestViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

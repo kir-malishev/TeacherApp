@@ -25,13 +25,15 @@
     <string name="registration">Регистрация</string>
     <string name="authorization">Авторизация</string>
     <string name="create">Создать тест</string>
+    <string name="edittest">Редактирование теста</string>
     <string name="editqq">Введите вопрос</string>
     <string name="nochoose">Вы не выбрали тип вопроса</string>
     <string name="editrightans">Введите верный ответ</string>
     <string name="otherans">Введите другие ответы (всего не более 8)\nВарианты ответа будут перемешаны</string>
     <string name="message_text">Text of your message</string>
     <string name="yes">Да</string>
-    <string name="no">Отмена</string>
+    <string name="no">Нет</string>
+    <string name="cancel">Отмена</string>
     <string name="numbervar">Вариант №</string>
     <string name="number1">Вариант №1</string>
     <string name="numberqq">Вопрос №</string>
@@ -81,7 +83,8 @@
     <string name="wait">Секундочку</string>
     <string name="add">Добавить вопрос</string>
     <string name="editname">Название</string>
-    <string name="nonameyet">Названия пока нет(</string>
+    <string name="nonameyet">Названия пока нет</string>
+    <string name="youwanttocontinue">В прошлый раз Вы не завершили редактирование теста! Создать новый?</string>
     <string name="plus">+</string>
     <color name="light_color">#F0E68C</color>
     <color name="dark_color">#370903</color>

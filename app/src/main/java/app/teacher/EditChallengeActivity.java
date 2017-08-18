@@ -13,22 +13,14 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListView;
 
-import android.widget.AdapterView.OnItemClickListener;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-public class EditChallengeActivity extends Activity{
+public class EditChallengeActivity extends Activity implements TestUpdater{
 
     Test test;
     final int MAX_VALUE_CHALLENGES = 200;
     RecyclerView list;
     TestAdapter adapter;
-    final String DATA_FOR_TEST = "data_for_test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +29,18 @@ public class EditChallengeActivity extends Activity{
         setContentView(R.layout.new_challenge);
 
         test = getTest();
-        Bundle extras = getIntent().getExtras();
-        if(test == null)
-            test = new Test(getString(R.string.nonameyet));
-        setTitle(test.getName());
-
+        if(test == null) {
+            test = new Test();
+            setTitle(getString(R.string.nonameyet));
+        } else if (test.isEmpty()) {
+            setTitle(getString(R.string.nonameyet));
+        } else {
+            if (test.getName().isEmpty())
+                setTitle(getString(R.string.nonameyet));
+            else
+                setTitle(test.getName());
+            checkOfDesireToContinue();
+        }
 
         list = (RecyclerView) findViewById(R.id.challenges);
         LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -62,7 +61,6 @@ public class EditChallengeActivity extends Activity{
                         break;
                 }
                 intent.putExtra("position", position);
-                intent.putExtra("challenge", challenge);
                 startActivity(intent);
             }
         });
@@ -95,7 +93,7 @@ public class EditChallengeActivity extends Activity{
                 }
                 test.addChallenge(challenge);
                 saveTest();
-                updateListView();
+                adapter.notifyItemInserted(test.size() - 1);
                 }
         });
         ad.setCancelable(true);
@@ -109,16 +107,18 @@ public class EditChallengeActivity extends Activity{
         saveTest();
     }
 
-    public void updateListView(){
-        adapter.notifyItemInserted(test.size() - 1);
-    }
-
 
     public void newChallenge(View v) {
         if (test.size() <= MAX_VALUE_CHALLENGES)
             choiceChallenge();
         else
             Utils.showToast(this, getString(R.string.cannotadd));
+    }
+
+    public void inMenu(View v){
+        saveTest();
+        Intent intent = new Intent(this, ActivityMenu.class);
+        startActivity(intent);
     }
 
     public void setTestName(View v){
@@ -142,6 +142,33 @@ public class EditChallengeActivity extends Activity{
             }
         });
 
+        ad.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+
+        ad.setCancelable(true);
+        ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            public void onCancel(DialogInterface dialog) {
+            }
+        });
+
+        ad.show();
+    }
+
+    void checkOfDesireToContinue(){
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        ad.setTitle(R.string.edittest);
+        ad.setMessage(R.string.youwanttocontinue);
+        ad.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        adapter.notifyItemRangeRemoved(0, test.size());
+                        test.clear();
+                        adapter.notifyDataSetChanged();
+                        setTitle(getString(R.string.nonameyet));
+                    }
+        });
+
         ad.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
             }
@@ -156,24 +183,22 @@ public class EditChallengeActivity extends Activity{
         ad.show();
     }
 
-    void saveTest(){
-        SharedPreferences sharedPref = getSharedPreferences(DATA_FOR_TEST, Context.MODE_PRIVATE);
+    @Override
+    public void saveTest(){
+        SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        final GsonBuilder builder = new GsonBuilder();
-        builder.registerTypeAdapter(Test.class, new TestConverter());
-        final Gson gson = builder.create();
-        String json = gson.toJson(test);
+        TestConverter converter = new TestConverter();
+        String json = converter.getJSON(test);
         editor.putString("test", json);
         editor.apply();
     }
 
-    Test getTest(){
-        SharedPreferences sharedPref = getSharedPreferences(DATA_FOR_TEST, Context.MODE_PRIVATE);
-        GsonBuilder builder = new GsonBuilder();
-        builder.registerTypeAdapter(Test.class, new TestConverter());
-        final Gson gson = builder.create();
+    @Override
+    public Test getTest(){
+        SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
         String json = sharedPref.getString("test", "");
-        test = gson.fromJson(json, Test.class);
+        TestConverter converter = new TestConverter();
+        test = converter.getFromJSON(json);
         return test;
     }
 
@@ -195,12 +220,12 @@ public class EditChallengeActivity extends Activity{
     }
 
     /** Закрывает клавиатуру, если произедено касание какого-либо из полей. */
-   /* @Override
+    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             hideKeyboard();
         return super.dispatchTouchEvent(ev);
-    }*/
+    }
 }
 
 

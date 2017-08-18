@@ -59,6 +59,7 @@
     <string name="auth_google_play_services_client_google_display_name">Google</string>
     <string name="authorization">Авторизация</string>
     <string name="back">Назад</string>
+    <string name="cancel">Отмена</string>
     <string name="cannotadd">Добавлять больше нельзя\n(пожалейте своих учеников)</string>
     <string name="cannotdiminish">Убавлять нечего</string>
     <string name="choiceoption">Выберите действие</string>
@@ -98,6 +99,7 @@
     <string name="editname">Название</string>
     <string name="editqq">Введите вопрос</string>
     <string name="editrightans">Введите верный ответ</string>
+    <string name="edittest">Редактирование теста</string>
     <string name="email">E-mail</string>
     <string name="emailalreadywas">Этот e-mail уже зарегистрирован</string>
     <string name="erremail">Неверно введён e-mail</string>
@@ -119,14 +121,14 @@
     <string name="mytests">Мои тесты</string>
     <string name="nametest">Введите название теста</string>
     <string name="next">Вперёд!</string>
-    <string name="no">Отмена</string>
+    <string name="no">Нет</string>
     <string name="noans">В тесте нет вопросов</string>
     <string name="nochoose">Вы не выбрали тип вопроса</string>
     <string name="noconnect">Не удаётся соединиться с сервером. Проверьте доступ к Интернету.</string>
     <string name="noemail">Введите e-mail</string>
     <string name="noend">не закончен</string>
     <string name="noname">Вы не ввели название теста</string>
-    <string name="nonameyet">Названия пока нет(</string>
+    <string name="nonameyet">Названия пока нет</string>
     <string name="nopass">Введите пароль</string>
     <string name="nopass1">Подтвердите пароль</string>
     <string name="noresults">Никто ещё не выполнил этот тест</string>
@@ -171,6 +173,7 @@
     <string name="warning">Если вы выйдите, данные не сохранятся</string>
     <string name="warning1">Если вы выйдите, внесённые изменения не сохранятся</string>
     <string name="yes">Да</string>
+    <string name="youwanttocontinue">В прошлый раз Вы не завершили редактирование теста! Создать новый?</string>
     <style name="AppTheme" parent="android:Theme.Light">
         <item name="android:windowBackground">@color/dark_color</item>
     <item name="android:textColor">@color/light_color</item>

@@ -1,7 +1,12 @@
 package app.teacher;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,6 +20,7 @@ public class Test {
     ArrayList<Challenge> challenges;
     String name;
     String testId;
+    final String FILE_FOR_SAVE = "data_for_test";
 
     Test(){
         this.challenges = new ArrayList<Challenge>();
@@ -52,6 +58,11 @@ public class Test {
         this.testId = testId;
     }
 
+    void clear(){
+        challenges.clear();
+        name = "";
+        testId = "";
+    }
     void swap(int firstPos, int secondPos){
         Collections.swap(challenges, firstPos, secondPos);
     }
@@ -86,6 +97,12 @@ public class Test {
 
     String getTestId(){
         return this.testId;
+    }
+
+    boolean isEmpty(){
+        if(challenges.isEmpty() && name.isEmpty() && testId.isEmpty())
+            return true;
+        return false;
     }
 
     void remove(int index){

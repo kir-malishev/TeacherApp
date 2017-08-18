@@ -74,42 +74,8 @@ public class ActivityMenu extends Activity {
 	 * @see EditTestActivity
 	 */
 	public void create(View view) {
-		ad = new AlertDialog.Builder(this);
-		final EditText editText = new EditText(this);
-		editText.setSingleLine(true);
-		ad.setTitle(R.string.create);
-		ad.setMessage(R.string.nametest);
-
-		ad.setView(editText);
-
-		ad.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				String testName = editText.getText().toString().trim();
-				if (testName.equals("")) {
-					Utils.showToast(ActivityMenu.this, getString(R.string.noname));
-					return;
-				}
-				//EditTestActivity.testName = testName;
-				//Intent intent = new Intent(getApplicationContext(), EditTestActivity.class);
-				Intent intent = new Intent(getApplicationContext(), EditChallengeActivity.class);
-				intent.putExtra("test_name", testName);
-				startActivity(intent);
-				finish();
-			}
-		});
-
-		ad.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-			}
-		});
-
-		ad.setCancelable(true);
-		ad.setOnCancelListener(new OnCancelListener() {
-			public void onCancel(DialogInterface dialog) {
-			}
-		});
-
-		ad.show();
+		Intent intent = new Intent(getApplicationContext(), EditChallengeActivity.class);
+		startActivity(intent);
 	}
 
 	/**

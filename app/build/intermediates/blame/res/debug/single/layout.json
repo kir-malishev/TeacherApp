@@ -28,6 +28,10 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\login1.xml"
     },
     {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_with_radio_button.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\item_with_radio_button.xml"
+    },
+    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\new_challenge.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\new_challenge.xml"
     },
@@ -40,16 +44,20 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\style_for_spinner.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_choice.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_choice.xml"
-    },
-    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_review.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\test_review.xml"
     },
     {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_choice.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_choice.xml"
+    },
+    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view_item.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\list_view_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\question_with_choice.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\question_with_choice.xml"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\registration.xml",

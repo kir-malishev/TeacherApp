@@ -62,6 +62,7 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
                 }
                 intent.putExtra("position", position);
                 startActivity(intent);
+                finish();
             }
         });
         ItemTouchHelper.Callback callback = new RecyclerItemTouchHelper(adapter);
@@ -185,9 +186,9 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
 
     @Override
     public void saveTest(){
-        SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        TestConverter converter = new TestConverter();
+        CompatibleWithJSON<Test> converter = new TestConverter();
         String json = converter.getJSON(test);
         editor.putString("test", json);
         editor.apply();
@@ -195,9 +196,9 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
 
     @Override
     public Test getTest(){
-        SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
         String json = sharedPref.getString("test", "");
-        TestConverter converter = new TestConverter();
+        CompatibleWithJSON<Test> converter = new TestConverter();
         test = converter.getFromJSON(json);
         return test;
     }

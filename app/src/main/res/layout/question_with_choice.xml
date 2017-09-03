@@ -127,7 +127,7 @@
                 android:orientation="vertical" >
 
                 <Spinner
-                    android:id="@+id/pointsforinput"
+                    android:id="@+id/pointsforchoice"
                     android:layout_width="fill_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/hbutton"/>

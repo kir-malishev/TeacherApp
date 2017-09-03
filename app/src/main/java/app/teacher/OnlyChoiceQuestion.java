@@ -68,6 +68,14 @@ public class OnlyChoiceQuestion extends Challenge{
         return rightAnswer;
     }
 
+    String getAnswer(int position){
+        return this.answers.get(position);
+    }
+
+    ArrayList<String> getAnswers(){
+        return this.answers;
+    }
+
     String toJSON(){
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();

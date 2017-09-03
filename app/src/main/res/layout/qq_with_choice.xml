@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-                <ScrollView
-                   xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/scrollView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-            android:fillViewport="true" >
-   
-    <LinearLayout
-	android:id="@+id/layout"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fillViewport="true" >
 
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.75" >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/questionlabel"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:scrollHorizontally="false"
-            android:textSize="20sp"
-/>
+            android:layout_height="0dp"
+            android:layout_weight="0.75" >
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/questionlabel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:scrollHorizontally="false"
+                android:textSize="20sp"
+                />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.3" >
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/viewemail"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3" >
+
+            <TextView
+                android:id="@+id/viewemail"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="bottom"
+                android:text="@string/editqq" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:gravity="bottom"
-            android:text="@string/editqq" />
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_weight="0.7" >
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/editqq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:singleLine="true" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_weight="0.7" >
+                <requestFocus />
+            </EditText>
 
-        <EditText
-            android:id="@+id/editqq"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:singleLine="true" >
 
-            <requestFocus />
-        </EditText>
-        
-        
 
-    </LinearLayout>
-    
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -81,26 +81,26 @@
                 android:gravity="bottom"
                 android:text="@string/editrightans" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_weight="0.7" >
-
-        <EditText
-            android:id="@+id/ans0"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/number1"
-            android:singleLine="true" />
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_weight="0.7" >
 
-    </LinearLayout>
-    
+            <EditText
+                android:id="@+id/ans0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/number1"
+                android:singleLine="true" />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -115,56 +115,56 @@
                 android:gravity="bottom"
                 android:text="@string/otherans" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-                <ScrollView
-                    android:id="@+id/scrollView2"
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" >
+
+                <LinearLayout
+                    android:id="@+id/questions"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:fillViewport="true" >
-            
-                    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" >
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:orientation="vertical" >
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
 
         <LinearLayout
-            android:id="@+id/questions"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:orientation="vertical" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
-        </LinearLayout>
-        </LinearLayout>
-         </ScrollView>
-                
-                                    
-                 <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-        
-                 <LinearLayout
-                     android:layout_width="0dp"
-                     android:layout_height="match_parent"
-                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                     android:layout_weight="3"
-                     android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_weight="3"
+                android:orientation="vertical" >
 
-                     <TextView
-                         android:id="@+id/textView3"
-                         android:layout_width="match_parent"
-                         android:layout_height="60dp"
-                         android:gravity="center"
-                         android:textSize="20sp"
-                         android:text="@string/points" />
-            
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:text="@string/points" />
+
             </LinearLayout>
-            
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -177,41 +177,41 @@
                     android:layout_width="fill_parent"
                     android:layout_height="60dp"
                     android:background="@drawable/hbutton"/>
-                
+
             </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-        
-                 <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
-            <Button
-                android:id="@+id/remove"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="7dp"
-                android:onClick="remove"
-                android:text="Удалить"
-                android:textSize="20sp" />
-            
-            </LinearLayout>
-            
             <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical" >
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/remove"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    android:onClick="remove"
+                    android:text="Удалить"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
                 <Button
                     android:id="@+id/add"
@@ -224,32 +224,32 @@
                     android:onClick="add"
                     android:text="Добавить"
                     android:textSize="20sp" />
-                
+
             </LinearLayout>
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" >
-
-        <Button
-            android:id="@+id/back"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:onClick="back"
-            android:text="Назад"
-            android:textSize="20sp" />
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:onClick="back"
+                android:text="Назад"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
-
-
-</LinearLayout>
-
-          </ScrollView>
+</ScrollView>

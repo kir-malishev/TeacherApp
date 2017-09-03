@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -68,6 +69,8 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 	RadioGroup radioGroup;
 
+	final int MAX_SIZE = 6;
+
 
 	/**
 	 * Устанавливает разметку. Отображает информацию о вопросе, если она есть.
@@ -76,7 +79,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.question_with_choice);
+		setContentView(R.layout.qq_with_choice);
 
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -85,7 +88,6 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 		Intent intent = new Intent();
 		int position = intent.getIntExtra("position", 0);
 		onlyChoiceQuestion = (OnlyChoiceQuestion) test.getChallenge(position);
-
 
 
 		TextView label = (TextView) findViewById(R.id.questionlabel);
@@ -109,7 +111,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 		setData();
 
-		view = (ScrollView) findViewById(R.id.scrollView3);
+		/*view = (ScrollView) findViewById(R.id.scrollView3);
 		view.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
 
 			public void onSwipeLeft() {
@@ -123,7 +125,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 					swipe(position - 1);
 				}
 			}
-		});
+		});*/
 	}
 
 	/**
@@ -179,9 +181,24 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 */
 	public void setData() {
 
+		rightAnswer.setText(onlyChoiceQuestion.getRightAnswers());
+
+		if(onlyChoiceQuestion.size() <= 1){
+			if(onlyChoiceQuestion.size() == 0 || onlyChoiceQuestion.getAnswers().contains(onlyChoiceQuestion.getRightAnswers())){
+				addEdit("");
+			}
+		}
+		else {
+			for (String answer : onlyChoiceQuestion.getAnswers()) {
+				if (!answer.equals(onlyChoiceQuestion.getRightAnswers())) {
+					addEdit(answer);
+				}
+			}
+		}
 
 
 
+/*
 		int size;
 		String question = "";
 		int points;
@@ -218,26 +235,24 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 		}
 		if (editTextList.size() == 0) {
 			addEdit();
-		}
+		}*/
 	}
 
 	/**
 	 * Добавляет новое текстовое поле для ввода варианта ответа.
 	 * 
 	 */
-	public void addEdit() {
+	public void addEdit(String text) {
+
 		EditText editTxt;
 		int size = editTextList.size();
-		if (size <= 6) {
-			editTxt = new EditText(this);
-			editTxt.setLayoutParams(editParams);
-			editTxt.setHint(getString(R.string.numbervar) + (size + 2));
-			editTxt.setSingleLine(true);
-			editTextList.add(editTxt);
-			list.addView(editTxt);
-		} else {
-			Utils.showToast(this, getString(R.string.mustnot));
-		}
+		editTxt = new EditText(this);
+		editTxt.setLayoutParams(editParams);
+		editTxt.setHint(getString(R.string.numbervar) + (size + 2));
+		editTxt.setSingleLine(true);
+		editTxt.setText(text);
+		editTextList.add(editTxt);
+		list.addView(editTxt);
 	}
 
 	/**
@@ -248,24 +263,11 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 */
 	public void add(View v) {
 
-		int size = Math.min(2, onlyChoiceQuestion.size());
-		for (int i = 0; i < size; i++) {
-
-			RadioButton answer = new RadioButton(this);
-			answer.setTextColor(getResources().getColor(R.color.light_color));
-			answer.setText(RunTestActivity.answers.get(position)[i]);
-			answer.setId(i);
-			if (RunTestActivity.userAns.get(position).contains(RunTestActivity.answers.get(position)[i]))
-				answer.setChecked(true);
-
-			answers.addView(answer);
-		}
 
 
 
 
-
-		addEdit();
+		//addEdit();
 	}
 
 	/**
@@ -313,9 +315,9 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 	@Override
 	public void saveTest(){
-		SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+		SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = sharedPref.edit();
-		TestConverter converter = new TestConverter();
+		CompatibleWithJSON<Test> converter = new TestConverter();
 		String json = converter.getJSON(test);
 		editor.putString("test", json);
 		editor.apply();
@@ -323,9 +325,9 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 	@Override
 	public Test getTest(){
-		SharedPreferences sharedPref = getSharedPreferences(test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+		SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
 		String json = sharedPref.getString("test", "");
-		TestConverter converter = new TestConverter();
+		CompatibleWithJSON<Test> converter = new TestConverter();
 		test = converter.getFromJSON(json);
 		return test;
 	}

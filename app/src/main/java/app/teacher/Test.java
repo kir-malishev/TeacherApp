@@ -20,7 +20,7 @@ public class Test {
     ArrayList<Challenge> challenges;
     String name;
     String testId;
-    final String FILE_FOR_SAVE = "data_for_test";
+    static final String FILE_FOR_SAVE = "data_for_test";
 
     Test(){
         this.challenges = new ArrayList<Challenge>();

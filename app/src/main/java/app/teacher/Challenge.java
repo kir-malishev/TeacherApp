@@ -20,6 +20,7 @@ public class Challenge {
 
 
     String question = "";
+    int points = 1;
     int type = -1;
 
 
@@ -32,12 +33,35 @@ public class Challenge {
         this.question = question;
     }
 
+    Challenge(int type, int points){
+        this.type = type;
+        this.points = points;
+    }
+
+    Challenge(int type, String question, int points){
+        this.type = type;
+        this.question = question;
+        this.points = points;
+    }
+
+    void setQuestion(String question){
+        this.question = question;
+    }
+
+    void setPoints(int points){
+        this.points = points;
+    }
+
     String getQuestion(){
         return question;
     }
 
     int getType(){
         return type;
+    }
+
+    int getPoints(){
+        return points;
     }
 
 

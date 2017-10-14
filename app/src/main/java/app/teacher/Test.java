@@ -115,4 +115,23 @@ public class Test {
         return challenges.size();
     }
 
+
+    void saveTest(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        CompatibleWithJSON<Test> converter = new TestConverter();
+        String json = converter.getJSON(this);
+        editor.putString("test", json);
+        editor.apply();
+    }
+
+
+    public static Test getTest(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        String json = sharedPref.getString("test", "");
+        CompatibleWithJSON<Test> converter = new TestConverter();
+        return converter.getFromJSON(json);
+    }
+
+
 }

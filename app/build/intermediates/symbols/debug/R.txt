@@ -40,7 +40,7 @@ int drawable hbutton_pressed 0x7f020006
 int drawable ic_launcher 0x7f020007
 int drawable icon 0x7f020008
 int drawable magicball 0x7f020009
-int id add 0x7f08002c
+int id add 0x7f08002b
 int id addans 0x7f08001f
 int id adjust_height 0x7f080001
 int id adjust_width 0x7f080002
@@ -49,7 +49,7 @@ int id answers 0x7f080022
 int id authemail 0x7f08000d
 int id authorization 0x7f08000b
 int id authpass 0x7f08000f
-int id back 0x7f08002d
+int id back 0x7f08002c
 int id button1 0x7f080013
 int id buttonreg 0x7f080036
 int id challenges 0x7f08001d
@@ -76,13 +76,13 @@ int id menu 0x7f080018
 int id mytests 0x7f08001a
 int id newans 0x7f080007
 int id none 0x7f080003
-int id pointsforchoice 0x7f08002a
+int id pointsforchoice 0x7f080029
 int id pointsforinput 0x7f08002e
 int id questionlabel 0x7f080024
-int id questions 0x7f080028
+int id questions 0x7f08002d
 int id registration 0x7f080030
 int id remember 0x7f080010
-int id remove 0x7f08002b
+int id remove 0x7f08002a
 int id result 0x7f080037
 int id results 0x7f080039
 int id scrollView1 0x7f08002f
@@ -94,7 +94,7 @@ int id style_for_snipper 0x7f08003a
 int id tests 0x7f08003c
 int id textView1 0x7f080017
 int id textView2 0x7f080015
-int id textView3 0x7f080029
+int id textView3 0x7f080028
 int id toauth 0x7f080012
 int id toreg 0x7f080011
 int id viewauthemail 0x7f08000c

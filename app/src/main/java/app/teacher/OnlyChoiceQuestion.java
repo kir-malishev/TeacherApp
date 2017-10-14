@@ -25,11 +25,23 @@ public class OnlyChoiceQuestion extends Challenge{
         this.rightAnswer = "";
     }
 
+    OnlyChoiceQuestion(int points){
+        super(TYPE, points);
+        this.answers = new ArrayList<String>();
+        this.rightAnswer = "";
+    }
+
     OnlyChoiceQuestion(String question){
         super(TYPE, question);
         this.answers = new ArrayList<String>();
         this.rightAnswer = "";
 
+    }
+
+    OnlyChoiceQuestion(String question, int points){
+        super(TYPE, question, points);
+        this.answers = new ArrayList<String>();
+        this.rightAnswer = "";
     }
 
     OnlyChoiceQuestion(String question, ArrayList<String> answers){
@@ -38,8 +50,20 @@ public class OnlyChoiceQuestion extends Challenge{
         this.rightAnswer = "";
     }
 
+    OnlyChoiceQuestion(String question, ArrayList<String> answers, int points){
+        super(TYPE, question, points);
+        this.answers = answers;
+        this.rightAnswer = "";
+    }
+
     OnlyChoiceQuestion(String question, ArrayList<String> answers, String rightAnswer){
         super(TYPE, question);
+        this.answers = answers;
+        this.rightAnswer = rightAnswer;
+    }
+
+    OnlyChoiceQuestion(String question, ArrayList<String> answers, String rightAnswer, int points){
+        super(TYPE, question, points);
         this.answers = answers;
         this.rightAnswer = rightAnswer;
     }
@@ -52,9 +76,23 @@ public class OnlyChoiceQuestion extends Challenge{
     void remove(int position){
         answers.remove(position);
     }
+
     void setRightAnswer(String rightAnswer){
         this.rightAnswer = rightAnswer;
+        for(String answer: answers){
+            if(answer.equals(rightAnswer)) return;
+        }
+        addAnswer((rightAnswer));
     }
+
+    void addAnswer(String answer){
+        answers.add(answer);
+    }
+
+    void setAnswers(ArrayList<String> answers){
+        this.answers = answers;
+    }
+
 
     boolean checkAnswer(String answer){
         return this.rightAnswer.equals(answer);
@@ -62,6 +100,20 @@ public class OnlyChoiceQuestion extends Challenge{
 
     int size(){
         return answers.size();
+    }
+
+    ArrayList<String> getIncorrectAnswers() {
+        ArrayList<String> incorrectAnswers = new ArrayList<String>();
+        for(String answer: answers){
+            if(!answer.equals(rightAnswer)){
+                incorrectAnswers.add(answer);
+            }
+        }
+        return incorrectAnswers;
+    }
+
+    int numberOfIncorrectAnswers(){
+        return getIncorrectAnswers().size();
     }
 
     String getRightAnswers(){

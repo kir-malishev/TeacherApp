@@ -19,13 +19,28 @@ public class InputQuestion extends Challenge {
         this.rightAnswer = new ArrayList<String>();
     }
 
+    InputQuestion(int points){
+        super(TYPE, points);
+        this.rightAnswer = new ArrayList<String>();
+    }
+
     InputQuestion(String question){
         super(TYPE, question);
         this.rightAnswer = new ArrayList<String>();
     }
 
+    InputQuestion(String question,int  points){
+        super(TYPE, question, points);
+        this.rightAnswer = new ArrayList<String>();
+    }
+
     InputQuestion(String question, ArrayList<String> rightAnswer){
         super(TYPE, question);
+        this.rightAnswer = rightAnswer;
+    }
+
+    InputQuestion(String question, ArrayList<String> rightAnswer, int points){
+        super(TYPE, question, points);
         this.rightAnswer = rightAnswer;
     }
 }

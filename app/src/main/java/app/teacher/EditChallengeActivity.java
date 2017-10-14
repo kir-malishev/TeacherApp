@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-public class EditChallengeActivity extends Activity implements TestUpdater{
+public class EditChallengeActivity extends Activity {
 
     Test test;
     final int MAX_VALUE_CHALLENGES = 200;
@@ -28,7 +28,7 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
 
         setContentView(R.layout.new_challenge);
 
-        test = getTest();
+        test = Test.getTest(this);
         if(test == null) {
             test = new Test();
             setTitle(getString(R.string.nonameyet));
@@ -39,7 +39,8 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
                 setTitle(getString(R.string.nonameyet));
             else
                 setTitle(test.getName());
-            checkOfDesireToContinue();
+            if(!getIntent().getBooleanExtra("isContinueEditing", false))
+                checkOfDesireToContinue();
         }
 
         list = (RecyclerView) findViewById(R.id.challenges);
@@ -93,7 +94,7 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
                         break;
                 }
                 test.addChallenge(challenge);
-                saveTest();
+                test.saveTest(EditChallengeActivity.this);
                 adapter.notifyItemInserted(test.size() - 1);
                 }
         });
@@ -105,7 +106,7 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
         });
         ad.show();
 
-        saveTest();
+        test.saveTest(this);
     }
 
 
@@ -117,7 +118,7 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
     }
 
     public void inMenu(View v){
-        saveTest();
+        test.saveTest(this);
         Intent intent = new Intent(this, ActivityMenu.class);
         startActivity(intent);
     }
@@ -184,7 +185,7 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
         ad.show();
     }
 
-    @Override
+    /*@Override
     public void saveTest(){
         SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
@@ -201,18 +202,18 @@ public class EditChallengeActivity extends Activity implements TestUpdater{
         CompatibleWithJSON<Test> converter = new TestConverter();
         test = converter.getFromJSON(json);
         return test;
-    }
+    }*/
 
     @Override
     protected void onPause() {
         super.onPause();
-        saveTest();
+        test.saveTest(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        saveTest();
+        test.saveTest(this);
     }
 
     private void hideKeyboard() {

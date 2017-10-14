@@ -23,8 +23,9 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
     @Override
     public JsonElement serialize(Challenge src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject json = new JsonObject();
-        json.addProperty("type", src.type);
-        json.addProperty("question", src.question);
+        json.addProperty("type", src.getType());
+        json.addProperty("question", src.getQuestion());
+        json.addProperty("points", src.getPoints());
         JsonArray jsonAnswers = new JsonArray();
         JsonArray jsonRightAnswer = new JsonArray();
         switch(src.type){
@@ -59,19 +60,20 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
     public Challenge deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
         JsonObject object = json.getAsJsonObject();
         String question = object.get("question").getAsString();
+        int points = object.get("points").getAsInt();
         int type = object.get("type").getAsInt();
         Challenge challenge = null;
         ArrayList<String> answers = new ArrayList<String>();
         switch(type){
             case -1:
-                challenge = new Challenge(type, question);
+                challenge = new Challenge(type, question, points);
                 break;
             case 0:
                 for(JsonElement answer: object.get("answers").getAsJsonArray()){
                     answers.add(answer.getAsString());
                 }
                 String rightAnswerType0 = object.get("rightAnswer").getAsString();
-                challenge = new OnlyChoiceQuestion(question, answers, rightAnswerType0);
+                challenge = new OnlyChoiceQuestion(question, answers, rightAnswerType0, points);
                 break;
             case 1:
                 for(JsonElement answer: object.get("answers").getAsJsonArray()){
@@ -81,14 +83,14 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
                 for(JsonElement answer: object.get("rightAnswer").getAsJsonArray()){
                     rightAnswerType1.add(answer.getAsString());
                 }
-                challenge = new MultipleChoiceQuestion(question, answers, rightAnswerType1);
+                challenge = new MultipleChoiceQuestion(question, answers, rightAnswerType1, points);
                 break;
             case 2:
                 ArrayList<String> rightAnswerType2 = new ArrayList<String>();
                 for(JsonElement answer: object.get("rightAnswer").getAsJsonArray()){
                     rightAnswerType2.add(answer.getAsString());
                 }
-                challenge = new InputQuestion(question, rightAnswerType2);
+                challenge = new InputQuestion(question, rightAnswerType2, points);
                 break;
         }
 

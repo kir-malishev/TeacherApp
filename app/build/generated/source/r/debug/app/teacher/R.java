@@ -114,7 +114,7 @@ containing a value of this type.
         public static final int magicball=0x7f020009;
     }
     public static final class id {
-        public static final int add=0x7f08002c;
+        public static final int add=0x7f08002b;
         public static final int addans=0x7f08001f;
         public static final int adjust_height=0x7f080001;
         public static final int adjust_width=0x7f080002;
@@ -123,7 +123,7 @@ containing a value of this type.
         public static final int authemail=0x7f08000d;
         public static final int authorization=0x7f08000b;
         public static final int authpass=0x7f08000f;
-        public static final int back=0x7f08002d;
+        public static final int back=0x7f08002c;
         public static final int button1=0x7f080013;
         public static final int buttonreg=0x7f080036;
         public static final int challenges=0x7f08001d;
@@ -150,13 +150,13 @@ containing a value of this type.
         public static final int mytests=0x7f08001a;
         public static final int newans=0x7f080007;
         public static final int none=0x7f080003;
-        public static final int pointsforchoice=0x7f08002a;
+        public static final int pointsforchoice=0x7f080029;
         public static final int pointsforinput=0x7f08002e;
         public static final int questionlabel=0x7f080024;
-        public static final int questions=0x7f080028;
+        public static final int questions=0x7f08002d;
         public static final int registration=0x7f080030;
         public static final int remember=0x7f080010;
-        public static final int remove=0x7f08002b;
+        public static final int remove=0x7f08002a;
         public static final int result=0x7f080037;
         public static final int results=0x7f080039;
         public static final int scrollView1=0x7f08002f;
@@ -168,7 +168,7 @@ containing a value of this type.
         public static final int tests=0x7f08003c;
         public static final int textView1=0x7f080017;
         public static final int textView2=0x7f080015;
-        public static final int textView3=0x7f080029;
+        public static final int textView3=0x7f080028;
         public static final int toauth=0x7f080012;
         public static final int toreg=0x7f080011;
         public static final int viewauthemail=0x7f08000c;

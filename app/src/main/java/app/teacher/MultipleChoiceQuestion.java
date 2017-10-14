@@ -22,8 +22,20 @@ public class MultipleChoiceQuestion extends Challenge {
         this.rightAnswer = new ArrayList<String>();
     }
 
+    MultipleChoiceQuestion(int points){
+        super(TYPE, points);
+        this.answers = new ArrayList<String>();
+        this.rightAnswer = new ArrayList<String>();
+    }
+
     MultipleChoiceQuestion(String question){
         super(TYPE, question);
+        this.answers = new ArrayList<String>();
+        this.rightAnswer = new ArrayList<String>();
+    }
+
+    MultipleChoiceQuestion(String question, int points){
+        super(TYPE, question, points);
         this.answers = new ArrayList<String>();
         this.rightAnswer = new ArrayList<String>();
     }
@@ -34,8 +46,20 @@ public class MultipleChoiceQuestion extends Challenge {
         this.rightAnswer = new ArrayList<String>();
     }
 
+    MultipleChoiceQuestion(String question, ArrayList<String> answers, int points){
+        super(TYPE, question, points);
+        this.answers = answers;
+        this.rightAnswer = new ArrayList<String>();
+    }
+
     MultipleChoiceQuestion(String question, ArrayList<String> answers, ArrayList<String> rightAnswer){
         super(TYPE, question);
+        this.answers = answers;
+        this.rightAnswer = rightAnswer;
+    }
+
+    MultipleChoiceQuestion(String question, ArrayList<String> answers, ArrayList<String> rightAnswer, int points){
+        super(TYPE, question, points);
         this.answers = answers;
         this.rightAnswer = rightAnswer;
     }

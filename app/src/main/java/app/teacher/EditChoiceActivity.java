@@ -29,8 +29,7 @@ import android.widget.TextView;
  * @autor Кирилл Малышев
  * @version 1.0
  */
-@SuppressLint("ClickableViewAccessibility")
-public class EditChoiceActivity extends Activity implements TestUpdater{
+public class EditChoiceActivity extends Activity {
 
 	/** Индекс вопроса (номер вопроса - 1). */
 	int position;
@@ -67,7 +66,6 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 	OnlyChoiceQuestion onlyChoiceQuestion;
 
-	RadioGroup radioGroup;
 
 	final int MAX_SIZE = 6;
 
@@ -81,12 +79,12 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 		setContentView(R.layout.qq_with_choice);
 
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-		test = getTest();
+		test = Test.getTest(this);
 
-		Intent intent = new Intent();
-		int position = intent.getIntExtra("position", 0);
+		final int position = getIntent().getIntExtra("position", 0);  // номер вопроса в тесте
+
 		onlyChoiceQuestion = (OnlyChoiceQuestion) test.getChallenge(position);
 
 
@@ -96,7 +94,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 		rightAnswer = (EditText) findViewById(R.id.ans0);
 		qq = (EditText) findViewById(R.id.editqq);
 
-		list = (LinearLayout) findViewById(R.id.questions);
+		list = (LinearLayout) findViewById(R.id.answers);
 		editParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
 				LinearLayout.LayoutParams.WRAP_CONTENT);
 
@@ -107,25 +105,23 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 
 		spinner.setAdapter(adapter);
 
-		radioGroup = (RadioGroup) findViewById(R.id.answers);
 
 		setData();
 
-		/*view = (ScrollView) findViewById(R.id.scrollView3);
+		view = (ScrollView) findViewById(R.id.scrollView3);
 		view.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
-
 			public void onSwipeLeft() {
 				if (position + 1 < EditTestActivity.listAnswers.size()) {
 					swipe(position + 1);
 				}
 			}
-
 			public void onSwipeRight() {
 				if (position > 0) {
 					swipe(position - 1);
 				}
 			}
-		});*/
+		});
+
 	}
 
 	/**
@@ -137,7 +133,8 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 */
 	public void swipe(int position) {
 		saveQuestion();
-		String type = EditTestActivity.listAnswers.get(position).getType();
+		Utils.showToast(this, "This is swipe!");
+		/*String type = EditTestActivity.listAnswers.get(position).getType();
 		Intent intent = new Intent(EditChoiceActivity.this, EditTestActivity.class);
 		if (type.equals("choice")) {
 			intent = new Intent(EditChoiceActivity.this, EditChoiceActivity.class);
@@ -150,7 +147,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 		intent.putExtra("position", position);
 		intent.putExtra("type", EditTestActivity.listAnswers.get(position).getType());
 		startActivity(intent);
-		finish();
+		finish();*/
 	}
 
 	/**
@@ -158,20 +155,18 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 * {@link EditTestActivity#data_for_test}
 	 */
 	public void saveQuestion() {
-		String points = spinner.getSelectedItem().toString();
-		EditTestActivity.data_for_test.get(position).put("points", points);
-		EditTestActivity.data_for_test.get(position).put("type", type);
-		EditTestActivity.data_for_test.get(position).put("qq", qq.getText().toString().trim());
-		EditTestActivity.data_for_test.get(position).put("size", Integer.toString(editTextList.size() + 1));
-		EditTestActivity.data_for_test.get(position).put("ans_" + 0, rightAnswer.getText().toString().trim());
-		int k = 1;
-		String text;
+		onlyChoiceQuestion.setPoints(Integer.parseInt(spinner.getSelectedItem().toString()));
+		onlyChoiceQuestion.setQuestion(qq.getText().toString().trim());
+		onlyChoiceQuestion.setRightAnswer(rightAnswer.getText().toString().trim());
+		ArrayList<String> listOfAnswers = new ArrayList<String>();
 		for (int i = 0; i < editTextList.size(); i++) {
-			text = editTextList.get(i).getText().toString().trim();
+			String text = editTextList.get(i).getText().toString().trim();
 			if (!text.equals("")) {
-				EditTestActivity.data_for_test.get(position).put("ans_" + (k++), text);
+				listOfAnswers.add(text);
 			}
 		}
+		onlyChoiceQuestion.setAnswers(listOfAnswers);
+		test.saveTest(this);
 	}
 
 	/**
@@ -181,61 +176,19 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 */
 	public void setData() {
 
+		qq.setText(onlyChoiceQuestion.getQuestion());
+
 		rightAnswer.setText(onlyChoiceQuestion.getRightAnswers());
 
-		if(onlyChoiceQuestion.size() <= 1){
-			if(onlyChoiceQuestion.size() == 0 || onlyChoiceQuestion.getAnswers().contains(onlyChoiceQuestion.getRightAnswers())){
+		if(onlyChoiceQuestion.numberOfIncorrectAnswers() == 0){
 				addEdit("");
-			}
 		}
 		else {
-			for (String answer : onlyChoiceQuestion.getAnswers()) {
-				if (!answer.equals(onlyChoiceQuestion.getRightAnswers())) {
-					addEdit(answer);
-				}
+			for (String answer : onlyChoiceQuestion.getIncorrectAnswers()) {
+				addEdit(answer);
 			}
 		}
-
-
-
-/*
-		int size;
-		String question = "";
-		int points;
-		if (EditTestActivity.data_for_test.get(position).containsKey("size"))
-			size = Integer.parseInt(EditTestActivity.data_for_test.get(position).get("size"));
-		else
-			size = 1;
-		if (EditTestActivity.data_for_test.get(position).containsKey("qq"))
-			question = EditTestActivity.data_for_test.get(position).get("qq");
-		else
-			question = "";
-		qq.setText(question);
-		if (EditTestActivity.data_for_test.get(position).containsKey("points"))
-			points = Integer.parseInt(EditTestActivity.data_for_test.get(position).get("points"));
-		else
-			points = 1;
-		spinner.setSelection(points - 1);
-		String ans;
-		if (EditTestActivity.data_for_test.get(position).containsKey("ans_" + 0))
-			ans = EditTestActivity.data_for_test.get(position).get("ans_" + 0);
-		else
-			ans = "";
-		rightAnswer.setText(ans);
-		int j = 0;
-		for (int i = 0; i < size; i++) {
-			if (EditTestActivity.data_for_test.get(position).containsKey("ans_" + (i + 1)))
-				ans = EditTestActivity.data_for_test.get(position).get("ans_" + (i + 1));
-			else
-				ans = "";
-			if (!ans.equals("")) {
-				addEdit();
-				editTextList.get(j++).setText(ans);
-			}
-		}
-		if (editTextList.size() == 0) {
-			addEdit();
-		}*/
+		spinner.setSelection(onlyChoiceQuestion.getPoints() - 1);
 	}
 
 	/**
@@ -262,12 +215,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 *            Кнопка "Добавить".
 	 */
 	public void add(View v) {
-
-
-
-
-
-		//addEdit();
+		addEdit("");
 	}
 
 	/**
@@ -281,6 +229,7 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 		if (size >= 2) {
 			editTextList.get(size - 1).setVisibility(View.GONE);
 			editTextList.remove(size - 1);
+			saveQuestion();
 		} else {
 			Utils.showToast(this, getString(R.string.lessnot));
 		}
@@ -309,26 +258,22 @@ public class EditChoiceActivity extends Activity implements TestUpdater{
 	 */
 	public void back(View v) {
 		saveQuestion();
+		Intent intent = new Intent(this, EditChallengeActivity.class);
+		intent.putExtra("isContinueEditing", true);
+		startActivity(intent);
 		finish();
+	}
 
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		saveQuestion();
 	}
 
 	@Override
-	public void saveTest(){
-		SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPref.edit();
-		CompatibleWithJSON<Test> converter = new TestConverter();
-		String json = converter.getJSON(test);
-		editor.putString("test", json);
-		editor.apply();
-	}
-
-	@Override
-	public Test getTest(){
-		SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
-		String json = sharedPref.getString("test", "");
-		CompatibleWithJSON<Test> converter = new TestConverter();
-		test = converter.getFromJSON(json);
-		return test;
+	protected void onDestroy() {
+		super.onDestroy();
+		saveQuestion();
 	}
 }

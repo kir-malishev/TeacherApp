@@ -44,12 +44,12 @@
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\style_for_spinner.xml"
     },
     {
-        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_review.xml",
-        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\test_review.xml"
-    },
-    {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\qq_with_choice.xml",
         "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\qq_with_choice.xml"
+    },
+    {
+        "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test_review.xml",
+        "source": "D:\\AndroidApps\\TeacherApp\\app\\src\\main\\res\\layout\\test_review.xml"
     },
     {
         "merged": "D:\\AndroidApps\\TeacherApp\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_view_item.xml",

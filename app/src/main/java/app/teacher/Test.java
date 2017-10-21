@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -113,6 +114,18 @@ public class Test {
 
     int size(){
         return challenges.size();
+    }
+
+    public static void clearTestFromMemory(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.clear();
+        editor.apply();
+    }
+
+    public static void showJsonInLog(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        Log.d("DEBUG_TEST", sharedPref.getString("test", ""));
     }
 
 

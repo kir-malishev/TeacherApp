@@ -111,7 +111,7 @@ public class EditChoiceActivity extends Activity {
 		view = (ScrollView) findViewById(R.id.scrollView3);
 		view.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
 			public void onSwipeLeft() {
-				if (position + 1 < EditTestActivity.listAnswers.size()) {
+				if (position <= test.size()) {
 					swipe(position + 1);
 				}
 			}
@@ -133,7 +133,21 @@ public class EditChoiceActivity extends Activity {
 	 */
 	public void swipe(int position) {
 		saveQuestion();
-		Utils.showToast(this, "This is swipe!");
+		Intent intent = new Intent(this, EditChoiceActivity.class);
+		switch(test.getChallenge(position).getType()){
+			case 0:
+				intent = new Intent(this, EditChoiceActivity.class);
+				break;
+			case 1:
+				intent = new Intent(this, EditMultipleActivity.class);
+				break;
+			case 2:
+				intent = new Intent(this, EditInputActivity.class);
+				break;
+		}
+		intent.putExtra("position", position);
+		startActivity(intent);
+		finish();
 		/*String type = EditTestActivity.listAnswers.get(position).getType();
 		Intent intent = new Intent(EditChoiceActivity.this, EditTestActivity.class);
 		if (type.equals("choice")) {
@@ -155,17 +169,16 @@ public class EditChoiceActivity extends Activity {
 	 * {@link EditTestActivity#data_for_test}
 	 */
 	public void saveQuestion() {
+		onlyChoiceQuestion.clear();
 		onlyChoiceQuestion.setPoints(Integer.parseInt(spinner.getSelectedItem().toString()));
 		onlyChoiceQuestion.setQuestion(qq.getText().toString().trim());
 		onlyChoiceQuestion.setRightAnswer(rightAnswer.getText().toString().trim());
-		ArrayList<String> listOfAnswers = new ArrayList<String>();
 		for (int i = 0; i < editTextList.size(); i++) {
 			String text = editTextList.get(i).getText().toString().trim();
 			if (!text.equals("")) {
-				listOfAnswers.add(text);
+				onlyChoiceQuestion.addAnswer(text);
 			}
 		}
-		onlyChoiceQuestion.setAnswers(listOfAnswers);
 		test.saveTest(this);
 	}
 
@@ -178,13 +191,15 @@ public class EditChoiceActivity extends Activity {
 
 		qq.setText(onlyChoiceQuestion.getQuestion());
 
-		rightAnswer.setText(onlyChoiceQuestion.getRightAnswers());
+		rightAnswer.setText(onlyChoiceQuestion.getRightAnswer());
 
-		if(onlyChoiceQuestion.numberOfIncorrectAnswers() == 0){
+		ArrayList<String> incorrectAnswers = onlyChoiceQuestion.getIncorrectAnswers();
+
+		if(incorrectAnswers.size() == 0){
 				addEdit("");
 		}
 		else {
-			for (String answer : onlyChoiceQuestion.getIncorrectAnswers()) {
+			for (String answer : incorrectAnswers) {
 				addEdit(answer);
 			}
 		}
@@ -225,8 +240,9 @@ public class EditChoiceActivity extends Activity {
 	 *            Кнопка "Удалить".
 	 */
 	public void remove(View v) {
+		final int MIN_VALUE_ANSWERS = 1;
 		int size = editTextList.size();
-		if (size >= 2) {
+		if (size >= MIN_VALUE_ANSWERS + 1) {
 			editTextList.get(size - 1).setVisibility(View.GONE);
 			editTextList.remove(size - 1);
 			saveQuestion();

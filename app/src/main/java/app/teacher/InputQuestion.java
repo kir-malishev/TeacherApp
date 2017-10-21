@@ -1,10 +1,6 @@
 package app.teacher;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by Кирилл on 01.07.2017.
@@ -13,6 +9,7 @@ public class InputQuestion extends Challenge {
 
     ArrayList<String> rightAnswer;
     static final int TYPE = 2;
+
 
     InputQuestion(){
         super(TYPE);
@@ -42,5 +39,27 @@ public class InputQuestion extends Challenge {
     InputQuestion(String question, ArrayList<String> rightAnswer, int points){
         super(TYPE, question, points);
         this.rightAnswer = rightAnswer;
+    }
+
+    void setRightAnswer(ArrayList<String> rightAnswer){
+        this.rightAnswer = rightAnswer;
+    }
+
+    ArrayList<String> getRightAnswer(){
+        return rightAnswer;
+    }
+
+    void addRightAnswer(String answer){
+        rightAnswer.add(answer);
+    }
+
+    int numberOfRightAnswers(){
+        return rightAnswer.size();
+    }
+
+    void clear(){
+        rightAnswer = new ArrayList<String>();
+        question = "";
+        points = 1;
     }
 }

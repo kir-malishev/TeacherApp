@@ -1,6 +1,5 @@
 package app.teacher;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -13,7 +12,6 @@ import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by Кирилл on 15.08.2017.
@@ -34,20 +32,20 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
                     jsonAnswers.add(answer);
                 }
                 json.add("answers", jsonAnswers);
-                json.addProperty("rightAnswer", ((OnlyChoiceQuestion) src).rightAnswer);
+                json.addProperty("rightAnswer", ((OnlyChoiceQuestion) src).getRightAnswer());
                 break;
             case 1:
                 for(String answer: ((MultipleChoiceQuestion) src).answers){
                     jsonAnswers.add(answer);
                 }
                 json.add("answers", jsonAnswers);
-                for(String rightAnswer: ((MultipleChoiceQuestion) src).rightAnswer){
+                for(String rightAnswer: ((MultipleChoiceQuestion) src).getRightAnswer()){
                     jsonAnswers.add(rightAnswer);
                 }
                 json.add("rightAnswer", jsonRightAnswer);
                 break;
             case 2:
-                for(String rightAnswer: ((InputQuestion) src).rightAnswer){
+                for(String rightAnswer: ((InputQuestion) src).getRightAnswer()){
                     jsonAnswers.add(rightAnswer);
                 }
                 json.add("rightAnswer", jsonRightAnswer);

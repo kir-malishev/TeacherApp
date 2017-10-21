@@ -27,7 +27,6 @@ public class EditChallengeActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.new_challenge);
-
         test = Test.getTest(this);
         if(test == null) {
             test = new Test();

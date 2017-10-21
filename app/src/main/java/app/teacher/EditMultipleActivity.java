@@ -68,6 +68,10 @@ public class EditMultipleActivity extends Activity {
 	/** Основное окно разметки. */
 	ScrollView view;
 
+	Test test;
+
+	MultipleChoiceQuestion multipleChoiceQuestion;
+
 	/**
 	 * Устанавливает разметку. Отображает информацию о вопросе, если она есть.
 	 */
@@ -75,14 +79,20 @@ public class EditMultipleActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Bundle extras = getIntent().getExtras();
+		/*Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			position = extras.getInt("position");
 			type = extras.getString("type");
-		}
+		}*/
 
 		setContentView(R.layout.qq_with_multiple);
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+		test = Test.getTest(this);
+
+		final int position = getIntent().getIntExtra("position", 0);  // номер вопроса в тесте
+
+		multipleChoiceQuestion = (MultipleChoiceQuestion) test.getChallenge(position);
 
 		TextView label = (TextView) findViewById(R.id.questionlabel);
 		label.setText(getString(R.string.numberqq) + (position + 1));
@@ -101,13 +111,14 @@ public class EditMultipleActivity extends Activity {
 
 		spinner.setAdapter(adapter);
 
-		getQuestion();
+		//getQuestion();
+		setData();
 
 		view = (ScrollView) findViewById(R.id.scrollView3);
 		view.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
 
 			public void onSwipeLeft() {
-				if (position + 1 < EditTestActivity.listAnswers.size()) {
+				if (position <= test.size()) {
 					swipe(position + 1);
 				}
 			}
@@ -129,6 +140,22 @@ public class EditMultipleActivity extends Activity {
 	 */
 	public void swipe(int position) {
 		saveQuestion();
+		Intent intent = new Intent(this, EditMultipleActivity.class);
+		switch(test.getChallenge(position).getType()){
+			case 0:
+				intent = new Intent(this, EditChoiceActivity.class);
+				break;
+			case 1:
+				intent = new Intent(this, EditMultipleActivity.class);
+				break;
+			case 2:
+				intent = new Intent(this, EditInputActivity.class);
+				break;
+		}
+		intent.putExtra("position", position);
+		startActivity(intent);
+		finish();
+		/*saveQuestion();
 		String type = EditTestActivity.listAnswers.get(position).getType();
 		Intent intent = new Intent(EditMultipleActivity.this, EditTestActivity.class);
 		if (type.equals(Item.CHOICE)) {
@@ -143,7 +170,7 @@ public class EditMultipleActivity extends Activity {
 		intent.putExtra("type", EditTestActivity.listAnswers.get(position).getType());
 		startActivity(intent);
 
-		finish();
+		finish();*/
 	}
 
 	/**
@@ -151,7 +178,18 @@ public class EditMultipleActivity extends Activity {
 	 * {@link EditTestActivity#data_for_test}
 	 */
 	public void saveQuestion() {
-		String points = spinner.getSelectedItem().toString();
+		multipleChoiceQuestion.clear();
+		multipleChoiceQuestion.setPoints(Integer.parseInt(spinner.getSelectedItem().toString()));
+		multipleChoiceQuestion.setQuestion(qq.getText().toString().trim());
+		for (int i = 0; i < editTextList.size(); i++) {
+			String text = editTextList.get(i).getText().toString().trim();
+			if (!text.equals("")) {
+				multipleChoiceQuestion.addAnswer(text, checkBoxes.get(i).isChecked());
+			}
+		}
+		test.saveTest(this);
+
+		/*String points = spinner.getSelectedItem().toString();
 		EditTestActivity.data_for_test.get(position).put("points", points);
 		EditTestActivity.data_for_test.get(position).put("type", type);
 		EditTestActivity.data_for_test.get(position).put("qq", qq.getText().toString().trim());
@@ -166,7 +204,7 @@ public class EditMultipleActivity extends Activity {
 				isRight = checkBoxes.get(i).isChecked();
 				EditTestActivity.data_for_test.get(position).put("isright_" + (k++), Boolean.toString(isRight));
 			}
-		}
+		}*/
 	}
 
 	/**
@@ -174,7 +212,7 @@ public class EditMultipleActivity extends Activity {
 	 * {@link EditTestActivity#data_for_test} и выводит её на экран.
 	 * 
 	 */
-	public void getQuestion() {
+	/*public void getQuestion() {
 		int size;
 		String question = "";
 		int points;
@@ -211,13 +249,37 @@ public class EditMultipleActivity extends Activity {
 			addCheckBox();
 			addCheckBox();
 		}
+	}*/
+
+	/**
+	 * Получает информацию о вопросе из массива
+	 * {@link EditTestActivity#data_for_test} и выводит её на экран.
+	 *
+	 */
+	public void setData() {
+		qq.setText(multipleChoiceQuestion.getQuestion());
+		for(String answer : multipleChoiceQuestion.getAnswers()){
+			addEdit(multipleChoiceQuestion.isContainsToRight(answer), answer);
+		}
+		for(int i = multipleChoiceQuestion.size(); i < 2; i++){
+			addEdit(false, "");
+		}
+		spinner.setSelection(multipleChoiceQuestion.getPoints() - 1);
 	}
 
 	/**
 	 * Добавляет новый чекбокс для выбора верности варианта ответа.
 	 * 
 	 */
-	public void addCheckBox() {
+	/*public void addCheckBox() {
+
+	}*/
+
+	/**
+	 * Добавляет новое текстовое поле для ввода варианта ответа.
+	 * 
+	 */
+	public void addEdit(boolean isRight, String answer) {
 		CheckBox checkBox;
 		final int MAX_VALUE_ANSWERS = 8;
 		int size = checkBoxes.size();
@@ -228,27 +290,21 @@ public class EditMultipleActivity extends Activity {
 			checkBox.setLayoutParams(editParams);
 			checkBox.setTextColor(getResources().getColor(R.color.light_color));
 			checkBox.setText(R.string.rightans);
+			checkBox.setChecked(isRight);
 			checkBoxes.add(checkBox);
 			list.addView(checkBox);
-			addEdit();
+
+			EditText editTxt;
+			editTxt = new EditText(this);
+			editTxt.setLayoutParams(editParams);
+			editTxt.setHint(getString(R.string.numbervar) + (size + 1));
+			editTxt.setText(answer);
+			editTxt.setSingleLine(true);
+			editTextList.add(editTxt);
+			list.addView(editTxt);
 		} else {
 			Utils.showToast(this, getString(R.string.mustnot));
 		}
-	}
-
-	/**
-	 * Добавляет новое текстовое поле для ввода варианта ответа.
-	 * 
-	 */
-	public void addEdit() {
-		EditText editTxt;
-		int size = editTextList.size();
-		editTxt = new EditText(this);
-		editTxt.setLayoutParams(editParams);
-		editTxt.setHint(getString(R.string.numbervar) + (size + 1));
-		editTxt.setSingleLine(true);
-		editTextList.add(editTxt);
-		list.addView(editTxt);
 	}
 
 	/**
@@ -271,7 +327,7 @@ public class EditMultipleActivity extends Activity {
 	 *            Кнопка "Добавить".
 	 */
 	public void add(View v) {
-		addCheckBox();
+		addEdit(false, "");
 	}
 
 	/**
@@ -281,15 +337,16 @@ public class EditMultipleActivity extends Activity {
 	 *            Кнопка "Удалить".
 	 */
 	public void remove(View v) {
-		final int MIN_VALUE_ANSWERS = 1;
+		final int MIN_VALUE_ANSWERS = 2;
 		int size = editTextList.size();
 		if (size >= MIN_VALUE_ANSWERS + 1) {
 			checkBoxes.get(size - 1).setVisibility(View.GONE);
 			checkBoxes.remove(size - 1);
 			editTextList.get(size - 1).setVisibility(View.GONE);
 			editTextList.remove(size - 1);
-			viewList.get(size - 1).setVisibility(View.GONE);
-			viewList.remove(size - 1);
+			viewList.get(size - 2).setVisibility(View.GONE);
+			viewList.remove(size - 2);
+			saveQuestion();
 		} else {
 			Utils.showToast(this, getString(R.string.lessnot));
 		}
@@ -312,13 +369,28 @@ public class EditMultipleActivity extends Activity {
 	 * Сохраняет информацию о вопросе в массив
 	 * {@link EditTestActivity#data_for_test}, закрывает активность и возвращает
 	 * пользователя к списку вопросов.
-	 * 
+	 *
 	 * @param v
 	 *            Кнопка "Назад".
 	 */
 	public void back(View v) {
 		saveQuestion();
+		Intent intent = new Intent(this, EditChallengeActivity.class);
+		intent.putExtra("isContinueEditing", true);
+		startActivity(intent);
 		finish();
+	}
 
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		saveQuestion();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		saveQuestion();
 	}
 }

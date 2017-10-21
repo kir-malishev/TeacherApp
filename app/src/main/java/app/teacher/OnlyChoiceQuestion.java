@@ -116,7 +116,7 @@ public class OnlyChoiceQuestion extends Challenge{
         return getIncorrectAnswers().size();
     }
 
-    String getRightAnswers(){
+    String getRightAnswer(){
         return rightAnswer;
     }
 
@@ -126,6 +126,13 @@ public class OnlyChoiceQuestion extends Challenge{
 
     ArrayList<String> getAnswers(){
         return this.answers;
+    }
+
+    void clear(){
+        answers = new ArrayList<String>();
+        rightAnswer = "";
+        question = "";
+        points = 1;
     }
 
     String toJSON(){

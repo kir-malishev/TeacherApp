@@ -6,7 +6,6 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import app.teacher.R;
 
 /**
  * Активность редактирования вопроса с вводом ответа.
@@ -54,6 +52,10 @@ public class EditInputActivity extends Activity {
 	/** Основное окно разметки. */
 	ScrollView view;
 
+	Test test;
+
+	InputQuestion inputQuestion;
+
 	/**
 	 * Устанавливает разметку. Отображает информацию о вопросе, если она есть.
 	 */
@@ -61,15 +63,21 @@ public class EditInputActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		Bundle extras = getIntent().getExtras();
+		/*Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			position = extras.getInt("position");
 			type = extras.getString("type");
-		}
+		}*/
 
 		setContentView(R.layout.qq_with_input);
 
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+		test = Test.getTest(this);
+
+		final int position = getIntent().getIntExtra("position", 0);  // номер вопроса в тесте
+
+		inputQuestion = (InputQuestion) test.getChallenge(position);
 
 		TextView label = (TextView) findViewById(R.id.questionlabel);
 		label.setText(getString(R.string.numberqq) + (position + 1));
@@ -87,13 +95,15 @@ public class EditInputActivity extends Activity {
 
 		spinner.setAdapter(adapter);
 
-		getQuestion();
+		//getQuestion();
+
+		setData();
 
 		view = (ScrollView) findViewById(R.id.scrollView3);
 		view.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
 
 			public void onSwipeLeft() {
-				if (position + 1 < EditTestActivity.listAnswers.size()) {
+				if (position <= test.size()) {
 					swipe(position + 1);
 				}
 			}
@@ -116,6 +126,24 @@ public class EditInputActivity extends Activity {
 	 */
 	public void swipe(int position) {
 		saveQuestion();
+		Intent intent = new Intent(this, EditInputActivity.class);
+		switch(test.getChallenge(position).getType()){
+			case 0:
+				intent = new Intent(this, EditChoiceActivity.class);
+				break;
+			case 1:
+				intent = new Intent(this, EditMultipleActivity.class);
+				break;
+			case 2:
+				intent = new Intent(this, EditInputActivity.class);
+				break;
+		}
+		intent.putExtra("position", position);
+		startActivity(intent);
+		finish();
+
+
+		/*saveQuestion();
 		String type = EditTestActivity.listAnswers.get(position).getType();
 		Intent intent = new Intent(EditInputActivity.this, EditTestActivity.class);
 		if (type.equals(Item.CHOICE)) {
@@ -129,7 +157,7 @@ public class EditInputActivity extends Activity {
 		intent.putExtra("type", EditTestActivity.listAnswers.get(position).getType());
 		startActivity(intent);
 
-		finish();
+		finish();*/
 	}
 
 	/**
@@ -137,7 +165,18 @@ public class EditInputActivity extends Activity {
 	 * {@link EditTestActivity#data_for_test}
 	 */
 	public void saveQuestion() {
-		String points = spinner.getSelectedItem().toString();
+		inputQuestion.clear();
+		inputQuestion.setPoints(Integer.parseInt(spinner.getSelectedItem().toString()));
+		inputQuestion.setQuestion(qq.getText().toString().trim());
+		for (int i = 0; i < editTextList.size(); i++) {
+			String text = editTextList.get(i).getText().toString().trim();
+			if (!text.equals("")) {
+				inputQuestion.addRightAnswer(text);
+			}
+		}
+		test.saveTest(this);
+
+		/*String points = spinner.getSelectedItem().toString();
 		EditTestActivity.data_for_test.get(position).put("points", points);
 		EditTestActivity.data_for_test.get(position).put("type", type);
 		EditTestActivity.data_for_test.get(position).put("qq", qq.getText().toString().trim());
@@ -148,54 +187,28 @@ public class EditInputActivity extends Activity {
 			text = editTextList.get(i).getText().toString().trim();
 			if (!text.equals(""))
 				EditTestActivity.data_for_test.get(position).put("ans_" + (k++), text);
-		}
+		}*/
 	}
 
-	/**
-	 * Получает информацию о вопросе из массива
-	 * {@link EditTestActivity#data_for_test} и выводит её на экран.
-	 * 
-	 */
-	public void getQuestion() {
-		int size;
-		String question = "";
-		int points;
-		if (EditTestActivity.data_for_test.get(position).containsKey("size"))
-			size = Integer.parseInt(EditTestActivity.data_for_test.get(position).get("size"));
-		else
-			size = 1;
-		if (EditTestActivity.data_for_test.get(position).containsKey("qq"))
-			question = EditTestActivity.data_for_test.get(position).get("qq");
-		else
-			question = "";
-		qq.setText(question);
-		if (EditTestActivity.data_for_test.get(position).containsKey("points"))
-			points = Integer.parseInt(EditTestActivity.data_for_test.get(position).get("points"));
-		else
-			points = 1;
-		spinner.setSelection(points - 1);
-		String ans;
-		int j = 0;
-		for (int i = 0; i < size; i++) {
-			if (EditTestActivity.data_for_test.get(position).containsKey("ans_" + i))
-				ans = EditTestActivity.data_for_test.get(position).get("ans_" + i);
-			else
-				ans = "";
-			if (!ans.equals("")) {
-				addEdit();
-				editTextList.get(j++).setText(ans);
+	public void setData(){
+		qq.setText(inputQuestion.getQuestion());
+		if(inputQuestion.numberOfRightAnswers() == 0){
+			addEdit("");
+		} else{
+			for(String rightAnswer: inputQuestion.getRightAnswer()){
+				addEdit(rightAnswer);
 			}
 		}
-		if (editTextList.size() == 0) {
-			addEdit();
-		}
+		spinner.setSelection(inputQuestion.getPoints() - 1);
 	}
+
+
 
 	/**
 	 * Добавляет новое текстовое поле для ввода варианта ответа.
 	 * 
 	 */
-	public void addEdit() {
+	public void addEdit(String text) {
 		EditText editTxt;
 		final int MAX_VALUE_ANSWERS = 8;
 		int size = editTextList.size();
@@ -203,6 +216,7 @@ public class EditInputActivity extends Activity {
 			editTxt = new EditText(this);
 			editTxt.setLayoutParams(editParams);
 			editTxt.setHint(getString(R.string.numbervar) + (size + 1));
+			editTxt.setText(text);
 			editTxt.setSingleLine(true);
 			editTextList.add(editTxt);
 			list.addView(editTxt);
@@ -218,7 +232,7 @@ public class EditInputActivity extends Activity {
 	 *            Кнопка "Добавить".
 	 */
 	public void add(View v) {
-		addEdit();
+		addEdit("");
 	}
 
 	/**
@@ -233,6 +247,7 @@ public class EditInputActivity extends Activity {
 		if (size >= MIN_VALUE_ANSWERS + 1) {
 			editTextList.get(size - 1).setVisibility(View.GONE);
 			editTextList.remove(size - 1);
+			saveQuestion();
 		} else {
 			Utils.showToast(this, getString(R.string.lessnot));
 		}
@@ -255,13 +270,28 @@ public class EditInputActivity extends Activity {
 	 * Сохраняет информацию о вопросе в массив
 	 * {@link EditTestActivity#data_for_test}, закрывает активность и возвращает
 	 * пользователя к списку вопросов.
-	 * 
+	 *
 	 * @param v
 	 *            Кнопка "Назад".
 	 */
 	public void back(View v) {
 		saveQuestion();
+		Intent intent = new Intent(this, EditChallengeActivity.class);
+		intent.putExtra("isContinueEditing", true);
+		startActivity(intent);
 		finish();
+	}
 
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		saveQuestion();
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		saveQuestion();
 	}
 }

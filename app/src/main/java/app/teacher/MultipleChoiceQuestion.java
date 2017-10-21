@@ -69,11 +69,43 @@ public class MultipleChoiceQuestion extends Challenge {
         this.rightAnswer = rightAnswer;
     }
 
+    void setAnswers(ArrayList<String> answers){
+        this.answers = answers;
+    }
+
+    void addAnswer(String answer){
+        answers.add(answer);
+    }
+
+    void addAnswer(String answer, boolean isRight){
+        answers.add(answer);
+        if(isRight) rightAnswer.add(answer);
+    }
+
+
     boolean checkAnswer(ArrayList<String> answer){
         return this.rightAnswer.equals(answer);
     }
 
-    ArrayList<String> getRightAnswers(){
+    boolean isContainsToRight(String answer){
+        return rightAnswer.contains(answer);
+    }
+
+    ArrayList<String> getRightAnswer(){
         return this.rightAnswer;
+    }
+
+    ArrayList<String> getAnswers(){
+        return this.answers;
+    }
+
+    int size(){
+        return answers.size();
+    }
+    void clear(){
+        answers = new ArrayList<String>();
+        rightAnswer = new ArrayList<String>();
+        question = "";
+        points = 1;
     }
 }

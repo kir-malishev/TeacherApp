@@ -1,18 +1,15 @@
 package app.teacher;
 
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-
-import java.util.Collections;
-import java.util.concurrent.RunnableFuture;
 
 /**
  * Created by Кирилл on 17.08.2017.
  */
-public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
-    private TestAdapter adapter;
-    public RecyclerItemTouchHelper(TestAdapter adapter) {
+public class EditTestTouchHelper extends ItemTouchHelper.SimpleCallback {
+    private EditTestAdapter adapter;
+
+    public EditTestTouchHelper(EditTestAdapter adapter) {
         super(ItemTouchHelper.UP | ItemTouchHelper.DOWN , ItemTouchHelper.START | ItemTouchHelper.END);
         this.adapter = adapter;
     }

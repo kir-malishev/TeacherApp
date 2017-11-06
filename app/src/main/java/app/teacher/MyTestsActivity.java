@@ -1,29 +1,21 @@
 package app.teacher;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.EditText;
-import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * Активность просмотра созданных тестов.
@@ -33,12 +25,6 @@ import android.widget.ListView;
  */
 public class MyTestsActivity extends Activity implements OnItemClickListener {
 
-	/**
-	 * Объект для запуска потока, отправляющего запрос на сервер.
-	 * 
-	 * @see MyTestsActivity.Task
-	 */
-	RequestTask task;
 
 	/** Номер теста */
 	String id;
@@ -56,14 +42,18 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 	 */
 	ArrayList<Item> tests = new ArrayList<Item>();
 
-	/** Список вопросов теста. */
-	ListView list;
 
 	/** Всплывающее диалоговое окно. */
 	AlertDialog.Builder ad;
 
 	/** Тип запроса */
 	String mode;
+
+
+	RecyclerView list;
+	ReviewTestAdapter adapter;
+
+	ArrayList<TestDescription> descriptions;
 
 	/**
 	 * Устанавливает разметку, отправляет запрос на сервер для получения списка
@@ -74,28 +64,40 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_review);
 
-		if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
 		email = LoginActivity.LOGIN;
 
-		list = (ListView) findViewById(R.id.tests);
 
-		mode = "gettestreview";
-		task = new Task();
-		task.setContext(this);
-		task.addParam("login", LoginActivity.LOGIN);
-		task.execute(RequestTask.DOMAIN + "/api/scripts/gettestreview.php");
+		descriptions = TestDescription.getTestDescriptions(this);
 
-		Bundle extras = getIntent().getExtras();
+		if (descriptions.size() == 0)
+			Utils.showToast(this, "Вы пока не создали ни одного теста(");
+
+		list = (RecyclerView) findViewById(R.id.tests);
+		LinearLayoutManager manager = new LinearLayoutManager(MyTestsActivity.this);
+		list.setLayoutManager(manager);
+		adapter = new ReviewTestAdapter(descriptions, new ReviewTestAdapter.OnItemClickListener() {
+			@Override
+			public void onItemClick(TestDescription testDescription, int position) {
+				choiceOfAction(position);
+			}
+		});
+
+		list.setAdapter(adapter);
+
+
+		//mode = "gettestreview";
+
+
+
+
+		/*Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			String id = extras.getString("id");
 			showID(id);
-		}
+		}*/
 
 	}
+
 
 	/**
 	 * Показывает всплывающее окно с номером вновь созданного теста.
@@ -144,49 +146,45 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 		setTestName(-1);
 	}
 
-	/**
-	 * Парсит json-объект со списком тестов пользователя и создаёт в ListView
-	 * {@see MyTestsActivity#list} соответствующие элементы.
-	 * 
-	 * @param review
-	 *            Json-объект.
-	 */
-	public void parsingJSON(String review) {
-		try {
-			JSONObject json = new JSONObject(review);
-			JSONArray data = json.getJSONArray("testreview");
-			int size = data.length();
-			String nameTest;
-			String id;
-			for (int i = 0; i < size; i++) {
 
-				nameTest = data.getJSONObject(i).getString("nametest").toString();
-				id = data.getJSONObject(i).getString("id").toString().toLowerCase();
-				addTest(nameTest, id, "test");
+	void choiceOfAction(int position) {
+		String title = getString(R.string.choiceoption);
+		String[] options = getResources().getStringArray(R.array.options);
+		ad = new AlertDialog.Builder(this);
+		ad.setTitle(title);
+
+		ad.setItems(options, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int item) {
+				switch (item) {
+					case 0:                // Редактировать вопросы
+
+
+						break;
+					case 1:                // Результаты прохождений
+
+
+						break;
+					case 2:                // Отправить тест на e-mail
+
+
+						break;
+					case 3:                // Удалить тест
+
+
+						break;
+				}
 			}
-
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-	}
-
-	/**
-	 * Добавляет в ListView {@link MyTestsActivity#list} новый элемент
-	 * 
-	 * @param header
-	 *            Заголовок большего размера.
-	 * @param subHeader
-	 *            Заголовок меньшего размера.
-	 * @param type
-	 *            Тип вопроса теста.
-	 */
-	public void addTest(String header, String subHeader, String type) {
-
-		tests.add(new Item(header, subHeader, type));
-		list.setAdapter(new MyAdapter(this, tests));
-		list.setOnItemClickListener(this);
+		});
+		ad.setCancelable(true);
+		ad.setOnCancelListener(new OnCancelListener() {
+			public void onCancel(DialogInterface dialog) {
+			}
+		});
+		ad.show();
 
 	}
+
 
 	/**
 	 * Открывает окно выбора действия над тестом и выполняет выбранное дествие.
@@ -202,7 +200,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, final int position, long ID) {
-		testName = tests.get(position).getHeader();
+		/*testName = tests.get(position).getHeader();
 		id = tests.get(position).getSubHeader();
 		String title = getString(R.string.choiceoption);
 		String[] options = getResources().getStringArray(R.array.options);
@@ -261,7 +259,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 			public void onCancel(DialogInterface dialog) {
 			}
 		});
-		ad.show();
+		ad.show();*/
 
 	}
 
@@ -270,7 +268,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 	 * в формате docx файла.
 	 */
 	public void toMail() {
-		ad = new AlertDialog.Builder(this);
+		/*ad = new AlertDialog.Builder(this);
 		final EditText editText = new EditText(this);
 		editText.setSingleLine(true);
 		editText.setText(email);
@@ -325,7 +323,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 			}
 		});
 
-		ad.show();
+		ad.show();*/
 	}
 
 	/**
@@ -337,7 +335,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 	 *            Индекс элемента.
 	 */
 	public void setTestName(final int position) {
-		ad = new AlertDialog.Builder(this);
+		/*ad = new AlertDialog.Builder(this);
 		final EditText editText = new EditText(this);
 		editText.setSingleLine(true);
 		if (position == -1)
@@ -398,7 +396,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 			}
 		});
 
-		ad.show();
+		ad.show();*/
 	}
 
 	/**
@@ -411,46 +409,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 	 *            Json-объект с информацией по тесту.
 	 */
 	public void getTest(String review) {
-		JSONObject json;
-		try {
-			EditTestActivity.data_for_test = new ArrayList<HashMap<String, String>>();
-			json = new JSONObject(review);
-			JSONArray data = json.getJSONArray("test");
-			String type;
-			String points;
-			String question;
-			String answer;
-			String isRight;
-			String size;
-			int testSize = data.length();
-			for (int position = 0; position < testSize; position++) {
-				type = data.getJSONObject(position).getString("type").toString();
-				question = data.getJSONObject(position).getString("question").toString();
-				points = data.getJSONObject(position).getString("points").toString();
-				size = data.getJSONObject(position).getString("size").toString();
-				EditTestActivity.data_for_test.add(new HashMap<String, String>());
-				EditTestActivity.data_for_test.get(position).put("size", size);
-				EditTestActivity.data_for_test.get(position).put("type", type);
-				EditTestActivity.data_for_test.get(position).put("qq", question);
-				EditTestActivity.data_for_test.get(position).put("points", points);
-				if (type.equals("input") || type.equals("choice")) {
-					for (int i = 0; i < Integer.parseInt(size); i++) {
-						answer = data.getJSONObject(position).getString("answer" + (i + 1)).toString();
-						EditTestActivity.data_for_test.get(position).put("ans_" + i, answer);
-					}
-				} else if (type.equals("multiple")) {
-					for (int i = 0; i < Integer.parseInt(size); i++) {
-						answer = data.getJSONObject(position).getString("answer" + (i + 1)).toString();
-						isRight = data.getJSONObject(position).getString("isright" + (i + 1)).toString();
-						EditTestActivity.data_for_test.get(position).put("ans_" + i, answer);
-						EditTestActivity.data_for_test.get(position).put("isright_" + i, isRight);
-					}
-				}
 
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
 	}
 
 	private void hideKeyboard() {
@@ -466,52 +425,4 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 		return super.dispatchTouchEvent(ev);
 	}
 
-	/**
-	 * Класс для обработки ответа от сервера. Отправка запроса происходит в
-	 * классе {@link RequestTask}
-	 */
-	class Task extends RequestTask {
-
-		/**
-		 * Обрабатывает ответ тем или иным образом в зависимости от типа запроса
-		 * {@link MyTestsActivity#mode}.
-		 * 
-		 * @param result
-		 *            Ответ сервера.
-		 */
-		@Override
-		protected void onPostExecute(String result) {
-
-
-			dialog.dismiss();
-			try {
-				if (mode.equals("gettest")) {
-					EditTestActivity.testName = testName;
-					Intent intent = new Intent(getApplicationContext(), EditTestActivity.class);
-					intent.putExtra("mode", true);
-					intent.putExtra("id", id);
-					getTest(result);
-					startActivity(intent);
-					finish();
-				} else if (mode.equals("gettestreview") && Boolean.valueOf(result))
-					Utils.showToast(MyTestsActivity.this, getString(R.string.notests));
-				else if (mode.equals("gettestreview") && result.length() > 0) {
-					parsingJSON(result);
-				} else if (mode.equals("renametest"))
-					Utils.showToast(MyTestsActivity.this, getString(R.string.renameOK));
-				else if (mode.equals("mailtest"))
-					if (Boolean.valueOf(result))
-						Utils.showToast(MyTestsActivity.this, getString(R.string.succesfulmail));
-					else
-						Utils.showToast(MyTestsActivity.this, getString(R.string.errormail));
-				else
-					Utils.showToast(MyTestsActivity.this, getString(R.string.error));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-			super.onPostExecute(result);
-		}
-
-	}
 }

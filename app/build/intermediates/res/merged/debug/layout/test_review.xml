@@ -18,13 +18,16 @@
             android:layout_weight="4"
             android:fillViewport="true" >
 
-        <ListView
-            android:id="@+id/tests"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="7" >
 
-        </ListView>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/tests"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="true">
+
+            </android.support.v7.widget.RecyclerView>
         
         </ScrollView>
 

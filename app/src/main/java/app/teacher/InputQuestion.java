@@ -62,4 +62,9 @@ public class InputQuestion extends Challenge {
         question = "";
         points = 1;
     }
+
+    @Override
+    boolean check() {
+        return super.check() && !rightAnswer.isEmpty();
+    }
 }

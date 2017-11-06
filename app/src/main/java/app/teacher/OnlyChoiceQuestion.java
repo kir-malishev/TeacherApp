@@ -1,14 +1,10 @@
 package app.teacher;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 
 /**
  * Created by Кирилл on 01.07.2017.
@@ -141,5 +137,8 @@ public class OnlyChoiceQuestion extends Challenge{
         return gson.toJson(this);
     }
 
-
+    @Override
+    boolean check() {
+        return super.check() && answers.size() >= 2 && !rightAnswer.isEmpty();
+    }
 }

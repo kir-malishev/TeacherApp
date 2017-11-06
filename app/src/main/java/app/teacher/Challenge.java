@@ -1,8 +1,5 @@
 package app.teacher;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
  * Created by Кирилл on 01.07.2017.
  */
@@ -62,6 +59,10 @@ public class Challenge {
 
     int getPoints(){
         return points;
+    }
+
+    boolean check() {
+        return !question.isEmpty();
     }
 
 

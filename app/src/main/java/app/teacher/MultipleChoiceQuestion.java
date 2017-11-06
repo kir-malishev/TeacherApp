@@ -1,10 +1,6 @@
 package app.teacher;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by Кирилл on 01.07.2017.
@@ -107,5 +103,10 @@ public class MultipleChoiceQuestion extends Challenge {
         rightAnswer = new ArrayList<String>();
         question = "";
         points = 1;
+    }
+
+    @Override
+    boolean check() {
+        return super.check() && answers.size() >= 2 && !rightAnswer.isEmpty();
     }
 }

@@ -1,5 +1,9 @@
 package app.teacher;
 
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -8,15 +12,10 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
-
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
-
-import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -32,7 +31,7 @@ public class RequestTask extends AsyncTask<String, String, String> {
      * Адрес сервера, на который посылаются запросы.
      */
     public static final String DOMAIN = "https://www.malishevkir.fvds.ru";
-    final String USER_AGENT = "Project For Step In Future By Kirill Malyshev 1.0";
+    final String USER_AGENT = "Project By Kirill Malyshev 1.0";
     /**
      * Диалог закрузки
      */

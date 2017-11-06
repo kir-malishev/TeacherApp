@@ -2,21 +2,15 @@ package app.teacher;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-
-import static app.teacher.R.layout.list_view_item;
 
 /**
  * Created by Кирилл on 04.07.2017.
  */
-public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder> implements ItemTouchHelperAdapter {
+public class EditTestAdapter extends RecyclerView.Adapter<EditTestAdapter.TestViewHolder> implements ItemTouchHelperAdapter {
 
 
     public interface OnItemClickListener {
@@ -30,9 +24,7 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
     boolean update;
 
 
-
-
-    TestAdapter(Context context, Test test, OnItemClickListener listener){
+    EditTestAdapter(Context context, Test test, OnItemClickListener listener) {
         this.context = context;
         this.test = test;
         this.listener = listener;
@@ -115,13 +107,6 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.TestViewHolder
             this.itemView = itemView;
             header = (TextView) itemView.findViewById(R.id.item_headerText);
             subHeader = (TextView) itemView.findViewById(R.id.item_subHeaderText);
-
-       /* if (test != null) {
-            this.test = test;
-        }
-        else
-            this.test = new Test();
-        this.context = context;*/
         }
 
         public void bind(final Challenge challenge, final int position, final OnItemClickListener listener){

@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,12 +14,16 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class EditChallengeActivity extends Activity {
 
     Test test;
     final int MAX_VALUE_CHALLENGES = 200;
     RecyclerView list;
-    TestAdapter adapter;
+    EditTestAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,7 @@ public class EditChallengeActivity extends Activity {
 
         setContentView(R.layout.new_challenge);
         test = Test.getTest(this);
-        if(test == null) {
+        if (test == null) {
             test = new Test();
             setTitle(getString(R.string.nonameyet));
         } else if (test.isEmpty()) {
@@ -38,18 +41,18 @@ public class EditChallengeActivity extends Activity {
                 setTitle(getString(R.string.nonameyet));
             else
                 setTitle(test.getName());
-            if(!getIntent().getBooleanExtra("isContinueEditing", false))
+            if (!getIntent().getBooleanExtra("isContinueEditing", false))
                 checkOfDesireToContinue();
         }
 
         list = (RecyclerView) findViewById(R.id.challenges);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         list.setLayoutManager(manager);
-        adapter = new TestAdapter(EditChallengeActivity.this, test, new TestAdapter.OnItemClickListener(){
+        adapter = new EditTestAdapter(EditChallengeActivity.this, test, new EditTestAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Challenge challenge, int position) {
                 Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
-                switch(challenge.getType()){
+                switch (challenge.getType()) {
                     case 0:
                         intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
                         break;
@@ -65,11 +68,11 @@ public class EditChallengeActivity extends Activity {
                 finish();
             }
         });
-        ItemTouchHelper.Callback callback = new RecyclerItemTouchHelper(adapter);
+        ItemTouchHelper.Callback callback = new EditTestTouchHelper(adapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
         itemTouchHelper.attachToRecyclerView(list);
         list.setAdapter(adapter);
-   }
+    }
 
     public void choiceChallenge() {
         String title = getString(R.string.addquestion);
@@ -95,7 +98,7 @@ public class EditChallengeActivity extends Activity {
                 test.addChallenge(challenge);
                 test.saveTest(EditChallengeActivity.this);
                 adapter.notifyItemInserted(test.size() - 1);
-                }
+            }
         });
         ad.setCancelable(true);
         ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -116,13 +119,13 @@ public class EditChallengeActivity extends Activity {
             Utils.showToast(this, getString(R.string.cannotadd));
     }
 
-    public void inMenu(View v){
+    public void inMenu(View v) {
         test.saveTest(this);
         Intent intent = new Intent(this, ActivityMenu.class);
         startActivity(intent);
     }
 
-    public void setTestName(View v){
+    public void setTestName(View v) {
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
         final EditText editText = new EditText(this);
         editText.setSingleLine(true);
@@ -157,17 +160,22 @@ public class EditChallengeActivity extends Activity {
         ad.show();
     }
 
-    void checkOfDesireToContinue(){
+    void clearRecyclerView() {
+        adapter.notifyItemRangeRemoved(0, test.size());
+        test.clear();
+        Test.clearTestFromMemory(this);
+        adapter.notifyDataSetChanged();
+        setTitle(getString(R.string.nonameyet));
+    }
+
+    void checkOfDesireToContinue() {
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
         ad.setTitle(R.string.edittest);
         ad.setMessage(R.string.youwanttocontinue);
         ad.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        adapter.notifyItemRangeRemoved(0, test.size());
-                        test.clear();
-                        adapter.notifyDataSetChanged();
-                        setTitle(getString(R.string.nonameyet));
-                    }
+            public void onClick(DialogInterface dialog, int whichButton) {
+                clearRecyclerView();
+            }
         });
 
         ad.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
@@ -184,24 +192,65 @@ public class EditChallengeActivity extends Activity {
         ad.show();
     }
 
-    /*@Override
-    public void saveTest(){
-        SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        CompatibleWithJSON<Test> converter = new TestConverter();
-        String json = converter.getJSON(test);
-        editor.putString("test", json);
-        editor.apply();
+    public boolean checkTest() {
+        int code = test.status();
+        switch (code) {
+            case -1:
+                return true;
+            case -2:
+                Utils.showToast(this, "Нет названия теста");
+                return false;
+            case -3:
+                Utils.showToast(this, "В тесте не ни одного вопроса");
+                return false;
+            case -4:
+                Utils.showToast(this, "Неизвестная ошибка");
+                return false;
+        }
+        if (code >= 0) {
+            Utils.showToast(this, "Вы не завершили редактирование задания №" + (code + 1));
+            return false;
+        }
+        Utils.showToast(this, "Совсем неизвестная ошибка");
+        return false;
+
     }
 
-    @Override
-    public Test getTest(){
-        SharedPreferences sharedPref = getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
-        String json = sharedPref.getString("test", "");
-        CompatibleWithJSON<Test> converter = new TestConverter();
-        test = converter.getFromJSON(json);
-        return test;
-    }*/
+    public void saveTest(View v) {
+        if (!checkTest()) return;
+
+        String json = test.getJSON();
+        API api = Request.getApi();
+        Call<SaveTestResponse> call = api.sendTest(json, LoginActivity.LOGIN);
+        //Utils.showToast(this, json);
+        call.enqueue(new Callback<SaveTestResponse>() {
+            @Override
+            public void onResponse(Call<SaveTestResponse> call, Response<SaveTestResponse> response) {
+                if (response.isSuccessful()) {
+                    SaveTestResponse saveTestResponse = response.body();
+                    int status = saveTestResponse.getStatus();
+                    switch (status) {
+                        case 1:
+                            Utils.showToast(EditChallengeActivity.this, "Номер созданного теста: " + saveTestResponse.getTestID());
+                            clearRecyclerView();
+                            break;
+                        case 2:
+                            Utils.showToast(EditChallengeActivity.this, "Тест успешно обновлён!");
+                            clearRecyclerView();
+                            break;
+                        default:
+                            Utils.showToast(EditChallengeActivity.this, "Произошла какая-то ошибка!");
+                    }
+                } else
+                    Utils.showToast(EditChallengeActivity.this, "Произошла ошибка! Попробуйте в другой раз!");
+            }
+
+            @Override
+            public void onFailure(Call<SaveTestResponse> call, Throwable t) {
+                Utils.showToast(EditChallengeActivity.this, "Произошла ошибка! Попробуйте в другой раз!");
+            }
+        });
+    }
 
     @Override
     protected void onPause() {
@@ -220,13 +269,16 @@ public class EditChallengeActivity extends Activity {
         imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
     }
 
-    /** Закрывает клавиатуру, если произедено касание какого-либо из полей. */
+    /**
+     * Закрывает клавиатуру, если произедено касание какого-либо из полей.
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             hideKeyboard();
         return super.dispatchTouchEvent(ev);
     }
+
 }
 
 

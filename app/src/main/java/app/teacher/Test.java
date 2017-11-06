@@ -2,14 +2,8 @@ package app.teacher;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -21,7 +15,7 @@ public class Test {
     ArrayList<Challenge> challenges;
     String name;
     String testId;
-    static final String FILE_FOR_SAVE = "data_for_test";
+    final static private String FILE_FOR_SAVE = "data_for_test";
 
     Test(){
         this.challenges = new ArrayList<Challenge>();
@@ -132,10 +126,15 @@ public class Test {
     void saveTest(Context context){
         SharedPreferences sharedPref = context.getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        CompatibleWithJSON<Test> converter = new TestConverter();
-        String json = converter.getJSON(this);
+        String json = getJSON();
         editor.putString("test", json);
         editor.apply();
+    }
+
+    String getJSON() {
+        CompatibleWithJSON<Test> converter = new TestConverter();
+        String json = converter.getJSON(this);
+        return json;
     }
 
 
@@ -144,6 +143,27 @@ public class Test {
         String json = sharedPref.getString("test", "");
         CompatibleWithJSON<Test> converter = new TestConverter();
         return converter.getFromJSON(json);
+    }
+
+
+    /**
+     * PROBLEM                                 CODE
+     * <p/>
+     * The number of the invalid challenge      >=0
+     * OK                                        -1
+     * No name                                   -2
+     * No challenges                             -3
+     * Unknown                                   -4
+     */
+
+    public int status() {
+        if (name.isEmpty()) return -2;
+        if (challenges.isEmpty()) return -3;
+        for (int i = 0; i < size(); i++) {
+            Challenge challenge = getChallenge(i);
+            if (!challenge.check()) return i;
+        }
+        return -1;
     }
 
 

@@ -1,14 +1,5 @@
 package app.teacher;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -21,13 +12,20 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  * Активность просмотра списка результатов прохождений теста.
  * 
  * @autor Кирилл Малышев
  * @version 1.0
  */
-public class ResultsActivity extends Activity implements OnItemClickListener {
+public class ResultsActivity extends BaseActivity implements OnItemClickListener {
 
 	/**
 	 * Объект для запуска потока, отправляющего запрос на сервер.
@@ -216,7 +214,7 @@ public class ResultsActivity extends Activity implements OnItemClickListener {
 			try {
 				if (mode.equals("getresultreview")) {
 					if (Boolean.valueOf(result))
-						Utils.showToast(ResultsActivity.this, getString(R.string.noresults));
+						showToast(getString(R.string.noresults));
 					else
 						parsingJSON(result);
 				} else if (mode.equals("inresult")) {

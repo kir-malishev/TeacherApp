@@ -24,5 +24,10 @@ public interface API {
     @POST("/api/scripts/gettestreview.php")
     Call<ResponseBody> getTestReview(@Field("login") String login);
 
+    @FormUrlEncoded
+    @Headers(USER_AGENT)
+    @POST("/api/scripts/gettest.php")
+    Call<GetTestResponse> getTest(@Field("testID") String testID);
+
 
 }

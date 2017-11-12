@@ -19,7 +19,6 @@
         <activity
             android:name="app.teacher.LoginActivity"
             android:label="@string/app_name"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +29,6 @@
         <activity
             android:name="app.teacher.RegActivity"
             android:label="@string/registration"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -39,7 +37,6 @@
         <activity
             android:name="app.teacher.EditTestActivity"
             android:label="@string/create"
-            android:noHistory="false"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -48,7 +45,6 @@
         <activity
             android:name="app.teacher.EditChoiceActivity"
             android:label="@string/create"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -57,7 +53,6 @@
         <activity
             android:name="app.teacher.EditInputActivity"
             android:label="@string/create"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -66,7 +61,6 @@
         <activity
             android:name="app.teacher.EditMultipleActivity"
             android:label="@string/create"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -75,7 +69,6 @@
         <activity
             android:name="app.teacher.ActivityMenu"
             android:label="@string/menu"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -84,7 +77,6 @@
         <activity
             android:name="app.teacher.MyTestsActivity"
             android:label="@string/mytests"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -93,7 +85,6 @@
         <activity
             android:name="app.teacher.ResultsActivity"
             android:label="@string/result"
-            android:noHistory="false"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -102,7 +93,6 @@
         <activity
             android:name="app.teacher.ResultViewActivity"
             android:label="@string/result"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,6 +1,5 @@
 package app.teacher;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -25,7 +24,7 @@ import retrofit2.Response;
  * @version 1.0
  * @autor Кирилл Малышев
  */
-public class ActivityMenu extends Activity {
+public class ActivityMenu extends BaseActivity {
     /**
      * Всплывающее диалоговое окно
      */
@@ -88,29 +87,33 @@ public class ActivityMenu extends Activity {
      * @see MyTestsActivity
      */
     public void myTests(View view) {
+        showProgress("Загружаю тесты");
         API api = Request.getApi();
         Call<ResponseBody> call = api.getTestReview(LoginActivity.LOGIN);
         call.enqueue(new Callback<ResponseBody>() {
+
+
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                dismissProgress();
                 if (response.isSuccessful()) {
                     try {
                         String jsonTestDescription = response.body().string();
                         TestDescription.saveJSON(ActivityMenu.this, jsonTestDescription);
                         Intent intent = new Intent(ActivityMenu.this, MyTestsActivity.class);
                         startActivity(intent);
-                        finish();
                     } catch (IOException e) {
-                        Utils.showToast(ActivityMenu.this, "Произошла ошибка! Попробуйте в другой раз!");
+                        showToast("Произошла ошибка! Попробуйте в другой раз!");
                         e.printStackTrace();
                     }
                 } else
-                    Utils.showToast(ActivityMenu.this, "Произошла ошибка! Попробуйте в другой раз!");
+                    showToast("Произошла ошибка! Попробуйте в другой раз!");
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Utils.showToast(ActivityMenu.this, "Произошла ошибка! Попробуйте в другой раз!");
+                dismissProgress();
+                showToast("Произошла ошибка! Попробуйте в другой раз!");
             }
         });
     }

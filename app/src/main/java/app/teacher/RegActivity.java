@@ -1,9 +1,5 @@
 package app.teacher;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +9,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.IOException;
+
 
 /** Активность для регистрации пользователей. 
  * @autor Кирилл Малышев
  * @version 1.0
 */
-public class RegActivity extends Activity {
+public class RegActivity extends BaseActivity {
 
 	/**Поле для ввода логина (e-mail).*/
 	public EditText editLogin;
@@ -76,19 +74,19 @@ public class RegActivity extends Activity {
 		password = editPass.getText().toString();
 		password1 = editPass1.getText().toString();
 		if (email.equals("")) {
-			Utils.showToast(this, getString(R.string.noemail));
+			showToast(getString(R.string.noemail));
 		} else if (!Utils.isValidEmail(editLogin.getText().toString())) {
-			Utils.showToast(this, getString(R.string.erremail));
+			showToast(getString(R.string.erremail));
 		} else if (password.equals("")) {
-			Utils.showToast(this, getString(R.string.nopass));
+			showToast(getString(R.string.nopass));
 		} else if (password.length() < MIN_LENGTH_PASS) {
-			Utils.showToast(this, getString(R.string.veryshortpass));
+			showToast(getString(R.string.veryshortpass));
 		} else if (password1.equals("")) {
-			Utils.showToast(this, getString(R.string.nopass1));
+			showToast(getString(R.string.nopass1));
 		} else if (!password.equals(password1)) {
-			Utils.showToast(this, getString(R.string.otherpass));
+			showToast(getString(R.string.otherpass));
 		} else if (!Utils.isConnected()) {
-			Utils.showToast(this, getString(R.string.noconnect));
+			showToast(getString(R.string.noconnect));
 		} else {
 			task = new Task();
 			task.setContext(this);
@@ -136,7 +134,7 @@ public class RegActivity extends Activity {
 				startActivity(intent);
 				finish();
 			} else {
-				Utils.showToast(RegActivity.this, getString(R.string.emailalreadywas));
+				showToast(getString(R.string.emailalreadywas));
 			}
 			super.onPostExecute(result);
 		}

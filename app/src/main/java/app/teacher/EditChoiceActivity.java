@@ -1,27 +1,20 @@
 package app.teacher;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Активность редактирования вопроса с выбором одного ответа.
@@ -29,7 +22,7 @@ import android.widget.TextView;
  * @autor Кирилл Малышев
  * @version 1.0
  */
-public class EditChoiceActivity extends Activity {
+public class EditChoiceActivity extends BaseActivity {
 
 	/** Индекс вопроса (номер вопроса - 1). */
 	int position;
@@ -67,8 +60,6 @@ public class EditChoiceActivity extends Activity {
 	OnlyChoiceQuestion onlyChoiceQuestion;
 
 
-	final int MAX_SIZE = 6;
-
 
 	/**
 	 * Устанавливает разметку. Отображает информацию о вопросе, если она есть.
@@ -78,8 +69,6 @@ public class EditChoiceActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.qq_with_choice);
-
-		//setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		test = Test.getTest(this);
 
@@ -148,20 +137,6 @@ public class EditChoiceActivity extends Activity {
 		intent.putExtra("position", position);
 		startActivity(intent);
 		finish();
-		/*String type = EditTestActivity.listAnswers.get(position).getType();
-		Intent intent = new Intent(EditChoiceActivity.this, EditTestActivity.class);
-		if (type.equals("choice")) {
-			intent = new Intent(EditChoiceActivity.this, EditChoiceActivity.class);
-		} else if (type.equals("multiple")) {
-			intent = new Intent(EditChoiceActivity.this, EditMultipleActivity.class);
-		} else if (type.equals("input")) {
-			intent = new Intent(EditChoiceActivity.this, EditInputActivity.class);
-		}
-
-		intent.putExtra("position", position);
-		intent.putExtra("type", EditTestActivity.listAnswers.get(position).getType());
-		startActivity(intent);
-		finish();*/
 	}
 
 	/**
@@ -247,7 +222,7 @@ public class EditChoiceActivity extends Activity {
 			editTextList.remove(size - 1);
 			saveQuestion();
 		} else {
-			Utils.showToast(this, getString(R.string.lessnot));
+			showToast(getString(R.string.lessnot));
 		}
 	}
 
@@ -275,7 +250,7 @@ public class EditChoiceActivity extends Activity {
 	public void back(View v) {
 		saveQuestion();
 		Intent intent = new Intent(this, EditChallengeActivity.class);
-		intent.putExtra("isContinueEditing", true);
+		intent.putExtra("isNotFinishedSinceLastTime", false);
 		startActivity(intent);
 		finish();
 	}

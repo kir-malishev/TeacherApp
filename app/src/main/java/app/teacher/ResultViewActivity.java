@@ -1,8 +1,5 @@
 package app.teacher;
 
-import java.io.IOException;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,13 +12,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 /**
  * Активность просмотра результата прохождения теста.
  * 
  * @autor Кирилл Малышев
  * @version 1.0
  */
-public class ResultViewActivity extends Activity {
+public class ResultViewActivity extends BaseActivity {
 
 	/** Резульатат прохождения в виде html-кода */
 	String result;
@@ -76,15 +75,15 @@ public class ResultViewActivity extends Activity {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				MyTestsActivity.email = editText.getText().toString().trim();
 				if (MyTestsActivity.email.equals("")) {
-					Utils.showToast(ResultViewActivity.this, getString(R.string.noname));
+					showToast(getString(R.string.noname));
 					return;
 				} else if (!Utils.isValidEmail(MyTestsActivity.email)) {
-					Utils.showToast(ResultViewActivity.this, getString(R.string.erremail));
+					showToast(getString(R.string.erremail));
 					return;
 				} else
 					try {
 						if (!Utils.isConnected()) {
-							Utils.showToast(ResultViewActivity.this, getString(R.string.noconnect));
+							showToast(getString(R.string.noconnect));
 						} else {
 
 							task = new Task();
@@ -160,9 +159,9 @@ public class ResultViewActivity extends Activity {
 
 			super.dialog.dismiss();
 			if (Boolean.valueOf(result))
-				Utils.showToast(ResultViewActivity.this, getString(R.string.succesfulmail));
+				showToast(getString(R.string.succesfulmail));
 			else
-				Utils.showToast(ResultViewActivity.this, getString(R.string.errormail));
+				showToast(getString(R.string.errormail));
 
 			super.onPostExecute(result);
 

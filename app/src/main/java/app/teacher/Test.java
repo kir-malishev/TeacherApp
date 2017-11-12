@@ -131,11 +131,6 @@ public class Test {
         editor.apply();
     }
 
-    String getJSON() {
-        CompatibleWithJSON<Test> converter = new TestConverter();
-        String json = converter.getJSON(this);
-        return json;
-    }
 
 
     public static Test getTest(Context context){
@@ -143,6 +138,20 @@ public class Test {
         String json = sharedPref.getString("test", "");
         CompatibleWithJSON<Test> converter = new TestConverter();
         return converter.getFromJSON(json);
+    }
+
+
+    String getJSON() {
+        CompatibleWithJSON<Test> converter = new TestConverter();
+        String json = converter.getJSON(this);
+        return json;
+    }
+
+    public static void saveJSON(Context context, String json) {
+        SharedPreferences sharedPref = context.getSharedPreferences(Test.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("test", json);
+        editor.apply();
     }
 
 

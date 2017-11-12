@@ -1,11 +1,8 @@
 package app.teacher;
 
-import java.io.IOException;
-
-import android.content.Context;
 import android.text.TextUtils;
-import android.view.Gravity;
-import android.widget.Toast;
+
+import java.io.IOException;
 
 /**
  * @autor Кирилл Малышев
@@ -40,18 +37,5 @@ public class Utils {
 		return (Runtime.getRuntime().exec(command).waitFor() == 0);
 	}
 
-	/**
-	 * Выводит на экран всплывающее сообщение.
-	 * 
-	 * @param context
-	 *            Контекст.
-	 * @param text
-	 *            Текст сообщения.
-	 */
-	public static void showToast(Context context, String text) {
-		Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
-		toast.setGravity(Gravity.CENTER, 0, 0);
-		toast.show();
-	}
 
 }

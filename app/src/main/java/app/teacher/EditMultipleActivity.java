@@ -1,13 +1,8 @@
 package app.teacher;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,7 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import app.teacher.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Активность редактирования вопроса с выбором одного или нескольких ответов.
@@ -27,7 +24,7 @@ import app.teacher.R;
  * @autor Кирилл Малышев
  * @version 1.0
  */
-public class EditMultipleActivity extends Activity {
+public class EditMultipleActivity extends BaseActivity {
 
 	/** Индекс вопроса (номер вопроса - 1). */
 	int position;
@@ -303,7 +300,7 @@ public class EditMultipleActivity extends Activity {
 			editTextList.add(editTxt);
 			list.addView(editTxt);
 		} else {
-			Utils.showToast(this, getString(R.string.mustnot));
+			showToast(getString(R.string.mustnot));
 		}
 	}
 
@@ -348,7 +345,7 @@ public class EditMultipleActivity extends Activity {
 			viewList.remove(size - 2);
 			saveQuestion();
 		} else {
-			Utils.showToast(this, getString(R.string.lessnot));
+			showToast(getString(R.string.lessnot));
 		}
 	}
 
@@ -376,7 +373,7 @@ public class EditMultipleActivity extends Activity {
 	public void back(View v) {
 		saveQuestion();
 		Intent intent = new Intent(this, EditChallengeActivity.class);
-		intent.putExtra("isContinueEditing", true);
+		intent.putExtra("isNotFinishedSinceLastTime", false);
 		startActivity(intent);
 		finish();
 	}

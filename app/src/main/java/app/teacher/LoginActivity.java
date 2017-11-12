@@ -1,10 +1,6 @@
 package app.teacher;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +13,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
+import java.io.IOException;
+
 
 /** Активность для авторицации пользователей. 
  * @autor Кирилл Малышев
@@ -25,7 +23,7 @@ import android.widget.EditText;
 
 
 @SuppressLint("CommitPrefEdits")
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 	/**Поле для ввода логина (e-mail)*/
 	EditText editLogin;
 	
@@ -116,7 +114,6 @@ public class LoginActivity extends Activity {
 	public void toFormReg(View view) {
 		Intent intent = new Intent(this, RegActivity.class);
 		startActivity(intent);
-		finish();
 	}
 
 	/**Проверяет корректность введённых данных и отправляет запрос на авторизацию на сервер.
@@ -129,11 +126,11 @@ public class LoginActivity extends Activity {
 		loginFromEdit = editLogin.getText().toString().toLowerCase();
 		PASSWORD = editPass.getText().toString();
 		if (loginFromEdit.equals("")) {
-			Utils.showToast(this, getString(R.string.noemail));
+			showToast(getString(R.string.noemail));
 		} else if (PASSWORD.equals("")) {
-			Utils.showToast(this, getString(R.string.nopass));
+			showToast(getString(R.string.nopass));
 		} else if (!Utils.isConnected()) {
-			Utils.showToast(this, getString(R.string.noconnect));
+			showToast(getString(R.string.noconnect));
 		} else {
 			task = new Task();
 			task.addParam("login", loginFromEdit);
@@ -182,10 +179,9 @@ public class LoginActivity extends Activity {
 					forgetAuth();
 				Intent intent = new Intent(LoginActivity.this, ActivityMenu.class);
 				startActivity(intent);
-				finish();
 
 			} else {
-				Utils.showToast(LoginActivity.this, getString(R.string.errorlogin));
+				showToast(getString(R.string.errorlogin));
 			}
 			super.onPostExecute(result);
 		}

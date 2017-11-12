@@ -1,6 +1,5 @@
 package app.teacher;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,13 +16,17 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 /**
  * Активность просмотра созданных тестов.
  * 
  * @autor Кирилл Малышев
  * @version 1.0
  */
-public class MyTestsActivity extends Activity implements OnItemClickListener {
+public class MyTestsActivity extends BaseActivity implements OnItemClickListener {
 
 
 	/** Номер теста */
@@ -70,7 +73,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 		descriptions = TestDescription.getTestDescriptions(this);
 
 		if (descriptions.size() == 0)
-			Utils.showToast(this, "Вы пока не создали ни одного теста(");
+			showToast("Вы пока не создали ни одного теста(");
 
 		list = (RecyclerView) findViewById(R.id.tests);
 		LinearLayoutManager manager = new LinearLayoutManager(MyTestsActivity.this);
@@ -147,7 +150,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 	}
 
 
-	void choiceOfAction(int position) {
+	void choiceOfAction(final int position) {
 		String title = getString(R.string.choiceoption);
 		String[] options = getResources().getStringArray(R.array.options);
 		ad = new AlertDialog.Builder(this);
@@ -158,7 +161,7 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 			public void onClick(DialogInterface dialog, int item) {
 				switch (item) {
 					case 0:                // Редактировать вопросы
-
+						downloadTest(descriptions.get(position).getTestID());
 
 						break;
 					case 1:                // Результаты прохождений
@@ -183,6 +186,47 @@ public class MyTestsActivity extends Activity implements OnItemClickListener {
 		});
 		ad.show();
 
+	}
+
+	void downloadTest(String testID) {
+		showProgress("Получаю тест");
+		API api = Request.getApi();
+		Call<GetTestResponse> call = api.getTest(testID);
+		call.enqueue(new Callback<GetTestResponse>() {
+			@Override
+			public void onResponse(Call<GetTestResponse> call, Response<GetTestResponse> response) {
+				dismissProgress();
+				if (response.isSuccessful()) {
+					GetTestResponse getTestResponse = response.body();
+					int status = getTestResponse.getStatus();
+					switch (status) {
+						case 0:
+							Test.saveJSON(MyTestsActivity.this, getTestResponse.getTestJSON());
+							toEditTest();
+							break;
+						case 1:
+							showToast("Теста с таким номером не существует!");
+							break;
+						default:
+							showToast("Произошла какая-то ошибка!");
+					}
+				} else
+					showToast("Произошла ошибка! Попробуйте в другой раз!");
+			}
+
+			@Override
+			public void onFailure(Call<GetTestResponse> call, Throwable t) {
+				dismissProgress();
+				showToast("Произошла ошибка! Попробуйте в другой раз!");
+			}
+		});
+
+	}
+
+	void toEditTest() {
+		Intent intent = new Intent(this, EditChallengeActivity.class);
+		intent.putExtra("isNotFinishedSinceLastTime", false);
+		startActivity(intent);
 	}
 
 

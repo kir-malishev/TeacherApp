@@ -9,9 +9,9 @@ package app.teacher;
 
 public final class R {
     public static final class array {
-        public static final int options=0x7f040000;
-        public static final int points=0x7f040001;
-        public static final int types=0x7f040002;
+        public static final int options=0x7f050000;
+        public static final int points=0x7f050001;
+        public static final int types=0x7f050002;
     }
     public static final class attr {
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -48,18 +48,18 @@ containing a value of this type.
         public static final int stackFromEnd=0x7f010003;
     }
     public static final class color {
-        public static final int black_color=0x7f050000;
-        public static final int button_color=0x7f050001;
-        public static final int dark_color=0x7f050002;
-        public static final int light_color=0x7f050003;
-        public static final int orange_color=0x7f050004;
-        public static final int white_color=0x7f050005;
-        public static final int yellow_color=0x7f050006;
+        public static final int black_color=0x7f060000;
+        public static final int button_color=0x7f060001;
+        public static final int dark_color=0x7f060002;
+        public static final int light_color=0x7f060003;
+        public static final int orange_color=0x7f060004;
+        public static final int white_color=0x7f060005;
+        public static final int yellow_color=0x7f060006;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
-        public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f060002;
+        public static final int activity_horizontal_margin=0x7f040000;
+        public static final int activity_vertical_margin=0x7f040001;
+        public static final int item_touch_helper_max_drag_scroll_per_frame=0x7f040002;
     }
     public static final class drawable {
         public static final int diary=0x7f020000;

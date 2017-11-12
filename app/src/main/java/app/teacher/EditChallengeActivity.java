@@ -1,6 +1,5 @@
 package app.teacher;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -18,7 +18,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditChallengeActivity extends Activity {
+public class EditChallengeActivity extends BaseActivity {
 
     Test test;
     final int MAX_VALUE_CHALLENGES = 200;
@@ -41,7 +41,7 @@ public class EditChallengeActivity extends Activity {
                 setTitle(getString(R.string.nonameyet));
             else
                 setTitle(test.getName());
-            if (!getIntent().getBooleanExtra("isContinueEditing", false))
+            if (getIntent().getBooleanExtra("isNotFinishedSinceLastTime", true))
                 checkOfDesireToContinue();
         }
 
@@ -65,7 +65,6 @@ public class EditChallengeActivity extends Activity {
                 }
                 intent.putExtra("position", position);
                 startActivity(intent);
-                finish();
             }
         });
         ItemTouchHelper.Callback callback = new EditTestTouchHelper(adapter);
@@ -103,7 +102,7 @@ public class EditChallengeActivity extends Activity {
         ad.setCancelable(true);
         ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
             public void onCancel(DialogInterface dialog) {
-                Utils.showToast(EditChallengeActivity.this, getString(R.string.nochoose));
+                showToast(getString(R.string.nochoose));
             }
         });
         ad.show();
@@ -116,14 +115,10 @@ public class EditChallengeActivity extends Activity {
         if (test.size() <= MAX_VALUE_CHALLENGES)
             choiceChallenge();
         else
-            Utils.showToast(this, getString(R.string.cannotadd));
+            showToast(getString(R.string.cannotadd));
     }
 
-    public void inMenu(View v) {
-        test.saveTest(this);
-        Intent intent = new Intent(this, ActivityMenu.class);
-        startActivity(intent);
-    }
+
 
     public void setTestName(View v) {
         AlertDialog.Builder ad = new AlertDialog.Builder(this);
@@ -138,7 +133,7 @@ public class EditChallengeActivity extends Activity {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String testName = editText.getText().toString().trim();
                 if (testName.isEmpty()) {
-                    Utils.showToast(EditChallengeActivity.this, getString(R.string.noname));
+                    showToast(getString(R.string.noname));
                     return;
                 }
                 test.setName(testName);
@@ -198,20 +193,20 @@ public class EditChallengeActivity extends Activity {
             case -1:
                 return true;
             case -2:
-                Utils.showToast(this, "Нет названия теста");
+                showToast("Нет названия теста");
                 return false;
             case -3:
-                Utils.showToast(this, "В тесте не ни одного вопроса");
+                showToast("В тесте не ни одного вопроса");
                 return false;
             case -4:
-                Utils.showToast(this, "Неизвестная ошибка");
+                showToast("Неизвестная ошибка");
                 return false;
         }
         if (code >= 0) {
-            Utils.showToast(this, "Вы не завершили редактирование задания №" + (code + 1));
+            showToast("Вы не завершили редактирование задания №" + (code + 1));
             return false;
         }
-        Utils.showToast(this, "Совсем неизвестная ошибка");
+        showToast("Совсем неизвестная ошибка");
         return false;
 
     }
@@ -220,36 +215,59 @@ public class EditChallengeActivity extends Activity {
         if (!checkTest()) return;
 
         String json = test.getJSON();
+
+        showProgress("Сохраняю тест");
         API api = Request.getApi();
         Call<SaveTestResponse> call = api.sendTest(json, LoginActivity.LOGIN);
         //Utils.showToast(this, json);
         call.enqueue(new Callback<SaveTestResponse>() {
             @Override
             public void onResponse(Call<SaveTestResponse> call, Response<SaveTestResponse> response) {
+                dismissProgress();
                 if (response.isSuccessful()) {
                     SaveTestResponse saveTestResponse = response.body();
                     int status = saveTestResponse.getStatus();
                     switch (status) {
                         case 1:
-                            Utils.showToast(EditChallengeActivity.this, "Номер созданного теста: " + saveTestResponse.getTestID());
+                            showToast("Номер созданного теста: " + saveTestResponse.getTestID());
                             clearRecyclerView();
                             break;
                         case 2:
-                            Utils.showToast(EditChallengeActivity.this, "Тест успешно обновлён!");
+                            showToast("Тест успешно обновлён!");
                             clearRecyclerView();
                             break;
                         default:
-                            Utils.showToast(EditChallengeActivity.this, "Произошла какая-то ошибка!");
+                            showToast("Произошла какая-то ошибка!");
                     }
                 } else
-                    Utils.showToast(EditChallengeActivity.this, "Произошла ошибка! Попробуйте в другой раз!");
+                    showToast("Произошла ошибка! Попробуйте в другой раз!");
             }
 
             @Override
             public void onFailure(Call<SaveTestResponse> call, Throwable t) {
-                Utils.showToast(EditChallengeActivity.this, "Произошла ошибка! Попробуйте в другой раз!");
+                dismissProgress();
+                showToast("Произошла ошибка! Попробуйте в другой раз!");
             }
         });
+    }
+
+    public void inMenu(View v) {
+        back();
+    }
+
+    void back() {
+        test.saveTest(this);
+        Intent intent = new Intent(this, ActivityMenu.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            back();
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
     }
 
     @Override

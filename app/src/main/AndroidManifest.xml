@@ -20,7 +20,6 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-                <activity
+        <activity
             android:name=".RegActivity"
             android:label="@string/registration"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -40,7 +38,6 @@
         <activity
             android:name=".EditTestActivity"
             android:label="@string/create"
-            android:noHistory="false"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -49,7 +46,6 @@
         <activity
             android:name=".EditChoiceActivity"
             android:label="@string/create"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -58,7 +54,6 @@
         <activity
             android:name=".EditInputActivity"
             android:label="@string/create"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -67,7 +62,6 @@
         <activity
             android:name=".EditMultipleActivity"
             android:label="@string/create"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -76,7 +70,6 @@
         <activity
             android:name=".ActivityMenu"
             android:label="@string/menu"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -85,16 +78,14 @@
         <activity
             android:name=".MyTestsActivity"
             android:label="@string/mytests"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-               <activity
+        <activity
             android:name=".ResultsActivity"
             android:label="@string/result"
-            android:noHistory="false"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -103,13 +94,12 @@
         <activity
             android:name=".ResultViewActivity"
             android:label="@string/result"
-            android:noHistory="true"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditChallengeActivity"></activity>
+        <activity android:name=".EditChallengeActivity" />
     </application>
 
 </manifest>

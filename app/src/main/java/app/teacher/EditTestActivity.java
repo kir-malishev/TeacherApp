@@ -1,15 +1,6 @@
 package app.teacher;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -27,6 +18,14 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Активность создания и редактирования теста.
  * 
@@ -34,7 +33,7 @@ import android.widget.ListView;
  * @version 1.0
  */
 @SuppressLint({ "CommitPrefEdits", "UseValueOf" })
-public class EditTestActivity extends Activity implements OnItemClickListener {
+public class EditTestActivity extends BaseActivity implements OnItemClickListener {
 
 	/** Всплывающее диалоговое окно. */
 	AlertDialog.Builder ad;
@@ -168,7 +167,7 @@ public class EditTestActivity extends Activity implements OnItemClickListener {
 		if (listAnswers.size() <= MAX_VALUE_QQ)
 			choiceTypeAns();
 		else
-			Utils.showToast(this, getString(R.string.cannotadd));
+			showToast(getString(R.string.cannotadd));
 	}
 
 	/**
@@ -295,7 +294,7 @@ public class EditTestActivity extends Activity implements OnItemClickListener {
 					task.execute(RequestTask.DOMAIN + "/api/scripts/savetest.php");
 				}
 			} else
-				Utils.showToast(this, getString(R.string.noconnect));
+				showToast(getString(R.string.noconnect));
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -313,7 +312,7 @@ public class EditTestActivity extends Activity implements OnItemClickListener {
 	public boolean toJSON() throws JSONException {
 		int size = listAnswers.size();
 		if (size < 1) {
-			Utils.showToast(this, getString(R.string.noans));
+			showToast(getString(R.string.noans));
 			return false;
 		}
 		String type;
@@ -346,12 +345,10 @@ public class EditTestActivity extends Activity implements OnItemClickListener {
 			boolean isRight = false;
 			if (quest.equals("") || (type.equals(Item.CHOICE) && (ans[0].equals("") || ans[1].equals(""))
 					|| (type.equals(Item.INPUT) && ans[0].equals("")))) {
-				Utils.showToast(this,
-						getString(R.string.numberqq) + " " + (position + 1) + " " + getString(R.string.noend));
+				showToast(getString(R.string.numberqq) + " " + (position + 1) + " " + getString(R.string.noend));
 				return false;
 			} else if (type.equals(Item.MULTIPLE) && !isAtLeastOneRight(position)) {
-				Utils.showToast(this,
-						getString(R.string.numberqq) + " " + (position + 1) + " " + getString(R.string.noright));
+				showToast(getString(R.string.numberqq) + " " + (position + 1) + " " + getString(R.string.noright));
 				return false;
 			} else {
 				answer.put("type", type);
@@ -438,7 +435,7 @@ public class EditTestActivity extends Activity implements OnItemClickListener {
 		ad.setCancelable(true);
 		ad.setOnCancelListener(new OnCancelListener() {
 			public void onCancel(DialogInterface dialog) {
-				Utils.showToast(EditTestActivity.this, getString(R.string.nochoose));
+				showToast(getString(R.string.nochoose));
 			}
 		});
 		ad.show();

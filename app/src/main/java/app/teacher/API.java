@@ -30,4 +30,10 @@ public interface API {
     Call<GetTestResponse> getTest(@Field("testID") String testID);
 
 
+    @FormUrlEncoded
+    @Headers(USER_AGENT)
+    @POST("/api/scripts/getresultreview.php")
+    Call<ResponseBody> getResultReview(@Field("testID") String testID);
+
+
 }

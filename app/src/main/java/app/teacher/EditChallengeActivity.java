@@ -53,13 +53,13 @@ public class EditChallengeActivity extends BaseActivity {
             public void onItemClick(Challenge challenge, int position) {
                 Intent intent = new Intent(EditChallengeActivity.this, EditTestActivity.class);
                 switch (challenge.getType()) {
-                    case 0:
+                    case Challenge.ONLY_CHOICE_QUESTION_TYPE:
                         intent = new Intent(EditChallengeActivity.this, EditChoiceActivity.class);
                         break;
-                    case 1:
+                    case Challenge.MULTIPLE_CHOICE_QUESTION_TYPE:
                         intent = new Intent(EditChallengeActivity.this, EditMultipleActivity.class);
                         break;
-                    case 2:
+                    case Challenge.INPUT_QUESTION:
                         intent = new Intent(EditChallengeActivity.this, EditInputActivity.class);
                         break;
                 }

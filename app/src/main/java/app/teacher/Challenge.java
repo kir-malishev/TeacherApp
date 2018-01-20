@@ -16,9 +16,14 @@ public class Challenge {
      */
 
 
+    public static final int UNKNOWN_TYPE = 0;
+    public static final int ONLY_CHOICE_QUESTION_TYPE = 1;
+    public static final int MULTIPLE_CHOICE_QUESTION_TYPE = 2;
+    public static final int INPUT_QUESTION = 3;
+
     String question = "";
     int points = 1;
-    int type = -1;
+    int type = UNKNOWN_TYPE;
 
 
     Challenge(int type){

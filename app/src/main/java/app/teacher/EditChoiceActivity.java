@@ -124,13 +124,13 @@ public class EditChoiceActivity extends BaseActivity {
 		saveQuestion();
 		Intent intent = new Intent(this, EditChoiceActivity.class);
 		switch(test.getChallenge(position).getType()){
-			case 0:
+			case Challenge.ONLY_CHOICE_QUESTION_TYPE:
 				intent = new Intent(this, EditChoiceActivity.class);
 				break;
-			case 1:
+			case Challenge.MULTIPLE_CHOICE_QUESTION_TYPE:
 				intent = new Intent(this, EditMultipleActivity.class);
 				break;
-			case 2:
+			case Challenge.INPUT_QUESTION:
 				intent = new Intent(this, EditInputActivity.class);
 				break;
 		}

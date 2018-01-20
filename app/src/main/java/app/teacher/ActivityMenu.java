@@ -43,6 +43,7 @@ public class ActivityMenu extends BaseActivity {
         EditTestActivity.data_for_test = new ArrayList<HashMap<String, String>>();
         EditTestActivity.testName = "";
 
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String id = extras.getString("id");

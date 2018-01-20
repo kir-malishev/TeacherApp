@@ -8,14 +8,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -159,13 +162,14 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 		ad.setItems(options, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int item) {
+				TestDescription testDescription = descriptions.get(position);
 				switch (item) {
 					case 0:                // Редактировать вопросы
-						downloadTest(descriptions.get(position).getTestID());
+						downloadTest(testDescription);
 
 						break;
 					case 1:                // Результаты прохождений
-
+						downloadResultsInfo(testDescription);
 
 						break;
 					case 2:                // Отправить тест на e-mail
@@ -188,10 +192,10 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 
 	}
 
-	void downloadTest(String testID) {
+	void downloadTest(final TestDescription testDescription) {
 		showProgress("Получаю тест");
 		API api = Request.getApi();
-		Call<GetTestResponse> call = api.getTest(testID);
+		Call<GetTestResponse> call = api.getTest(testDescription.getTestID());
 		call.enqueue(new Callback<GetTestResponse>() {
 			@Override
 			public void onResponse(Call<GetTestResponse> call, Response<GetTestResponse> response) {
@@ -227,6 +231,37 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 		Intent intent = new Intent(this, EditChallengeActivity.class);
 		intent.putExtra("isNotFinishedSinceLastTime", false);
 		startActivity(intent);
+	}
+
+	void downloadResultsInfo(final TestDescription testDescription) {
+		showProgress("Загружаю результаты");
+		API api = Request.getApi();
+		Call<ResponseBody> call = api.getResultReview(testDescription.getTestID());
+		call.enqueue(new Callback<ResponseBody>() {
+			@Override
+			public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+				dismissProgress();
+				if (response.isSuccessful()) {
+					try {
+						String jsonResultDescription = response.body().string();
+						Log.d("JSON", jsonResultDescription);
+						//TestDescription.saveJSON(ActivityMenu.this, jsonTestDescription);
+						//Intent intent = new Intent(ActivityMenu.this, MyTestsActivity.class);
+						//startActivity(intent);
+					} catch (IOException e) {
+						showToast("Произошла ошибка! Попробуйте в другой раз!");
+						e.printStackTrace();
+					}
+				} else
+					showToast("Произошла ошибка! Попробуйте в другой раз!");
+			}
+
+			@Override
+			public void onFailure(Call<ResponseBody> call, Throwable t) {
+				dismissProgress();
+				showToast("Произошла ошибка! Попробуйте в другой раз!");
+			}
+		});
 	}
 
 

@@ -10,7 +10,6 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
 import java.lang.reflect.Type;
-
 import java.util.ArrayList;
 
 /**
@@ -27,14 +26,14 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
         JsonArray jsonAnswers = new JsonArray();
         JsonArray jsonRightAnswer = new JsonArray();
         switch(src.type){
-            case 0:
+            case Challenge.ONLY_CHOICE_QUESTION_TYPE:
                 for(String answer: ((OnlyChoiceQuestion) src).answers){
                     jsonAnswers.add(answer);
                 }
                 json.add("answers", jsonAnswers);
                 json.addProperty("rightAnswer", ((OnlyChoiceQuestion) src).getRightAnswer());
                 break;
-            case 1:
+            case Challenge.MULTIPLE_CHOICE_QUESTION_TYPE:
                 for(String answer: ((MultipleChoiceQuestion) src).answers){
                     jsonAnswers.add(answer);
                 }
@@ -44,7 +43,7 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
                 }
                 json.add("rightAnswer", jsonRightAnswer);
                 break;
-            case 2:
+            case Challenge.INPUT_QUESTION:
                 for(String rightAnswer: ((InputQuestion) src).getRightAnswer()){
                     jsonAnswers.add(rightAnswer);
                 }
@@ -63,17 +62,17 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
         Challenge challenge = null;
         ArrayList<String> answers = new ArrayList<String>();
         switch(type){
-            case -1:
+            case Challenge.UNKNOWN_TYPE:
                 challenge = new Challenge(type, question, points);
                 break;
-            case 0:
+            case Challenge.ONLY_CHOICE_QUESTION_TYPE:
                 for(JsonElement answer: object.get("answers").getAsJsonArray()){
                     answers.add(answer.getAsString());
                 }
                 String rightAnswerType0 = object.get("rightAnswer").getAsString();
                 challenge = new OnlyChoiceQuestion(question, answers, rightAnswerType0, points);
                 break;
-            case 1:
+            case Challenge.MULTIPLE_CHOICE_QUESTION_TYPE:
                 for(JsonElement answer: object.get("answers").getAsJsonArray()){
                     answers.add(answer.getAsString());
                 }
@@ -83,7 +82,7 @@ public class ChallengeConverter implements JsonSerializer<Challenge>, JsonDeseri
                 }
                 challenge = new MultipleChoiceQuestion(question, answers, rightAnswerType1, points);
                 break;
-            case 2:
+            case Challenge.INPUT_QUESTION:
                 ArrayList<String> rightAnswerType2 = new ArrayList<String>();
                 for(JsonElement answer: object.get("rightAnswer").getAsJsonArray()){
                     rightAnswerType2.add(answer.getAsString());

@@ -9,7 +9,7 @@ public class MultipleChoiceQuestion extends Challenge {
 
     ArrayList<String> answers;
     ArrayList<String> rightAnswer;
-    static final int TYPE = 1;
+    static final int TYPE = Challenge.MULTIPLE_CHOICE_QUESTION_TYPE;
 
 
     MultipleChoiceQuestion(){

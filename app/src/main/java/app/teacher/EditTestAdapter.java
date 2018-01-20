@@ -68,15 +68,15 @@ public class EditTestAdapter extends RecyclerView.Adapter<EditTestAdapter.TestVi
         else
             holder.header.setText(test.getChallenge(position).getQuestion());
         switch(test.getChallenge(position).getType()){
-            case 0:
+            case Challenge.ONLY_CHOICE_QUESTION_TYPE:
                 holder.header.setTextColor(context.getResources().getColor(R.color.orange_color));
                 holder.subHeader.setText(context.getString(R.string.abouthoice));
                 break;
-            case 1:
+            case Challenge.MULTIPLE_CHOICE_QUESTION_TYPE:
                 holder.header.setTextColor(context.getResources().getColor(R.color.white_color));
                 holder.subHeader.setText(context.getString(R.string.aboutmultiple));
                 break;
-            case 2:
+            case Challenge.INPUT_QUESTION:
                 holder.header.setTextColor(context.getResources().getColor(R.color.yellow_color));
                 holder.subHeader.setText(context.getString(R.string.aboutinput));
                 break;

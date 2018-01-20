@@ -13,7 +13,7 @@ public class OnlyChoiceQuestion extends Challenge{
 
     ArrayList<String> answers;
     String rightAnswer;
-    static final int TYPE = 0;
+    static final int TYPE = Challenge.ONLY_CHOICE_QUESTION_TYPE;
 
     OnlyChoiceQuestion(){
         super(TYPE);

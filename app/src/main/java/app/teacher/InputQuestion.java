@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class InputQuestion extends Challenge {
 
     ArrayList<String> rightAnswer;
-    static final int TYPE = 2;
+    static final int TYPE = Challenge.INPUT_QUESTION;
 
 
     InputQuestion(){

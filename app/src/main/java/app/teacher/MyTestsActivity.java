@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -38,8 +37,7 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 	/** Название теста */
 	String testName;
 
-	/** Адрес электронной почты для отправки сообщений. */
-	public static String email;
+
 
 	/**
 	 * Массив элементов ListView.
@@ -70,8 +68,6 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.test_review);
 
-		email = LoginActivity.LOGIN;
-
 
 		descriptions = TestDescription.getTestDescriptions(this);
 
@@ -79,7 +75,7 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 			showToast("Вы пока не создали ни одного теста(");
 
 		list = (RecyclerView) findViewById(R.id.tests);
-		LinearLayoutManager manager = new LinearLayoutManager(MyTestsActivity.this);
+		LinearLayoutManager manager = new LinearLayoutManager(this);
 		list.setLayoutManager(manager);
 		adapter = new ReviewTestAdapter(descriptions, new ReviewTestAdapter.OnItemClickListener() {
 			@Override
@@ -244,10 +240,9 @@ public class MyTestsActivity extends BaseActivity implements OnItemClickListener
 				if (response.isSuccessful()) {
 					try {
 						String jsonResultDescription = response.body().string();
-						Log.d("JSON", jsonResultDescription);
-						//TestDescription.saveJSON(ActivityMenu.this, jsonTestDescription);
-						//Intent intent = new Intent(ActivityMenu.this, MyTestsActivity.class);
-						//startActivity(intent);
+						ResultDescription.saveJSON(MyTestsActivity.this, jsonResultDescription);
+						Intent intent = new Intent(MyTestsActivity.this, ResultsActivity.class);
+						startActivity(intent);
 					} catch (IOException e) {
 						showToast("Произошла ошибка! Попробуйте в другой раз!");
 						e.printStackTrace();

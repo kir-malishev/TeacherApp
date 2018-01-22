@@ -1,6 +1,9 @@
 package app.teacher;
 
+import android.content.Context;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -37,5 +40,10 @@ public class Utils {
 		return (Runtime.getRuntime().exec(command).waitFor() == 0);
 	}
 
+	public static void showToast(Context context, String text) {
+		Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+		toast.setGravity(Gravity.CENTER, 0, 0);
+		toast.show();
+	}
 
 }

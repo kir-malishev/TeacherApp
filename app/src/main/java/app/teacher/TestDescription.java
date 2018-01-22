@@ -50,14 +50,14 @@ public class TestDescription {
     }*/
 
     public static void saveJSON(Context context, String json) {
-        SharedPreferences sharedPref = context.getSharedPreferences(TestDescription.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(FILE_FOR_SAVE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("test_descriptions", json);
         editor.apply();
     }
 
     public static ArrayList<TestDescription> getTestDescriptions(Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences(TestDescription.FILE_FOR_SAVE, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(FILE_FOR_SAVE, Context.MODE_PRIVATE);
         String json = sharedPref.getString("test_descriptions", "");
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();

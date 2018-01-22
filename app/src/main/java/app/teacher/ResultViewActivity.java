@@ -1,18 +1,12 @@
 package app.teacher;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
-
-import java.io.IOException;
 
 /**
  * Активность просмотра результата прохождения теста.
@@ -60,7 +54,7 @@ public class ResultViewActivity extends BaseActivity {
 	 * @param v
 	 *            Кнопка "E-mail"
 	 */
-	public void toMail(View v) {
+	/*public void toMail(View v) {
 		AlertDialog.Builder ad;
 		ad = new AlertDialog.Builder(this);
 		final EditText editText = new EditText(this);

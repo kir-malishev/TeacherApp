@@ -99,8 +99,8 @@ public class ActivityMenu extends BaseActivity {
                 dismissProgress();
                 if (response.isSuccessful()) {
                     try {
-                        String jsonTestDescription = response.body().string();
-                        TestDescription.saveJSON(ActivityMenu.this, jsonTestDescription);
+                        String jsonTestDescriptions = response.body().string();
+                        TestDescription.saveJSON(ActivityMenu.this, jsonTestDescriptions);
                         Intent intent = new Intent(ActivityMenu.this, MyTestsActivity.class);
                         startActivity(intent);
                     } catch (IOException e) {
